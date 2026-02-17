@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: glossary_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD}  # Läser från .env
+      POSTGRES_DB: glossary_db
+    ports:
+      - "5435:5432"  # OBS: Ny port (5435)
+    volumes:
+      - glossary_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  glossary_postgres_data:
