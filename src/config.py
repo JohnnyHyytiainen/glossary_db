@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     DB_PORT: str
 
     # Pydantic läser automatiskt in .env filen
-    model_config = SettingsConfigDict(env_file=".env",env_ignore_empty=True)
+    model_config = SettingsConfigDict(env_file=".env", env_ignore_empty=True)
 
     @property
     def DATABASE_URL(self) -> str:
