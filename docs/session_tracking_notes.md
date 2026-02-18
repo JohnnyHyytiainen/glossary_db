@@ -24,8 +24,11 @@
 ## Wednesday 18/02/2026
 **Goals for today:**  
 ```text
-- Migration and config alembic
-    -
+- Migration and config alembic (alembic/env.py)
+    - Done
+
+- Create "to-do-list" (revision) with alembic
+    - 
 
 
 ```
