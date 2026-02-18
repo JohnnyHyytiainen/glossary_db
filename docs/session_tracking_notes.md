@@ -24,11 +24,17 @@
 ## Wednesday 18/02/2026
 **Goals for today:**  
 ```text
+During ERT infusion:
+- Create "to-do-list" (revision) with alembic
+    - Done
+
 - Migration and config alembic (alembic/env.py)
     - Done
 
-- Create "to-do-list" (revision) with alembic
-    - 
+- Revision, migration, alembic theory
+    - Ongoing
 
+At home:
+- 
 
 ```
