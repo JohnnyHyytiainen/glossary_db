@@ -25,6 +25,7 @@
 **Goals for today:**  
 ```text
 - Migration and config alembic
+    -
 
 
 ```
