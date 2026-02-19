@@ -32,9 +32,17 @@ During ERT infusion:
     - Done
 
 - Revision, migration, alembic theory
-    - Ongoing
+    - Done
+```
 
-At home:
-- 
+## Thursday 19/02/2026
+**Goals for today:** 
+```text
+- Theory to understand an objects lifecycle in SQLAlchemy(an objects THREE phases)
+    - Done
+
+- Seed my database by writing a python script and not using SQL
+    -
+
 
 ```
