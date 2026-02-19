@@ -42,7 +42,16 @@ During ERT infusion:
     - Done
 
 - Seed my database by writing a python script and not using SQL
-    -
+    - Done
 
+- Started to fill in glossary terms with explanation prior to manually entering them in seed.py script before writing an automated script.
+    - Done
+```
+
+## Friday 20/02-2026
+**Goals for today:**
+```text
+- Keep on translating glossary terms and continue writing seed script to fill my database.
+    -   
 
 ```
