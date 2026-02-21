@@ -104,21 +104,21 @@ RIGHT JOIN,,SQL,SQL Course,beginner
 LIKE,,SQL,SQL Course,beginner
 ILIKE,,SQL,SQL Course,beginner
 regexp,,SQL,SQL Course,beginner
-backup,"en extra kopia på någonting, används för säkerhet utifall någonting händer, t.ex en fil blir korrupt och ej läsbar. Har du en backup på originalet kan du läsa den istället utan problem.",Python,Python Course,beginner
-pull,kommandot git pull används för att hämta och ladda ner innehåll från ett repository och omedelbart uppdatera det lokala arkivet så att det matchar det innehållet.,Python,Python Course,beginner
-clone,"git clone används för att skapa en lokal kopia av ett befintligt repo (remote repository), till exempel från GitHub, GitLab eller Bitbucket. Det laddar ner hela projektets historik, filer och alla grenar (branches) till din dator, vilket gör att du kan arbeta lokalt och senare synkronisera ändringar.",Python,Python Course,beginner
-cd,linux kommando som står för 'change directory',Python,Python Course,beginner
-ls,linux kommando som står för 'list',Python,Python Course,beginner
-cd ..,linux kommando som står för 'change directory bakåt'. Den flyttar dig bakåt en directory.,Python,Python Course,beginner
-data type,"data type frågar om vad för TYP det är på datan. Heltal(integer), decimaler(float), text(string), Sant/Falskt(Boolean). Notera att det är stor skillnad på Data type och Data structure.",Python,Python Course,beginner
-data structure,"Data structures är ett sätt att organisera, lagra och hantera data för att kunna använda den effektivt. Exempel på datastruktur är, list [], tuple (), dictionary {}.",Python,Python Course,beginner
-variable,"en variabel är som en behållare som du ger ett namn och ett värde, till exempel hw = 'Hello World'. Då kan du kalla på variabeln när som helst med hw istället för att skriva Hello World.",Python,Python Course,beginner
-assignment,en tilldelning enkelt förklarat. Har du en variabel = 10 så innebär det att likhetstecknet tilldelar variabeln 10 (som är en int i detta exempel).,Python,Python Course,beginner
-input,input är det som går in.,Python,Python Course,beginner
-output,output är det som kommer ut.,Python,Python Course,beginner
-type casting,"innebär att en variabel av en viss datatyp konverteras till en annan. Till exempel: x = int(11.7), detta kommer bli 12 pga int är heltal och ej decimaler. https://www.w3schools.com/python/python_casting.asp",Python,Python Course,beginner
-boolean,"en bool är True eller False. If x = True, ... ... True är här en bool.",Python,Python Course,beginner
-string,en string kännetecknas av 'text',Python,Python Course,beginner
+backup,an extra copy of something used for safety in case something happens e.g. a file becomes corrupt and unreadable. If you have a backup of the original you can read it instead without any problems.,Python,Python Course,beginner
+pull,used to fetch and download content from a remote repository and immediately update the local repository to match that content,Python,Python Course,beginner
+clone,git clone is primarily used to point to an existing repo and make a clone or copy of that repo at in a new directory at another location. The original repository can be located on the local filesystem or on remote machine accessible supported protocols.,Python,Python Course,beginner
+cd,linux command for 'change directory',Python,Python Course,beginner
+ls,linux command to 'list',Python,Python Course,beginner
+cd ..,linux command that stands for 'change directory'. It moves you back one directory from current one,Python,Python Course,beginner
+data type,In programming a data type is an important concept. Variables can store data of different types and different types can do different things.,Python,Python Course,beginner
+data structure,"Data structures are a way of organizing, storing and managing data in order to use it effectively. Examples of data structures are, list [], tuple (), dictionary {}.",Python,Python Course,beginner
+variable,"a variable is like a container that you give a name and a value to, for example hw = 'Hello World'. Then you can call the variable at any time with hw instead of writing Hello World.",Python,Python Course,beginner
+assignment,"an assignment simply explained. If you have a variable = 10, it means that the equal sign assigns the variable 10 (which is an int in this example).",Python,Python Course,beginner
+input,input is what goes in,Python,Python Course,beginner
+output,output is what goes out,Python,Python Course,beginner
+type casting,"type casting means that a variable of a certain data type is converted to another. For example: x = int(11.7), this will be 12 because int is an integer and not a decimal.",Python,Python Course,beginner
+boolean,"A bool is either True eller False. If x = True, ... ... True here is a boolean.",Python,Python Course,beginner
+string,a string is characterized by 'text',Python,Python Course,beginner
 indentation,,Python,Python Course,beginner
 convention,,Python,Python Course,beginner
 control structures,,Python,Python Course,beginner

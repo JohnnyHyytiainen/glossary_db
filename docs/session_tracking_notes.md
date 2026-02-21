@@ -60,5 +60,10 @@ During ERT infusion:
 - Start writing a basic ETL pipeline to clean up messy glossary data because I dont feel like writing it manually anymore.
     - Done
 
+- Fill in definition for all terms in glossary csv.
+    - Done
+
+- Add pandas dependency to read in glossary_filled_clean.csv to load it all in to postgres db all at once.
+    - Done
 
 ```
