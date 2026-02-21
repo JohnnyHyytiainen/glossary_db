@@ -48,7 +48,7 @@ During ERT infusion:
     - Done
 ```
 
-## Friday 20/02-2026
+## Saturday 21/02-2026
 **Goals for today:**
 ```text
 - Keep on translating glossary terms and continue writing seed script to fill my database.

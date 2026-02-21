@@ -3,11 +3,11 @@
 
 | terminology
 | ---------------
-| git   -   versionshanteringssystem, sparar snapshots av varje committad ändring av ditt script.
+ git   -   versionshanteringssystem, sparar snapshots av varje committad ändring av ditt script.
 
-| github    -   versionshantering via git MEN molnbaserad tjänst du pushar dina ändringar till. Används för att ha extra kopia på koden sparad och för att kunna samarbeta med andra.
+github    -   versionshantering via git MEN molnbaserad tjänst du pushar dina ändringar till. Används för att ha extra kopia på koden sparad och för att kunna samarbeta med andra.
 
-| backup    -   en extra kopia på någonting, används för säkerhet utifall någonting händer, t.ex en fil blir korrupt och ej läsbar. Har du en backup på originalet kan du läsa den istället utan problem.
+backup    -   en extra kopia på någonting, används för säkerhet utifall någonting händer, t.ex en fil blir korrupt och ej läsbar. Har du en backup på originalet kan du läsa den istället utan problem.
 
 | gitignore     -   en textfil i root i projektet, tack vare filen kan du skriva och ändra vilka filer du vill spåra med git eller som git ska ignorera, detta för att undvika att känsliga filer ska sparas eller pushas till github.
 
