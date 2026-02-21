@@ -65,5 +65,4 @@ During ERT infusion:
 
 - Add pandas dependency to read in glossary_filled_clean.csv to load it all in to postgres db all at once.
     - Done
-
 ```
