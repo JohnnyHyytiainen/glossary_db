@@ -52,6 +52,13 @@ During ERT infusion:
 **Goals for today:**
 ```text
 - Keep on translating glossary terms and continue writing seed script to fill my database.
-    -   
+    - Done
+
+- Write a few more glossary classes to ingest into postgres db.
+    - Done
+
+- Start writing a basic ETL pipeline to clean up messy glossary data because I dont feel like writing it manually anymore.
+    - Done
+
 
 ```
