@@ -1,9 +1,8 @@
 # Kod: Engelska
 # Kommentarer: Svenska
 # För att läsa/ladda in alla 195x glosor från ren och ifylld csv -> postgres glossary db
-
-import pandas as pd
 import re
+import pandas as pd
 from sqlalchemy import select
 from src.database import SessionLocal
 from src.models import Term, Category, Source, DifficultyLevel
@@ -33,7 +32,7 @@ def load_data_from_csv():
         return
     
     db = SessionLocal()
-    # NYTT: En mängd (set) för att hålla koll på vilka slugs vi processat i denna körning
+    # NYTT: En mängd (set) för att hålla koll på vilka slugs jag processat i denna körning
     seen_slugs = set()
 
     try:

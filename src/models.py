@@ -1,10 +1,10 @@
 # Kod: Engelska
 # Kommentarer: Svenska
 # För att skapa mina tabeller.
+import enum
 from sqlalchemy import Column, Integer, String, Text, ForeignKey, Table, Enum, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-import enum
 from src.database import Base
 
 # --- 0. Enums (Valbara alternativ) ---

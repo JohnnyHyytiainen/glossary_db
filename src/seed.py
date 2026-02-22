@@ -112,7 +112,7 @@ def seed_data():
 
         # Vill du köra FLERA termer, använd detta:
         # Steg 6: Verifiera flera termer (The Batch Way)
-        # Vi letar efter alla slugs som finns i vår lista
+        # Jag letar efter alla slugs som finns i vår lista
         slugs_to_find = ["git", "github", "gitignore", "commit"]
         stmt = select(Term).where(Term.slug.in_(slugs_to_find))
         # Använd .all() istället för .one() när du förväntar dig en lista tillbaka

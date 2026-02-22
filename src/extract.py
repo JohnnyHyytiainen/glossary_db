@@ -1,7 +1,6 @@
 # Kod: Engelska
 # Kommentarer: Svenska
 # För att städa och rensa upp mina glosor och förenkla mitt jobb.
-
 import csv
 import os
 
@@ -68,7 +67,7 @@ def clean_markdown_files():
                         "Definition": definition,
                         "Category": category,
                         "Source": source,
-                        "Difficulty": "beginner" # Vi sätter en default som du kan ändra sen
+                        "Difficulty": "beginner" # Jag sätter en default som jag kan ändra sen
                     })
                     
     # 2. Skapa den slutgiltiga CSV-filen
