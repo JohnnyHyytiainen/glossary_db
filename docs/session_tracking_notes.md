@@ -77,10 +77,21 @@ During ERT infusion:
     - Done
 
 - Add Pydantic schemas and classes.
+    - Term schema Done.
     - 
+
+- Add different endpoints, term/slug
+    - Done
+
+- Add endpoint for RANDOM terms
+    - Done
+
+- Added nested schemas in schemas.py(Category + source) to terms
+    - Done
+
 Agenda: 
 Endpoints - FastAPI(Done)
-Pydantic schemas, classes (?)
-Testing with httpx - (?)
-First API calls - (?)
+Pydantic schemas, classes (Done)
+Testing with httpx - (Done)
+First API calls - (Done)
 ```
