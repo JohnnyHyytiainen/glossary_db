@@ -1,9 +1,10 @@
 # Kod: Engelska
 # Kommentarer: Svenska
 # Access layer, FastAPI endpoints för min databas
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy import select
 from sqlalchemy.orm import Session
+from sqlalchemy.sql.expression import func # <-- NY: För att kunna slumpa glosor i DB. Få ut 10x första random glosor via /terms endpoint
 # Importera min databas och modeller och pydantic schema
 from src.database import SessionLocal
 from src.models import Term
@@ -30,14 +31,33 @@ def get_db():
 def root():
     return {"message": "Welcome to my Glossary API. Use the /docs endpoint"}
 
-# NYTT: Säger åt FastAPI att svaret ska vara en lista av TermResponse-objekt
+# FÖRSTA endpoint: Säger åt FastAPI att svaret ska vara en lista av TermResponse-objekt
 @app.get("/terms", response_model=list[TermResponse])
 def get_all_terms(db: Session = Depends(get_db)):
-    """Gets the first 10 terms from the Database"""
-    stmt = select(Term).limit(10)
+    """Gets the first 10 RANDOM terms from the Database"""
+    stmt = select(Term).order_by(func.random()).limit(10) # order_by(func.random()) tvingar postgres att shuffla kortleken innan den tar upp 10 nya glosor
     terms = db.scalars(stmt).all()
-
     # Returnerar bara listan med SQAlchemy object rakt av.
     # Pydantic (via response_model) tittar på objekten, läser model_config = ConfigDict(from_attributes=True)
     # och gör automatiskt om allting till JSON i bakgrunden.
     return terms
+
+# ANDRA endpoint: Hämta SPECIFIK glosa via dens SLUG
+@app.get("/terms/{term_slug}", response_model=TermResponse)
+def get_term_by_slug(term_slug: str, db: Session = Depends(get_db)):
+    """Searches for a SPECIFIC term via its URL slug (ex, /terms/git)"""
+    stmt = select(Term).where(Term.slug == term_slug)
+    term = db.scalars(stmt).first()
+
+    if not term:
+        # Error handling. Felmeddelande om en viss slug ej existerar.
+        raise HTTPException(status_code=404, detail=f"Term {term_slug} was not found.")
+    return term
+
+# TREDJE endpoint: RANDOM GLOSA.
+@app.get("/random", response_model=TermResponse)
+def random_term(db: Session = Depends(get_db)):
+    """Gets A random term from the database"""
+    stmt = select(Term).order_by(func.random()).limit(1)
+    term_rnd = db.scalars(stmt).first()
+    return term_rnd
