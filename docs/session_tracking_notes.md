@@ -66,3 +66,21 @@ During ERT infusion:
 - Add pandas dependency to read in glossary_filled_clean.csv to load it all in to postgres db all at once.
     - Done
 ```
+
+## Sunday 22/02-2026
+**Goals for today:**
+```text
+- Add endpoints with FastAPI (main.py)
+    - Done
+
+- Theory and code review of `config.py` `database.py` `models.py` `extract.py` `seed.py` `seed_csv.py`
+    - Done
+
+- Add Pydantic schemas and classes.
+    - 
+Agenda: 
+Endpoints - FastAPI(Done)
+Pydantic schemas, classes (?)
+Testing with httpx - (?)
+First API calls - (?)
+```
