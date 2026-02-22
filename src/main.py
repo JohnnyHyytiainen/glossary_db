@@ -4,9 +4,10 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy import select
 from sqlalchemy.orm import Session
-# Importera min databas och modeller
+# Importera min databas och modeller och pydantic schema
 from src.database import SessionLocal
 from src.models import Term
+from src.schemas import TermResponse # <-- ny ifrån schemas.py
 
 # Själva applikationen
 app = FastAPI(
@@ -29,20 +30,14 @@ def get_db():
 def root():
     return {"message": "Welcome to my Glossary API. Use the /docs endpoint"}
 
-@app.get("/terms")
+# NYTT: Säger åt FastAPI att svaret ska vara en lista av TermResponse-objekt
+@app.get("/terms", response_model=list[TermResponse])
 def get_all_terms(db: Session = Depends(get_db)):
     """Gets the first 10 terms from the Database"""
-    # Gör en enkel SELECT * FROM terms LIMIT 10;
     stmt = select(Term).limit(10)
     terms = db.scalars(stmt).all()
 
-    # Formaterar svaret fint till en lista med lexikon(?) (JSON)
-    result = []
-    for t in terms:
-        result.append({
-            "id": t.id,
-            "term": t.term,
-            "slug": t.slug,
-            "difficulty": t.difficulty.value if t.difficulty else None
-        })
-    return {"data": result}
+    # Returnerar bara listan med SQAlchemy object rakt av.
+    # Pydantic (via response_model) tittar på objekten, läser model_config = ConfigDict(from_attributes=True)
+    # och gör automatiskt om allting till JSON i bakgrunden.
+    return terms
