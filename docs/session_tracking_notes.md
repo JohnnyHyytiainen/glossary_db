@@ -95,3 +95,22 @@ Pydantic schemas, classes (Done)
 Testing with httpx - (Done)
 First API calls - (Done)
 ```
+## Monday 23/02-2026
+**Goals for today:**
+```text
+- Add health check endpoint in main.py script
+    - #1
+
+- Add testing for API(tests/test_api.py script) with functions and asserts(learn how to make it)
+    - #2
+
+- Add pagination (For/terms endpoint + add docs for further understanding)
+    - #3
+
+- Add Query params (Filter by category)
+    - #4
+
+- Code review and get deeper understanding for todays session
+    - #5
+
+```
