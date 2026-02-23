@@ -102,15 +102,18 @@ First API calls - (Done)
     - Done
 
 - Add testing for API(tests/test_api.py script) with functions and asserts(learn how to make it)
-    - #2
+    - Done
 
 - Add pagination (For/terms endpoint + add docs for further understanding)
-    - #3
-
+    - Done
+    - See quick_setup_commands.md for explanation
+```
+## Tuesday 24/02-2026
+**Goals for today:**
+```text
 - Add Query params (Filter by category)
     - #4
 
 - Code review and get deeper understanding for todays session
     - #5
-
 ```

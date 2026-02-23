@@ -50,3 +50,7 @@ Kör exakt detta kommando i terminalen:
 
 - **Run the API TEST script:**
     - `pytest tests/test_api.py -v`
+
+- **Use pagination(sidindelning) URL:**
+    - http://127.0.0.1:8000/terms?skip=NUMBER&limit=NUMBER MAX 100
+    - http://127.0.0.1:8000/terms?skip=20&limit=85
