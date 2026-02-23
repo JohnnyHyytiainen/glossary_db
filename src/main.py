@@ -1,7 +1,7 @@
 # Kod: Engelska
 # Kommentarer: Svenska
 # Access layer, FastAPI endpoints för min databas
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, Query
 from sqlalchemy import select, text
 from sqlalchemy.orm import Session
 from sqlalchemy.sql.expression import (
@@ -49,15 +49,18 @@ def health_check(db: Session = Depends(get_db)):
 
 
 # FÖRSTA endpoint: Säger åt FastAPI att svaret ska vara en lista av TermResponse-objekt
-@app.get("/terms", response_model=list[TermResponse])
-def get_terms(db: Session = Depends(get_db)):
-    """Gets the first 10 RANDOM terms from the Database"""
-    # order_by(func.random()) tvingar postgres att shuffla kortleken innan den tar upp 10 nya glosor
-    stmt = (select(Term).order_by(func.random()).limit(10))  
+# Uppdaterad med Pagination(sidindelning)
+@app.get("/terms", response_model=list[TermResponse], tags=["Terms"])
+def get_terms(
+    skip: int = 0,
+    limit: int = Query(default=10, le=100),
+    db: Session = Depends(get_db)
+):
+    """Gets a list of terms Alphabetically with pagination(limit and skip)"""
+    # Ändring 1: sorterar alfabetiskt på Term.term (ordet) istället för slump.
+    # Ändring 2: lägger till .offset(skip) för att hoppa över ett visst antal rader.
+    stmt = select(Term).order_by(Term.term).offset(skip).limit(limit)
     terms = db.scalars(stmt).all()
-    # Returnerar bara listan med SQAlchemy object rakt av.
-    # Pydantic (via response_model) tittar på objekten, läser model_config = ConfigDict(from_attributes=True)
-    # och gör automatiskt om allting till JSON i bakgrunden.
     return terms
 
 
