@@ -99,7 +99,7 @@ First API calls - (Done)
 **Goals for today:**
 ```text
 - Add health check endpoint in main.py script
-    - #1
+    - Done
 
 - Add testing for API(tests/test_api.py script) with functions and asserts(learn how to make it)
     - #2
