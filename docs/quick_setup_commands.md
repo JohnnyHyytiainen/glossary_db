@@ -43,7 +43,10 @@ Kör exakt detta kommando i terminalen:
 (Märk hur du använder en punkt . istället för slash / och skippar .py. Detta är Pythons sätt att säga "Leta i mappen src efter modulen seed".)
 ```
 
-- Run the API script
+- **Run the API script:**
     - `uv run uvicorn src.main:app --reload`
     - (--reload means that the server restarts automatically as soon as i save a change in my code.)
     - Terminal should give `Uvicorn running on http://127:0.0.1:8000` if everything went smoothly
+
+- **Run the API TEST script:**
+    - `pytest tests/test_api.py -v`
