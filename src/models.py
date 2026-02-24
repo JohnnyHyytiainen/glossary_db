@@ -81,7 +81,7 @@ class Term(Base):
 
     # Tidsstämplar (server_default=func.now() låter databasen sätta tiden)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now())
 
     # --- THE GLUE (Relationerna) ---
     # Detta skapar inga kolumner i databasen, men det skapar magi i Python.

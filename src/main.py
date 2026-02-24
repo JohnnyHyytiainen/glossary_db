@@ -21,7 +21,6 @@ app = FastAPI(
     version="1.0.0",
 )
 
-
 # Dependency Injection: En funktion som ger mig en databas session för varje anrop
 def get_db():
     db = SessionLocal()
@@ -29,8 +28,7 @@ def get_db():
         yield db  # Här "lånas sessionen" / "öppnas dörren"
     finally:
         db.close()  # Här "stängs dörren till sessionen"
-
-
+        
 # --- Mina Endpoints (Vägar in till "huset") ---
 @app.get("/")
 def root():

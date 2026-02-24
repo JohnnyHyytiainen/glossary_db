@@ -87,7 +87,7 @@ def load_data_from_csv():
         print(f"Error occured when ingesting {e}")
         db.rollback()
     finally:
-        db.close
+        db.close()
 
 if __name__ == "__main__":
     load_data_from_csv()

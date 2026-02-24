@@ -19,6 +19,8 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 class Base(DeclarativeBase):
     pass
 
+# Se över denna. Verkar ej behövas?
+"""
 # 4: Dependency(Helper för FastAPI)
 # Funktionen ser till att det öppnas en DB session och lånar ut den till endpoint + stänger efter.
 def get_db():
@@ -27,3 +29,4 @@ def get_db():
         yield db
     finally:
         db.close()
+"""
