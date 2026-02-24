@@ -12,7 +12,7 @@ FILES = [
     {"path": "docs/glossary_terms/python_glossary.md", "category": "Python", "source": "Python Course"}
 ]
 
-OUTPUT_FILE = "docs/glossary_raw.csv"
+OUTPUT_FILE = "data/glossary_raw.csv"
 
 def clean_markdown_files():
     print("Starting to clean messy glossary files (EXTRACT & TRANSFORM)")

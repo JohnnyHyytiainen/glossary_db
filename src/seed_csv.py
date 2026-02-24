@@ -21,7 +21,7 @@ def generate_slug(text: str, _) -> str:
     return text.strip('-')
 
 def load_data_from_csv():
-    csv_file = "docs/glossary_terms/glossary_filled_clean.csv"
+    csv_file = "data/glossary_filled_clean.csv"
 
     print(f"Loading: Reading {csv_file}...")
 
