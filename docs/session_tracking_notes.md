@@ -116,7 +116,16 @@ First API calls - (Done)
 
 - Add query params (filter by word)
     - Done
+```
+## Tuesday 25/02-2026
+**Goals for today:**
+```text
+- Code review by me and Q/A forms made from LLM over all modules get deeper understanding for Mondays session and entire MvP v1.0 codebase
+    -
 
-- Code review and get deeper understanding for todays session
-    - 
+- Prepare everything for RAG -> ChromaDB
+    -
+
+- Read up on vector DBs, Vector Embedding, Augmentation(prompt engineering), Generation(Gemini API(?))
+    -
 ```
