@@ -117,7 +117,7 @@ First API calls - (Done)
 - Add query params (filter by word)
     - Done
 ```
-## Tuesday 25/02-2026
+## Wednesday 25/02-2026
 **Goals for today:**
 ```text
 MUST DO:

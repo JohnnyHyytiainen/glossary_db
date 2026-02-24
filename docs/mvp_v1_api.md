@@ -20,4 +20,4 @@
     - Generation(Gemini API?)
 
 - ChromaDB
-- LLM
+- LLM(gemini api - Free pro sub to October 2026 since student)
