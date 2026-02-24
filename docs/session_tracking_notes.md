@@ -120,6 +120,86 @@ First API calls - (Done)
 ## Tuesday 25/02-2026
 **Goals for today:**
 ```text
+MUST DO:
+1) FIX double get_db, one in database.py and one in main.py.
+    - ONLY USE ONE, PREF FROM DATABASE.PY, database.py should own both SessionLocal AND get_db()
+Förklaring:
+Just nu importerar jag SessionLocal från src.database och definierar get_db() lokalt i main.py.
+Det funkar, men 'clean' är att database.py äger både SessionLocal och get_db().
+
+Gör så här för minsta ändring:
+
+I src/database.py: lägg tillbaka en riktig get_db() (generatorn) utanför kommentarer/docstrings.
+
+I src/main.py: ta bort din lokala get_db() och importera den:
+
+    - före: from src.database import SessionLocal
+    - efter: from src.database import get_db (och om jag fortfarande behöver SessionLocal någonstans, importera båda)
+
+DoD: inget endpoint-beteende ändras, Jag har bara flyttat DB-dörrvakten till rätt fil.
+```
+```text
+2) FIX N+1 risk on /terms.
+
+N+1-fix: selectinload på de queries som returnerar Terms
+Min /terms, /terms/{slug}, /random returnerar TermResponse som innehåller categories och sources.
+Om relationerna lazy-loadas blir det klassiskt N+1: en query för terms + extra queries när Pydantic läser term.categories och term.sources.
+
+Fix:
+Lägg på "eager loading" i select(Term):
+
+import: from sqlalchemy.orm import selectinload
+
+bygg stmt så här (idé):
+
+select(Term).options(selectinload(Term.categories), selectinload(Term.sources))
+
+Gör det i:
+    - get_terms
+    - get_term_by_slug
+    - random_term
+--- 
+
+/terms?limit=10 ska typiskt bli ~3 queries totalt:
+
+1) terms
+2) categories för alla hämtade terms (IN-lista via junction)
+3) sources för alla hämtade terms (IN-lista via junction)
+--- 
+Det här är "N+1 → 3" utan att jag ändrar API:t alls(?)
+---
+För att Verifiera snabbt att N+1 är borta (5–10 min):
+- Sätt echo=True på din engine tillfälligt och slå /terms?limit=10.
+- Räkna SQL-rader i terminaln: du ska se '1 + 2' queries, inte '1 + 20'
+```
+```TEXT
+3) FIX Mini runbook/readme!
+"Mini runbook" för imorgon:
+1) Flytta get_db till database.py och importera i main.py
+2) Lägg selectinload på de tre term-queries
+3) Testa:
+
+- /health
+
+- /terms?limit=10
+
+- /terms/{slug}
+
+- /random
+
+---
+
+Efter den fixen ovanför(KRITISK!) är detta nästa steg:
+1) README runbook(runbook + brief explanation för att ej skjuta på det!)
+- Start DB(docker compose)
+- Migrera (alembic)
+- seed (csv script)
+- Start API
+- Exempelanrop (curl)
+    - Mest ROI för tiden jag lägger trots pågående projekt.
+```
+
+```text
 - Code review by me and Q/A forms made from LLM over all modules get deeper understanding for Mondays session and entire MvP v1.0 codebase
     -
 
