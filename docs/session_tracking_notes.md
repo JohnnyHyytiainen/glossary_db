@@ -112,8 +112,11 @@ First API calls - (Done)
 **Goals for today:**
 ```text
 - Add Query params (Filter by category)
-    - #4
+    - Done
+
+- Add query params (filter by word)
+    - Done
 
 - Code review and get deeper understanding for todays session
-    - #5
+    - 
 ```
