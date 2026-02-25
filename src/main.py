@@ -47,15 +47,18 @@ def get_terms(
     skip: int = 0,
     limit: int = Query(default=10, le=100),
     category: Optional[str] = None,  # <-- Frivillig filter parameter
-    search: Optional[str] = None,  # <-- Frivilliga sök parametrar för själva termen(glosan)
+    search: Optional[
+        str
+    ] = None,  # <-- Frivilliga sök parametrar för själva termen(glosan)
     db: Session = Depends(get_db),
 ):
     """Gets a list of terms Alphabetically with pagination(limit and skip) and optional term or category filtering"""
     # 1) Bygga SQL-fråga (Basen)
-    stmt = select(Term).options(
-        selectinload(Term.categories),
-        selectinload(Term.sources)
-    ).order_by(Term.term)
+    stmt = (
+        select(Term)
+        .options(selectinload(Term.categories), selectinload(Term.sources))
+        .order_by(Term.term)
+    )
     # 2) Filter nr ett: Om användaren skickar in en kategori, lägg på ett filter.
     if category:
         # .any() kollar om NÅGON av glosans kategorier matchar sökordet.
@@ -77,7 +80,14 @@ def get_terms(
 @app.get("/terms/{term_slug}", response_model=TermResponse)
 def get_term_by_slug(term_slug: str, db: Session = Depends(get_db)):
     """Searches for a SPECIFIC term via its URL slug (ex, /terms/git)"""
-    stmt = (select(Term).options(selectinload(Term.categories), selectinload(Term.sources),).where(Term.slug == term_slug))
+    stmt = (
+        select(Term)
+        .options(
+            selectinload(Term.categories),
+            selectinload(Term.sources),
+        )
+        .where(Term.slug == term_slug)
+    )
     term = db.scalars(stmt).first()
 
     if not term:
@@ -91,13 +101,13 @@ def get_term_by_slug(term_slug: str, db: Session = Depends(get_db)):
 def random_term(db: Session = Depends(get_db)):
     """Gets A random term from the database"""
     stmt = (
-    select(Term)
-    .options(
-        selectinload(Term.categories),
-        selectinload(Term.sources),
-    )
-    .order_by(func.random())
-    .limit(1)
+        select(Term)
+        .options(
+            selectinload(Term.categories),
+            selectinload(Term.sources),
+        )
+        .order_by(func.random())
+        .limit(1)
     )
     term_rnd = db.scalars(stmt).first()
 
