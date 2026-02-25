@@ -6,7 +6,6 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "alembic>=1.18.4",
-    "black>=26.1.0",
     "fastapi>=0.129.0",
     "httpx>=0.28.1",
     "pandas>=3.0.1",
@@ -21,4 +20,5 @@ dev = [
     "httpx>=0.28.1",
     "pytest>=9.0.2",
     "ruff>=0.15.1",
+    "black>=26.1.0",
 ]
