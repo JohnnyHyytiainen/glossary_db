@@ -40,7 +40,7 @@ A small backend API for a technical glossary. It stores normalized glossary data
 ```bash
 git clone https://github.com/JohnnyHyytiainen/glossary_db.git
 cd glossary_db
-````
+```
 
 Create a local `.env` from the example:
 
