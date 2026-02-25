@@ -4,11 +4,15 @@
 
 from sentence_transformers import SentenceTransformer
 import chromadb
+from pathlib import Path
 # Imports from mina moduler i src/
 from sqlalchemy import select
 from sqlalchemy.orm import selectinload
 from src.database import SessionLocal
 from src.models import Term
+
+# Gör pathing skottsäker för chroma_db folder. Just in case pathing gremlins spökar..
+CHROMA_PATH = Path(__file__).parent.parent / "chroma_db"
 
 # 1) E i ETL - Funktion för att extrahera alla terms, categories och sources från PostgreSQL db 
 def extract_terms():
@@ -89,15 +93,42 @@ def load_into_chromadb(prepared: list[dict]) -> None:
     Load: Save embeddings + the metadata in ChromaDB (persistent).
     PersistentClient saves directly to disc. Meaning data survives between runs.
     """
+    # print för överblick
+    print("Connecting to ChromaDB..")
+    # Använd pathing variabel enbart för att undvika pathing huvudvärk(just in case)
+    # Persistent klient (Sparar alla filer lokalt i chroma_db mappen)
+    client = chromadb.PersistentClient(path=str(CHROMA_PATH))
+
+    # Skapa eller hämta collection (tabellen i vektordatabasen)
+    # metadata = {"hnsw:space": "cosine"} - Använd cosine similarity istället för L2 avstånd(?)
+    # Cosine == bättre för text, bryr sig om riktningen och inte om magnitud (?)
+    collection = client.get_or_create_collection(
+        name="glossary_terms",
+        metadata={"hnsw:space": "cosine"}
+    )
+
+    # Packa upp all data till listor. ChromaDB vill ha listor och INTE DICTS!
+    ids =           [p["id"] for p in prepared]
+    texts =         [p["text"] for p in prepared]
+    embeddings =    [p["embedding"].tolist() for p in prepared] # numpy array behöver konverteras till standard python list
+    metadatas =     [p["metadata"] for p in prepared]
+
+    # Ladda in allt igen på en gång(Batch > loopa över varje ord)
+    collection.add(
+        ids=ids,
+        documents=texts,
+        embeddings=embeddings,
+        metadatas=metadatas
+    )
+    # Print för att ha koll.
+    print(f"Loading phase done! {collection.count()} terms stored in ChromaDB!")
 
 
-
-
-    
 
 if __name__ == "__main__":
     terms = extract_terms()
     prepared = transform_to_embeddings(terms)
+    load_into_chromadb(prepared)
 
     # Verifiera första termen just in case!
     first = prepared[0]
