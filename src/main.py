@@ -3,14 +3,14 @@
 # Access layer, FastAPI endpoints för min databas
 from fastapi import FastAPI, Depends, HTTPException, Query
 from sqlalchemy import select, text
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, selectinload
 from sqlalchemy.sql.expression import (
     func,
-)  # <-- NY: För att kunna slumpa glosor i DB. Få ut random terms via /random endpointen
-from typing import Optional # <-- NY: 
+)
+from typing import Optional
 
 # Importera min databas och modeller och pydantic schema
-from src.database import SessionLocal
+from src.database import get_db
 from src.models import Term, Category
 from src.schemas import TermResponse  # <-- ny ifrån schemas.py
 
@@ -21,14 +21,7 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# Dependency Injection: En funktion som ger mig en databas session för varje anrop
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db  # Här "lånas sessionen" / "öppnas dörren"
-    finally:
-        db.close()  # Här "stängs dörren till sessionen"
-        
+
 # --- Mina Endpoints (Vägar in till "huset") ---
 @app.get("/")
 def root():
@@ -53,21 +46,25 @@ def health_check(db: Session = Depends(get_db)):
 def get_terms(
     skip: int = 0,
     limit: int = Query(default=10, le=100),
-    category: Optional[str] = None, # <-- Frivillig filter parameter
-    search: Optional[str] = None, # <-- Frivilliga sök parametrar för själva termen(glosan)
-    db: Session = Depends(get_db)
+    category: Optional[str] = None,  # <-- Frivillig filter parameter
+    search: Optional[str] = None,  # <-- Frivilliga sök parametrar för själva termen(glosan)
+    db: Session = Depends(get_db),
 ):
     """Gets a list of terms Alphabetically with pagination(limit and skip) and optional term or category filtering"""
     # 1) Bygga SQL-fråga (Basen)
-    stmt = select(Term).order_by(Term.term)
+    stmt = select(Term).options(
+        selectinload(Term.categories),
+        selectinload(Term.sources)
+    ).order_by(Term.term)
     # 2) Filter nr ett: Om användaren skickar in en kategori, lägg på ett filter.
     if category:
         # .any() kollar om NÅGON av glosans kategorier matchar sökordet.
         # .ilike() gör sökningen "case-insensitive" (bryr sig inte om stora/små bokstäver)
-        stmt = stmt.where(Term.categories.any(Category.name.ilike(f"%{category}")))
+        stmt = stmt.where(Term.categories.any(Category.name.ilike(f"%{category}%")))
+
     # 3) Filter nr två: Om användare vill söka i fritext på glosans namn.
     if search:
-        stmt = stmt.where(Term.term.ilike(f"%{search}"))
+        stmt = stmt.where(Term.term.ilike(f"%{search}%"))
 
     # 4) PAGINATION: Lägg på skip och limit sist av allting
     stmt = stmt.offset(skip).limit(limit)
@@ -80,7 +77,7 @@ def get_terms(
 @app.get("/terms/{term_slug}", response_model=TermResponse)
 def get_term_by_slug(term_slug: str, db: Session = Depends(get_db)):
     """Searches for a SPECIFIC term via its URL slug (ex, /terms/git)"""
-    stmt = select(Term).where(Term.slug == term_slug)
+    stmt = (select(Term).options(selectinload(Term.categories), selectinload(Term.sources),).where(Term.slug == term_slug))
     term = db.scalars(stmt).first()
 
     if not term:
@@ -93,6 +90,17 @@ def get_term_by_slug(term_slug: str, db: Session = Depends(get_db)):
 @app.get("/random", response_model=TermResponse)
 def random_term(db: Session = Depends(get_db)):
     """Gets A random term from the database"""
-    stmt = select(Term).order_by(func.random()).limit(1)
+    stmt = (
+    select(Term)
+    .options(
+        selectinload(Term.categories),
+        selectinload(Term.sources),
+    )
+    .order_by(func.random())
+    .limit(1)
+    )
     term_rnd = db.scalars(stmt).first()
+
+    if not term_rnd:
+        raise HTTPException(status_code=404, detail="No terms in database")
     return term_rnd
