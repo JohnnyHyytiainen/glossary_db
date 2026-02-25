@@ -54,3 +54,10 @@ Kör exakt detta kommando i terminalen:
 - **Use pagination(sidindelning) URL:**
     - http://127.0.0.1:8000/terms?skip=NUMBER&limit=NUMBER MAX 100
     - http://127.0.0.1:8000/terms?skip=20&limit=85
+
+- **Run experimental PoC script:**
+    - `uv run python -m experiments.rag_poc`
+
+
+- **Run embed_terms ETL pipeline(Postgres db -> VectorDB using Chromadb):**
+    - `uv run python -m scripts.embed_terms`
