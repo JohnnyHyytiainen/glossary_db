@@ -7,7 +7,7 @@ from sqlalchemy import select
 from src.database import SessionLocal
 from src.models import Term, Category, Source, DifficultyLevel
 
-def generate_slug(text: str, _) -> str:
+def generate_slug(text: str) -> str:
     """
     Helper function to clean name and create a URL friendly slug.
     Example: 'Primary Key (PK)' -> 'primary-key-pk'
@@ -32,8 +32,6 @@ def load_data_from_csv():
         return
     
     db = SessionLocal()
-    # NYTT: En mängd (set) för att hålla koll på vilka slugs jag processat i denna körning
-    seen_slugs = set()
 
     try:
         # loopa igenom varje rad i CSV
@@ -44,7 +42,7 @@ def load_data_from_csv():
             source_name = str(row['Source']).strip()
 
             # skapa slug
-            slug = generate_slug(term_name, seen_slugs)
+            slug = generate_slug(term_name)
 
             # 1: Hämta eller skapa Category
             category = db.scalars(select(Category).where(Category.name == category_name)).first()

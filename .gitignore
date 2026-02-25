@@ -89,3 +89,14 @@ postgres_data/
 mysql_data/
 mongo_data/
 docker/.env
+
+# For my RAG experiment.
+# --- ChromaDB (vector DB lokal storage) ---
+chroma_db/
+.chroma/
+# --- HuggingFace model cache (om den hamnar lokalt) ---
+# Normalt hamnar den i ~/.cache/huggingface/ (utanför repot)
+# men om jag konfigurerar lokal cache:
+models/
+*.bin
+*.safetensors
