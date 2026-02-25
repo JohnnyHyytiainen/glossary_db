@@ -114,7 +114,7 @@ def load_into_chromadb(prepared: list[dict]) -> None:
     metadatas =     [p["metadata"] for p in prepared]
 
     # Ladda in allt igen på en gång(Batch > loopa över varje ord)
-    collection.add(
+    collection.upsert(
         ids=ids,
         documents=texts,
         embeddings=embeddings,
