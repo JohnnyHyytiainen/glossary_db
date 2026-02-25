@@ -179,13 +179,48 @@ För att Verifiera snabbt att N+1 är borta (5–10 min):
 
 
 ## Wednesday 25/02-2026
+**Goals for today:**
 ```text
 - Code review by me and Q/A forms made from LLM over all modules get deeper understanding for Mondays session and entire MvP v1.0 codebase
-    -
+    - Not done
 
 - Prepare everything for RAG -> ChromaDB
-    -
+    - Done
 
 - Read up on vector DBs, Vector Embedding, Augmentation(prompt engineering), Generation(Gemini API(?))
+    - Done
+
+- First proof of concept for vector embeddings and tests /experiments/rag_poc.py
+    - Done
+
+- ETL to take data from Postgres DB, extract, transform, load data into vector DB(chromaDB) scripts/embed_terms.py
+    - Done
+```
+
+## Thursday 26/02-2026
+**Goals for today:**
+```text
+- Try to search on my own vector db with vector embeddings and semantic search
     -
+
+- Add "nuke" / "clear" feature to clear all data if needed in embed_terms.py
+    -
+
+- Normalize embeddings for cosine in embed_terms.py
+    -
+
+- Add metadata. I have categories but NOT sources in embed_terms.py
+    - 
+
+- Add small guards in embed_terms.py (ex, if DB is empty, return early. If definition is missing)
+    -
+
+- Add "proof it works" script. Small query script(query_terms.py(?)) with something similar to:
+
+collection = client.get_collection("glossary_terms")
+q = "how to reduce redundancy"
+res = collection.query(query_texts=[q], n_results=5)
+print(res["ids"][0])
+print(res["documents"][0][0][:120])
+print(res["distances"][0])
 ```
