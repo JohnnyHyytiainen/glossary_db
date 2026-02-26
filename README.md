@@ -4,7 +4,8 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker%20Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/fastapi-109989?style=for-the-badge&logo=FASTAPI&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)  
+![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/sqlalchemy-%23D71F00.svg?style=for-the-badge&logo=sqlalchemy&logoColor=white)  
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 
@@ -188,10 +189,13 @@ uv run python -m src.seed_csv
   * Embeddings
   * Retrieval endpoint (`/search?q=...`)
   * Optional LLM integration (Gemini API)
+---
 
-See docs:
 
-* `docs/mvp_v1_api.md`
-* `docs/quick_setup_commands.md`
+![Read the Docs](https://img.shields.io/badge/Read%20the%20Docs-%2300056500?style=for-the-badge&logo=readthedocs&logoColor=white)
+
+- **[MvP Version 1](docs/mvp_v1_api.md)**
+
+- **[Quick setup commands](docs/quick_setup_commands.md)**
 
 
