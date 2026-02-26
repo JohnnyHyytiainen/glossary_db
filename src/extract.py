@@ -9,10 +9,13 @@ import os
 FILES = [
     {"path": "docs/glossary_terms/data_mod_glossary.md", "category": "Data Modeling", "source": "Data Modeling Course"},
     {"path": "docs/glossary_terms/sql_glossary.md", "category": "SQL", "source": "SQL Course"},
-    {"path": "docs/glossary_terms/python_glossary.md", "category": "Python", "source": "Python Course"}
+    {"path": "docs/glossary_terms/python_glossary.md", "category": "Python", "source": "Python Course"},
+    {"path": "docs/glossary_terms/dataplatform_dev_glossary.md", "category": "Dataplatform Development", "source": "Dataplatform Development Course"},
+    {"path": "docs/glossary_terms/data_visualization_glossary.md", "category": "Data Visualization", "source": "Data Visualization Course"},
+
 ]
 
-OUTPUT_FILE = "data/glossary_raw.csv"
+OUTPUT_FILE = "data/glossary_raw_2.csv"
 
 def clean_markdown_files():
     print("Starting to clean messy glossary files (EXTRACT & TRANSFORM)")
