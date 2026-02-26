@@ -20,7 +20,7 @@ Genom att använda en Embedding-modell `all-MiniLM-L6-v2` omvandlas varje glosa 
 När jag konfigurerade ChromaDB valde jag `metadata={"hnsw:space": "cosine"}`. Istället för att mäta det raka avståndet mellan två punkter (L2 / Euclidean distance), mäter Cosine Similarity **vinkeln** (riktningen) mellan två vektorer. Inom Natural Language Processing (NLP) är det här branschstandard, eftersom textens "längd" (magnitud) är mindre viktig än dess faktiska "riktning" (innebörd).
 
 
-### 3. Idempotency (Skottsäkra västen för min Pipelines)
+### 3. Idempotency (Skottsäkra västen för min Pipeline)
 
 En pipeline måste vara **idempotent,** den ska kunna köras 1 gång eller 1000 gånger utan att systemet kraschar eller datan dupliceras. Genom att använda mig av `.upsert()` (Update or Insert) istället för `.add()` i laddningsfasen, garanteras det att pipelinen säkert kan köras varje gång en ny glosa läggs till i PostgreSQL.
 
