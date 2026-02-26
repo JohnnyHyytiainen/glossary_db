@@ -19,28 +19,28 @@
     - `uv run python -m src.seed`
 
     - `uv run src/seed.py`
-    - Du stöter säkert på `ModuleNotFoundError: No module named 'src'` vid detta kommando.
+    - You will probably encounter `ModuleNotFoundError: No module named 'src'` when running this command.
 ```text
-Anledningen för ModuleNotFoundError: No module named 'src' är pga detta:
+The reason for ModuleNotFoundError: No module named 'src' is because of this:
 
-När du kör: uv run src/seed.py
+When you run: uv run src/seed.py
 
-Vad Python tänker: "Okej, jag startar filen seed.py. Eftersom den ligger i mappen src, sätter jag src som min 'hemkatalog' (root directory)."
+What Python is thinking: "Okay, I'll start the file seed.py. Since it's in the src folder, I'll set src as my 'home directory' (root directory)."
 
-Vad som händer sen: Python läser raden from src.database import... och tänker: "Okej, jag letar efter en mapp som heter src inuti min hemkatalog."
+What happens next: Python reads the line from src.database import... and thinks: "Okay, I'm looking for a folder called src inside my home directory."
 
-Felet: Men hemkatalogen är ju redan src. Python letar alltså efter src/src/database.py, vilket inte finns!
+The error: But the home directory is already src. Python is looking for src/src/database.py, which doesn't exist!
 ```
-- Lösningen:
+- The solution:
 ```text
-Lösningen: The Module Flag (-m)
-Lösningen är att be Python köra din fil som en Modul istället för ett fristående skript. Då behåller Python din nuvarande mapp (glossary_db/) som hemkatalog.
+The Solution: The Module Flag (-m)
+The solution is to tell Python to run your file as a Module instead of a standalone script. Then Python will keep your current folder (glossary_db/) as your home directory.
 
-Kör exakt detta kommando i terminalen:
+Run this exact command in the terminal:
 
 - uv run python -m src.seed
 
-(Märk hur du använder en punkt . istället för slash / och skippar .py. Detta är Pythons sätt att säga "Leta i mappen src efter modulen seed".)
+(Notice how you use a dot . instead of a slash / and skip the .py. This is Python's way of saying "Look in the src folder for the seed module".)
 ```
 
 - **Run the API script:**
