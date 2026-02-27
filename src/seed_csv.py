@@ -15,7 +15,6 @@ CUSTOM_SLUGS = {
         "__repr__": "dunder-repr",
         "__init__": "dunder-init",
         "__str__": "dunder-str",
-        "__init__": "dunder-init",
         "__iter__": "dunder-iter",
         "c++": "cpp",
         "cd ..": "cd-dotdot",
