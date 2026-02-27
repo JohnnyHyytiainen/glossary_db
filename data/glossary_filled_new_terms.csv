@@ -1,0 +1,120 @@
+Term,Definition,Category,Source,Difficulty
+assign,"To assign means to set a value; in pandas, assign() creates new columns in a DataFrame (often without mutating the original).",Dataplatform Development,Dataplatform Development Course,beginner
+logical error,A logical error is a bug where code runs without crashing but produces the wrong result.,Dataplatform Development,Dataplatform Development Course,beginner
+handling error,"Error handling is writing code that detects failures and responds safely (messages, retries, fallback, or clean exit).",Dataplatform Development,Dataplatform Development Course,beginner
+iterable,"An iterable is an object you can loop over (it produces items one by one), like lists, strings, or generators.",Dataplatform Development,Dataplatform Development Course,beginner
+iterate over,"To iterate over means to loop through each item in a collection, one at a time.",Dataplatform Development,Dataplatform Development Course,beginner
+list comprehension,A list comprehension is a compact way to build a new list from an iterable in a single expression.,Dataplatform Development,Dataplatform Development Course,beginner
+collections,"In Python, the collections module provides specialized container types like Counter, defaultdict, and deque.",Dataplatform Development,Dataplatform Development Course,beginner
+tuples,"A tuple is an immutable (unchangeable) ordered collection in Python, written with parentheses or commas.",Dataplatform Development,Dataplatform Development Course,beginner
+\_\_repr\_\_,__repr__ is a Python 'dunder' method that returns an unambiguous string representation of an object (useful for debugging).,Dataplatform Development,Dataplatform Development Course,beginner
+dunder methods,"Dunder methods are special Python methods with double underscores (e.g., __init__, __repr__) that customize object behavior.",Dataplatform Development,Dataplatform Development Course,beginner
+pythonic,"Pythonic means written in a clear, idiomatic style that fits Python conventions.",Dataplatform Development,Dataplatform Development Course,beginner
+idiomatic,"Idiomatic code follows the common style and patterns of a language, making it easier to read and maintain.",Dataplatform Development,Dataplatform Development Course,beginner
+DRY,"Don't Repeat Yourself (DRY): a principle that encourages avoiding duplicated code by reusing functions, modules, or shared logic.",Dataplatform Development,Dataplatform Development Course,beginner
+spaghetti code,"Spaghetti code is tangled, hard-to-follow code with poor structure and many hidden dependencies.",Dataplatform Development,Dataplatform Development Course,beginner
+\*args,"In Python, *args collects extra positional arguments into a tuple inside a function.",Dataplatform Development,Dataplatform Development Course,beginner
+\*\*kwargs,"In Python, **kwargs collects extra keyword arguments into a dictionary inside a function.",Dataplatform Development,Dataplatform Development Course,beginner
+unpacking list,"Unpacking means assigning elements from a list/tuple into multiple variables (e.g., a, b = [1, 2]).",Dataplatform Development,Dataplatform Development Course,beginner
+ternary operator,A ternary operator is a one-line conditional expression: x if condition else y.,Dataplatform Development,Dataplatform Development Course,beginner
+json,"JSON (JavaScript Object Notation) is a text format for structured data, commonly used in APIs.",Dataplatform Development,Dataplatform Development Course,beginner
+dataframe,A DataFrame is a 2D table-like data structure in pandas with labeled rows and columns.,Dataplatform Development,Dataplatform Development Course,beginner
+series,A Series is a 1D labeled array in pandas (similar to a single column with an index).,Dataplatform Development,Dataplatform Development Course,beginner
+pandas concat,pandas concat() combines multiple Series/DataFrames by stacking rows or columns.,Dataplatform Development,Dataplatform Development Course,beginner
+pandas appply,pandas apply() runs a function on each row or column (or element) to transform data.,Dataplatform Development,Dataplatform Development Course,beginner
+pandas isnull,pandas isnull()/isna() checks for missing values (NaN/None) and returns a boolean mask.,Dataplatform Development,Dataplatform Development Course,beginner
+masking in pandas,"Masking in pandas means filtering rows using boolean conditions (e.g., df[df['col'] > 0]).",Dataplatform Development,Dataplatform Development Course,beginner
+pandas transpose,pandas transpose (df.T) swaps rows and columns in a DataFrame.,Dataplatform Development,Dataplatform Development Course,beginner
+pandas value_counts(),pandas value_counts() counts unique values in a Series and returns frequencies.,Dataplatform Development,Dataplatform Development Course,beginner
+json,"JSON (JavaScript Object Notation) is a text format for structured data, commonly used in APIs.",Dataplatform Development,Dataplatform Development Course,beginner
+tabular data,Tabular data is data organized in rows and columns (like a spreadsheet or database table).,Dataplatform Development,Dataplatform Development Course,beginner
+zero-based indexing,Zero-based indexing means sequences start at index 0 (first element is at position 0).,Dataplatform Development,Dataplatform Development Course,beginner
+host system,The host system is the machine/OS that runs containers or virtual environments.,Dataplatform Development,Dataplatform Development Course,beginner
+virtualization,Virtualization is running isolated environments on a host machine (VMs or containers) to separate workloads.,Dataplatform Development,Dataplatform Development Course,beginner
+spin up,"To spin up means to start and make a service/resource ready (e.g., start containers or servers).",Dataplatform Development,Dataplatform Development Course,beginner
+dockerize,To dockerize an app means packaging it into a Docker image so it can run consistently anywhere.,Dataplatform Development,Dataplatform Development Course,beginner
+docker build,docker build creates a Docker image from a Dockerfile.,Dataplatform Development,Dataplatform Development Course,beginner
+docker run,docker run creates and starts a new container from an image.,Dataplatform Development,Dataplatform Development Course,beginner
+docker layers,"Docker image layers are cached filesystem snapshots created by each build step, enabling faster rebuilds.",Dataplatform Development,Dataplatform Development Course,beginner
+container,"A container is a lightweight isolated runtime for an application and its dependencies, sharing the host OS kernel.",Dataplatform Development,Dataplatform Development Course,beginner
+image,A Docker image is a packaged template of an application and its dependencies used to create containers.,Dataplatform Development,Dataplatform Development Course,beginner
+docker compose up -d,docker compose up -d starts services in the background (detached).,Dataplatform Development,Dataplatform Development Course,beginner
+docker compose up --build,docker compose up --build starts services and rebuilds images before running them.,Dataplatform Development,Dataplatform Development Course,beginner
+docker compose down,docker compose down stops and removes containers (and optionally networks/volumes).,Dataplatform Development,Dataplatform Development Course,beginner
+docker inspect,"docker inspect shows detailed JSON information about a Docker object (container, image, network, etc.).",Dataplatform Development,Dataplatform Development Course,beginner
+docker ps,docker ps lists running containers.,Dataplatform Development,Dataplatform Development Course,beginner
+docker volume ls,docker volume ls lists Docker volumes used for persistent storage.,Dataplatform Development,Dataplatform Development Course,beginner
+docker container ls -a,"docker container ls -a lists all containers, including stopped ones.",Dataplatform Development,Dataplatform Development Course,beginner
+docker image ls -a,"docker image ls -a lists all images, including intermediate ones.",Dataplatform Development,Dataplatform Development Course,beginner
+docker image prune,docker image prune removes unused images to free disk space.,Dataplatform Development,Dataplatform Development Course,beginner
+docker container prune,docker container prune removes stopped containers to free disk space.,Dataplatform Development,Dataplatform Development Course,beginner
+tag,"A tag is a label used to identify a version or variant (e.g., a Git tag or a Docker image tag).",Dataplatform Development,Dataplatform Development Course,beginner
+docker rm,docker rm removes one or more containers (usually stopped containers).,Dataplatform Development,Dataplatform Development Course,beginner
+kafka,"Apache Kafka is a distributed event-streaming platform for publishing, storing, and consuming streams of messages.",Dataplatform Development,Dataplatform Development Course,beginner
+event,"An event is something that happens in a system and can trigger processing (e.g., a message arrival or a user action).",Dataplatform Development,Dataplatform Development Course,beginner
+message,A message is a unit of data sent between systems (often via a queue or topic).,Dataplatform Development,Dataplatform Development Course,beginner
+producer,"In messaging/pub-sub, a producer publishes messages to a topic or queue.",Dataplatform Development,Dataplatform Development Course,beginner
+consumer,"In messaging/pub-sub, a consumer is a process that reads messages from a queue or topic.",Dataplatform Development,Dataplatform Development Course,beginner
+topic,A topic is a named stream/channel of messages in pub/sub systems like Kafka.,Dataplatform Development,Dataplatform Development Course,beginner
+publish,To publish means to send data/messages so others can consume them (often to a topic/queue).,Dataplatform Development,Dataplatform Development Course,beginner
+subscribe,To subscribe means to register interest in a topic/stream so you receive matching messages.,Dataplatform Development,Dataplatform Development Course,beginner
+sink,"A sink is the destination where data ends up (database, file, API, data warehouse).",Dataplatform Development,Dataplatform Development Course,beginner
+publish-subscribe model,Publish-subscribe (pub/sub) is a messaging pattern where producers publish to topics and subscribers receive matching messages.,Dataplatform Development,Dataplatform Development Course,beginner
+source system,"A source system is where data originates (an API, app database, logs, sensors, etc.).",Dataplatform Development,Dataplatform Development Course,beginner
+partition,"A partition is a slice of data used for scaling and parallelism (e.g., Kafka topic partitions or partitioned files).",Dataplatform Development,Dataplatform Development Course,beginner
+serialization,Serialization converts an in-memory object into a storable/transmittable format (like JSON or bytes).,Dataplatform Development,Dataplatform Development Course,beginner
+deserialization,Deserialization converts stored/transmitted data (like JSON) back into an in-memory object (like dicts/classes).,Dataplatform Development,Dataplatform Development Course,beginner
+pull model,"In a pull model, consumers request data when they are ready (e.g., polling).",Dataplatform Development,Dataplatform Development Course,beginner
+push model,"In a push model, producers send data to consumers as soon as it is available (event-driven).",Dataplatform Development,Dataplatform Development Course,beginner
+client,"A client is a program that requests data or services from a server (e.g., a browser calling an API).",Dataplatform Development,Dataplatform Development Course,beginner
+advertise,"In a pub/sub system, to advertise is to announce that a producer or service will publish certain messages or topics.",Dataplatform Development,Dataplatform Development Course,beginner
+ports mapping,"Port mapping publishes a container port to the host so services are reachable (e.g., host 8000 → container 8000).",Dataplatform Development,Dataplatform Development Course,beginner
+detached mode,Detached mode (Docker -d) runs a container in the background instead of blocking your terminal.,Dataplatform Development,Dataplatform Development Course,beginner
+docker exec -it,docker exec -it runs a command inside a running container with an interactive terminal.,Dataplatform Development,Dataplatform Development Course,beginner
+artist,"In Matplotlib, an Artist is any drawable element on a figure (lines, text, patches, axes, etc.).",Data Visualization,Data Visualization Course,beginner
+containers,Containers are isolated application runtimes; you can run many containers from the same image.,Data Visualization,Data Visualization Course,beginner
+spine,"In Matplotlib, spines are the border lines of an axes (top/bottom/left/right) that frame the plot.",Data Visualization,Data Visualization Course,beginner
+axes,"Axes (plural) is the plotting area in Matplotlib that contains the data, ticks, labels, and most chart elements.",Data Visualization,Data Visualization Course,beginner
+figure,"A figure is the overall canvas/container for one or more plots (e.g., a Matplotlib Figure).",Data Visualization,Data Visualization Course,beginner
+subplot,A subplot is one chart within a grid of multiple charts in a single figure.,Data Visualization,Data Visualization Course,beginner
+patch,"In Matplotlib, a Patch is a 2D shape (rectangle, circle, polygon) used to draw filled areas.",Data Visualization,Data Visualization Course,beginner
+annotation,"An annotation is text added to a chart to label or explain a point, trend, or region.",Data Visualization,Data Visualization Course,beginner
+arrowprops,"In Matplotlib, arrowprops are settings that control how an arrow looks in an annotation (style, width, color, etc.).",Data Visualization,Data Visualization Course,beginner
+marker,"A marker is a point symbol used in plots (shape, size, color) to represent data points.",Data Visualization,Data Visualization Course,beginner
+ticks,Ticks are the small marks on an axis that show the scale positions.,Data Visualization,Data Visualization Course,beginner
+ticklabels,"Tick labels are the text labels shown next to axis ticks (e.g., dates or numbers).",Data Visualization,Data Visualization Course,beginner
+layout,"In plotting, layout refers to the arrangement of chart elements (titles, axes, margins, legends, spacing).",Data Visualization,Data Visualization Course,beginner
+grid,A grid is a set of reference lines or layout structure used to align elements and improve readability in charts.,Data Visualization,Data Visualization Course,beginner
+legend,"A legend explains what colors, symbols, or lines represent in a chart.",Data Visualization,Data Visualization Course,beginner
+exploratory data analysis,"Exploratory data analysis (EDA) is the process of exploring data to find patterns, anomalies, and questions to investigate.",Data Visualization,Data Visualization Course,beginner
+explanatory data analysis,Explanatory data analysis focuses on communicating known insights clearly to an audience.,Data Visualization,Data Visualization Course,beginner
+clutter,"Clutter is unnecessary visual noise in a chart (extra labels, gridlines, colors) that makes it harder to read.",Data Visualization,Data Visualization Course,beginner
+proximity principle,The proximity principle says items placed close together are perceived as related; useful for grouping in charts/dashboards.,Data Visualization,Data Visualization Course,beginner
+attention,"In data visualization, guiding attention means designing the chart so viewers notice the most important information first.",Data Visualization,Data Visualization Course,beginner
+contrast,"Contrast is the difference between visual elements (color, size, brightness) used to improve readability and emphasis.",Data Visualization,Data Visualization Course,beginner
+colors sparingly,"Use colors sparingly: apply color only where it adds meaning, so highlights stand out and the chart stays readable.",Data Visualization,Data Visualization Course,beginner
+data storytelling,"Data storytelling combines data, visuals, and narrative to explain insights and drive decisions.",Data Visualization,Data Visualization Course,beginner
+grid,A grid is a set of reference lines or layout structure used to align elements and improve readability in charts.,Data Visualization,Data Visualization Course,beginner
+axis,An axis (singular) is one dimension of a plot (x-axis or y-axis) with a scale and ticks.,Data Visualization,Data Visualization Course,beginner
+insight,An insight is a meaningful takeaway from data that helps answer a question or guide a decision.,Data Visualization,Data Visualization Course,beginner
+context,"Context is the background information (time, units, comparisons, definitions) that makes a visualization understandable.",Data Visualization,Data Visualization Course,beginner
+call to action,A call to action is the clear next step you want the viewer to take after seeing a chart or dashboard.,Data Visualization,Data Visualization Course,beginner
+annotation,"An annotation is text added to a chart to label or explain a point, trend, or region.",Data Visualization,Data Visualization Course,beginner
+KPI,Key Performance Indicator (KPI): a measurable metric used to track progress toward a goal.,Data Visualization,Data Visualization Course,beginner
+story arc,A story arc is the narrative structure of a data story: setup → tension/question → insight → takeaway/action.,Data Visualization,Data Visualization Course,beginner
+data literacy,"Data literacy is the ability to read, understand, question, and communicate with data.",Data Visualization,Data Visualization Course,beginner
+dashboard fatigue,"Dashboard fatigue is when users stop engaging because dashboards are overloaded, repetitive, or hard to interpret.",Data Visualization,Data Visualization Course,beginner
+choropleth,"A choropleth map colors geographic areas based on a value (e.g., unemployment by region).",Data Visualization,Data Visualization Course,beginner
+fig.update_layout,"In Plotly, fig.update_layout updates a figure’s layout settings (titles, margins, legend, axes, etc.).",Data Visualization,Data Visualization Course,beginner
+radar chart,A radar chart plots multiple variables on axes radiating from a center to compare profiles across categories.,Data Visualization,Data Visualization Course,beginner
+spider chart,A spider chart is another name for a radar chart.,Data Visualization,Data Visualization Course,beginner
+mapbox,Mapbox is a mapping platform often used as a basemap/provider for interactive maps in tools like Plotly.,Data Visualization,Data Visualization Course,beginner
+geojson,"GeoJSON is a JSON format for geographic features (points, lines, polygons) and their properties.",Data Visualization,Data Visualization Course,beginner
+bubble chart,A bubble chart is a scatter plot where marker size represents a third value (in addition to x and y).,Data Visualization,Data Visualization Course,beginner
+pie chart,A pie chart shows parts of a whole as slices; it’s best for a few categories and rough comparisons.,Data Visualization,Data Visualization Course,beginner
+hovertemplate,"In Plotly, hovertemplate controls the text shown when you hover over a point.",Data Visualization,Data Visualization Course,beginner
+trace,"In Plotly, a trace is one set of plotted data (e.g., one line, one bar series) within a figure.",Data Visualization,Data Visualization Course,beginner
+on_action,"on_action is a callback/event handler triggered when a user performs an action (e.g., clicking a button).",Data Visualization,Data Visualization Course,beginner
+on_change,on_change is a callback/event handler triggered when an input value changes.,Data Visualization,Data Visualization Course,beginner
+state,"State is stored information that represents the current condition of an app (e.g., selected filters, current page).",Data Visualization,Data Visualization Course,beginner
+KPI,Key Performance Indicator (KPI): a measurable metric used to track progress toward a goal.,Data Visualization,Data Visualization Course,beginner
