@@ -104,21 +104,21 @@ RIGHT JOIN,,SQL,SQL Course,beginner
 LIKE,,SQL,SQL Course,beginner
 ILIKE,,SQL,SQL Course,beginner
 regexp,,SQL,SQL Course,beginner
-backup,an extra copy of something used for safety in case something happens e.g. a file becomes corrupt and unreadable. If you have a backup of the original you can read it instead without any problems.,Python,Python Course,beginner
-pull,used to fetch and download content from a remote repository and immediately update the local repository to match that content,Python,Python Course,beginner
-clone,git clone is primarily used to point to an existing repo and make a clone or copy of that repo at in a new directory at another location. The original repository can be located on the local filesystem or on remote machine accessible supported protocols.,Python,Python Course,beginner
-cd,linux command for 'change directory',Python,Python Course,beginner
-ls,linux command to 'list',Python,Python Course,beginner
-cd ..,linux command that stands for 'change directory'. It moves you back one directory from current one,Python,Python Course,beginner
-data type,In programming a data type is an important concept. Variables can store data of different types and different types can do different things.,Python,Python Course,beginner
-data structure,"Data structures are a way of organizing, storing and managing data in order to use it effectively. Examples of data structures are, list [], tuple (), dictionary {}.",Python,Python Course,beginner
-variable,"a variable is like a container that you give a name and a value to, for example hw = 'Hello World'. Then you can call the variable at any time with hw instead of writing Hello World.",Python,Python Course,beginner
-assignment,"an assignment simply explained. If you have a variable = 10, it means that the equal sign assigns the variable 10 (which is an int in this example).",Python,Python Course,beginner
-input,input is what goes in,Python,Python Course,beginner
-output,output is what goes out,Python,Python Course,beginner
-type casting,"type casting means that a variable of a certain data type is converted to another. For example: x = int(11.7), this will be 12 because int is an integer and not a decimal.",Python,Python Course,beginner
-boolean,"A bool is either True eller False. If x = True, ... ... True here is a boolean.",Python,Python Course,beginner
-string,a string is characterized by 'text',Python,Python Course,beginner
+backup,"en extra kopia på någonting, används för säkerhet utifall någonting händer, t.ex en fil blir korrupt och ej läsbar. Har du en backup på originalet kan du läsa den istället utan problem.",Python,Python Course,beginner
+pull,kommandot git pull används för att hämta och ladda ner innehåll från ett repository och omedelbart uppdatera det lokala arkivet så att det matchar det innehållet.,Python,Python Course,beginner
+clone,"git clone används för att skapa en lokal kopia av ett befintligt repo (remote repository), till exempel från GitHub, GitLab eller Bitbucket. Det laddar ner hela projektets historik, filer och alla grenar (branches) till din dator, vilket gör att du kan arbeta lokalt och senare synkronisera ändringar.",Python,Python Course,beginner
+cd,linux kommando som står för 'change directory',Python,Python Course,beginner
+ls,linux kommando som står för 'list',Python,Python Course,beginner
+cd ..,linux kommando som står för 'change directory bakåt'. Den flyttar dig bakåt en directory.,Python,Python Course,beginner
+data type,"data type frågar om vad för TYP det är på datan. Heltal(integer), decimaler(float), text(string), Sant/Falskt(Boolean). Notera att det är stor skillnad på Data type och Data structure.",Python,Python Course,beginner
+data structure,"Data structures är ett sätt att organisera, lagra och hantera data för att kunna använda den effektivt. Exempel på datastruktur är, list [], tuple (), dictionary {}.",Python,Python Course,beginner
+variable,"en variabel är som en behållare som du ger ett namn och ett värde, till exempel hw = 'Hello World'. Då kan du kalla på variabeln när som helst med hw istället för att skriva Hello World.",Python,Python Course,beginner
+assignment,en tilldelning enkelt förklarat. Har du en variabel = 10 så innebär det att likhetstecknet tilldelar variabeln 10 (som är en int i detta exempel).,Python,Python Course,beginner
+input,input är det som går in.,Python,Python Course,beginner
+output,output är det som kommer ut.,Python,Python Course,beginner
+type casting,"innebär att en variabel av en viss datatyp konverteras till en annan. Till exempel: x = int(11.7), detta kommer bli 12 pga int är heltal och ej decimaler. https://www.w3schools.com/python/python_casting.asp",Python,Python Course,beginner
+boolean,"en bool är True eller False. If x = True, ... ... True är här en bool.",Python,Python Course,beginner
+string,en string kännetecknas av 'text',Python,Python Course,beginner
 indentation,,Python,Python Course,beginner
 convention,,Python,Python Course,beginner
 control structures,,Python,Python Course,beginner
@@ -201,3 +201,128 @@ unit test,,Python,Python Course,beginner
 assertion,,Python,Python Course,beginner
 test coverage,,Python,Python Course,beginner
 TDD,,Python,Python Course,beginner
+assign,,Dataplatform Development,Dataplatform Development Course,beginner
+logical error,,Dataplatform Development,Dataplatform Development Course,beginner
+handling error,,Dataplatform Development,Dataplatform Development Course,beginner
+indexing,,Dataplatform Development,Dataplatform Development Course,beginner
+slicing,,Dataplatform Development,Dataplatform Development Course,beginner
+iterable,,Dataplatform Development,Dataplatform Development Course,beginner
+iterate over,,Dataplatform Development,Dataplatform Development Course,beginner
+list comprehension,,Dataplatform Development,Dataplatform Development Course,beginner
+collections,,Dataplatform Development,Dataplatform Development Course,beginner
+tuples,,Dataplatform Development,Dataplatform Development Course,beginner
+\_\_repr\_\_,,Dataplatform Development,Dataplatform Development Course,beginner
+dunder methods,,Dataplatform Development,Dataplatform Development Course,beginner
+pythonic,,Dataplatform Development,Dataplatform Development Course,beginner
+idiomatic,,Dataplatform Development,Dataplatform Development Course,beginner
+DRY,,Dataplatform Development,Dataplatform Development Course,beginner
+spaghetti code,,Dataplatform Development,Dataplatform Development Course,beginner
+keyword arguments,,Dataplatform Development,Dataplatform Development Course,beginner
+positional arguments,,Dataplatform Development,Dataplatform Development Course,beginner
+\*args,,Dataplatform Development,Dataplatform Development Course,beginner
+\*\*kwargs,,Dataplatform Development,Dataplatform Development Course,beginner
+unpacking list,,Dataplatform Development,Dataplatform Development Course,beginner
+return statement,,Dataplatform Development,Dataplatform Development Course,beginner
+ternary operator,,Dataplatform Development,Dataplatform Development Course,beginner
+json,,Dataplatform Development,Dataplatform Development Course,beginner
+dataframe,,Dataplatform Development,Dataplatform Development Course,beginner
+series,,Dataplatform Development,Dataplatform Development Course,beginner
+pandas concat,,Dataplatform Development,Dataplatform Development Course,beginner
+pandas appply,,Dataplatform Development,Dataplatform Development Course,beginner
+csv,,Dataplatform Development,Dataplatform Development Course,beginner
+pandas isnull,,Dataplatform Development,Dataplatform Development Course,beginner
+masking in pandas,,Dataplatform Development,Dataplatform Development Course,beginner
+pandas transpose,,Dataplatform Development,Dataplatform Development Course,beginner
+pandas value_counts(),,Dataplatform Development,Dataplatform Development Course,beginner
+json,,Dataplatform Development,Dataplatform Development Course,beginner
+tabular data,,Dataplatform Development,Dataplatform Development Course,beginner
+zero-based indexing,,Dataplatform Development,Dataplatform Development Course,beginner
+host system,,Dataplatform Development,Dataplatform Development Course,beginner
+virtualization,,Dataplatform Development,Dataplatform Development Course,beginner
+spin up,,Dataplatform Development,Dataplatform Development Course,beginner
+dockerize,,Dataplatform Development,Dataplatform Development Course,beginner
+docker build,,Dataplatform Development,Dataplatform Development Course,beginner
+docker run,,Dataplatform Development,Dataplatform Development Course,beginner
+docker layers,,Dataplatform Development,Dataplatform Development Course,beginner
+container,,Dataplatform Development,Dataplatform Development Course,beginner
+image,,Dataplatform Development,Dataplatform Development Course,beginner
+docker compose up -d,,Dataplatform Development,Dataplatform Development Course,beginner
+docker compose up --build,,Dataplatform Development,Dataplatform Development Course,beginner
+docker compose down,,Dataplatform Development,Dataplatform Development Course,beginner
+docker inspect,,Dataplatform Development,Dataplatform Development Course,beginner
+docker ps,,Dataplatform Development,Dataplatform Development Course,beginner
+docker volume ls,,Dataplatform Development,Dataplatform Development Course,beginner
+docker container ls -a,,Dataplatform Development,Dataplatform Development Course,beginner
+docker image ls -a,,Dataplatform Development,Dataplatform Development Course,beginner
+docker image prune,,Dataplatform Development,Dataplatform Development Course,beginner
+docker container prune,,Dataplatform Development,Dataplatform Development Course,beginner
+tag,,Dataplatform Development,Dataplatform Development Course,beginner
+docker rm,,Dataplatform Development,Dataplatform Development Course,beginner
+kafka,,Dataplatform Development,Dataplatform Development Course,beginner
+event,,Dataplatform Development,Dataplatform Development Course,beginner
+message,,Dataplatform Development,Dataplatform Development Course,beginner
+producer,,Dataplatform Development,Dataplatform Development Course,beginner
+consumer,,Dataplatform Development,Dataplatform Development Course,beginner
+topic,,Dataplatform Development,Dataplatform Development Course,beginner
+publish,,Dataplatform Development,Dataplatform Development Course,beginner
+subscribe,,Dataplatform Development,Dataplatform Development Course,beginner
+sink,,Dataplatform Development,Dataplatform Development Course,beginner
+publish-subscribe model,,Dataplatform Development,Dataplatform Development Course,beginner
+source system,,Dataplatform Development,Dataplatform Development Course,beginner
+partition,,Dataplatform Development,Dataplatform Development Course,beginner
+serialization,,Dataplatform Development,Dataplatform Development Course,beginner
+deserialization,,Dataplatform Development,Dataplatform Development Course,beginner
+pull model,,Dataplatform Development,Dataplatform Development Course,beginner
+push model,,Dataplatform Development,Dataplatform Development Course,beginner
+client,,Dataplatform Development,Dataplatform Development Course,beginner
+advertise,,Dataplatform Development,Dataplatform Development Course,beginner
+ports mapping,,Dataplatform Development,Dataplatform Development Course,beginner
+detached mode,,Dataplatform Development,Dataplatform Development Course,beginner
+docker exec -it,,Dataplatform Development,Dataplatform Development Course,beginner
+artist,,Data Visualization,Data Visualization Course,beginner
+containers,,Data Visualization,Data Visualization Course,beginner
+spine,,Data Visualization,Data Visualization Course,beginner
+axes,,Data Visualization,Data Visualization Course,beginner
+figure,,Data Visualization,Data Visualization Course,beginner
+subplot,,Data Visualization,Data Visualization Course,beginner
+patch,,Data Visualization,Data Visualization Course,beginner
+annotation,,Data Visualization,Data Visualization Course,beginner
+arrowprops,,Data Visualization,Data Visualization Course,beginner
+marker,,Data Visualization,Data Visualization Course,beginner
+ticks,,Data Visualization,Data Visualization Course,beginner
+ticklabels,,Data Visualization,Data Visualization Course,beginner
+layout,,Data Visualization,Data Visualization Course,beginner
+grid,,Data Visualization,Data Visualization Course,beginner
+legend,,Data Visualization,Data Visualization Course,beginner
+exploratory data analysis,,Data Visualization,Data Visualization Course,beginner
+explanatory data analysis,,Data Visualization,Data Visualization Course,beginner
+clutter,,Data Visualization,Data Visualization Course,beginner
+proximity principle,,Data Visualization,Data Visualization Course,beginner
+attention,,Data Visualization,Data Visualization Course,beginner
+contrast,,Data Visualization,Data Visualization Course,beginner
+colors sparingly,,Data Visualization,Data Visualization Course,beginner
+data storytelling,,Data Visualization,Data Visualization Course,beginner
+grid,,Data Visualization,Data Visualization Course,beginner
+axis,,Data Visualization,Data Visualization Course,beginner
+insight,,Data Visualization,Data Visualization Course,beginner
+context,,Data Visualization,Data Visualization Course,beginner
+call to action,,Data Visualization,Data Visualization Course,beginner
+annotation,,Data Visualization,Data Visualization Course,beginner
+KPI,,Data Visualization,Data Visualization Course,beginner
+story arc,,Data Visualization,Data Visualization Course,beginner
+data literacy,,Data Visualization,Data Visualization Course,beginner
+dashboard fatigue,,Data Visualization,Data Visualization Course,beginner
+choropleth,,Data Visualization,Data Visualization Course,beginner
+fig.update_layout,,Data Visualization,Data Visualization Course,beginner
+radar chart,,Data Visualization,Data Visualization Course,beginner
+spider chart,,Data Visualization,Data Visualization Course,beginner
+mapbox,,Data Visualization,Data Visualization Course,beginner
+geojson,,Data Visualization,Data Visualization Course,beginner
+bubble chart,,Data Visualization,Data Visualization Course,beginner
+pie chart,,Data Visualization,Data Visualization Course,beginner
+hovertemplate,,Data Visualization,Data Visualization Course,beginner
+trace,,Data Visualization,Data Visualization Course,beginner
+on_action,,Data Visualization,Data Visualization Course,beginner
+on_change,,Data Visualization,Data Visualization Course,beginner
+state,,Data Visualization,Data Visualization Course,beginner
+KPI,,Data Visualization,Data Visualization Course,beginner
