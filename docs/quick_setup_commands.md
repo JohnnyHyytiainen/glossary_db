@@ -61,3 +61,12 @@ Run this exact command in the terminal:
 
 - **Run embed_terms ETL pipeline(Postgres db -> VectorDB using Chromadb):**
     - `uv run python -m scripts.embed_terms`
+
+## Terms for NUKE and rebuild (Bigger seed_csv.py file)
+
+- `docker compose down -v`          -v is crucial in this scenario. This nukes the database's ENTIRE saved volume.
+- `docker compose up -d`            Starts an entire new and blank databaste.
+- `uv run alembic upgrade head`     Migrates and rebuilds all my tables once again.
+- `rm -rf chroma_db/`               Removes the entire chroma_db folder containing my vector DB.
+- `uv run python -m src.seed_csv`   Runs my seed_csv.py script and seeds my database again
+- `uv run python -m scripts.embed_terms` Runs my embed_terms.py script and rebuilds my vector DB.
