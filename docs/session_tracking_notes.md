@@ -181,9 +181,6 @@ För att Verifiera snabbt att N+1 är borta (5–10 min):
 ## Wednesday 25/02-2026
 **Goals for today:**
 ```text
-- Code review by me and Q/A forms made from LLM over all modules get deeper understanding for Mondays session and entire MvP v1.0 codebase
-    - Not done
-
 - Prepare everything for RAG -> ChromaDB
     - Done
 
@@ -197,9 +194,23 @@ För att Verifiera snabbt att N+1 är borta (5–10 min):
     - Done
 ```
 
-## Thursday 26/02-2026
+## Friday 27/02-2026
 **Goals for today:**
 ```text
+- Nuke container, rebuild it all from scratch with bigger dataset och terms.
+    -
+
+- Rebuild everything from scratch after nuke. Build(Docker), migration(alembic), seed(script), embed/ingest(postgres -> vectors -> ChromaDB)
+    - 
+
+```
+
+
+## TODO:
+```text
+- Code review and Q/A forms made from LLM over all modules get deeper understanding for Mondays session and entire MvP v1.0 codebase
+    - 
+
 - Try to search on my own vector db with vector embeddings and semantic search
     -
 
