@@ -36,9 +36,9 @@ print(f"{len(test_terms)} glosor inladdade!")
 
 # 5. SÖK SEMANTISKT
 queries = [
-    "vad är ett api",   # bör hitta ETL + pipeline
-    "Hur strukturerar jag någonting",              # bör hitta schema + normalization
-    "what do i use to structure something",  # bör hitta API
+    "vad är ett api",                       # bör hitta API
+    "Hur strukturerar jag någonting",       # bör hitta schema + normalization
+    "what do i use to structure something", # bör hitta schema
 ]
 
 print("\n--- SÖKRESULTAT ---")

@@ -198,11 +198,13 @@ För att Verifiera snabbt att N+1 är borta (5–10 min):
 **Goals for today:**
 ```text
 - Nuke container, rebuild it all from scratch with bigger dataset och terms.
-    -
+    - Done
 
 - Rebuild everything from scratch after nuke. Build(Docker), migration(alembic), seed(script), embed/ingest(postgres -> vectors -> ChromaDB)
-    - 
+    - Done
 
+- Test semantic search on my real terms in ChromaDB (experiments/test_search.py)
+    - Done
 ```
 
 
