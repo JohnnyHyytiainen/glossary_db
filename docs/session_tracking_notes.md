@@ -212,6 +212,13 @@ För att Verifiera snabbt att N+1 är borta (5–10 min):
 - Create helper function in src/rag.py for my FastAPI endpoint to call on when using /ask endpoint
     - Done
 
+- Uv add google-genai + create new api key to use gemini-2.5-flash for project, uv add python-dotenv to avoid issues with .env file.
+    - Done
+
+- Add ai-engine layer in src/rag.py
+    - 
+
+
 - Write new /ask endpoint in src/main.py to use helper function src/rag.py
     - 
 
