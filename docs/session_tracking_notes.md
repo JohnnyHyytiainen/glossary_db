@@ -215,45 +215,12 @@ För att Verifiera snabbt att N+1 är borta (5–10 min):
 - Uv add google-genai + create new api key to use gemini-2.5-flash for project, uv add python-dotenv to avoid issues with .env file.
     - Done
 
-- Add ai-engine layer in src/rag.py
-    - 
+- Formulate and add super prompt for Gemini to adhere to.
+    - Done
 
+- Add ai-engine layer in src/rag.py
+    - Done
 
 - Write new /ask endpoint in src/main.py to use helper function src/rag.py
-    - 
-
-- Install and setup google-genai
-    - 
-
-- Learn theory regarding super prompting and about google-genai
-    -
-
-```
-
-## TODO:
-```text
-- Code review and Q/A forms made from LLM over all modules get deeper understanding for Mondays session and entire MvP v1.0 codebase
-    - 
-
-- Try to search on my own vector db with vector embeddings and semantic search
-    -
-
-- Add "nuke" / "clear" feature to clear all data if needed in embed_terms.py
-    - 
-
-- Normalize embeddings for cosine in embed_terms.py
-    -
-
-
-- Add small guards in embed_terms.py (ex, if DB is empty, return early. If definition is missing)
-    -
-
-- Add "proof it works" script. Small query script(query_terms.py(?)) with something similar to:
-collection = client.get_collection("glossary_terms")
-q = "how to reduce redundancy"
-res = collection.query(query_texts=[q], n_results=5)
-print(res["ids"][0])
-print(res["documents"][0][0][:120])
-print(res["distances"][0])
-    - DONE
+    - Done
 ```
