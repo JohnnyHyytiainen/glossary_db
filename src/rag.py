@@ -51,20 +51,19 @@ def generate_rag_response(user_query: str) -> str:
     context = get_relevant_context(user_query)
 
     # 2) A(Augmented), bygg den super prompt och de regler som LLM ska använda sig av.
-    prompt = f"""Du är en pedagogisk och tekniskt kunnig Data Engineering-assistent.
-    Din uppgift är att svara på användarens fråga.
+    prompt = f"""You are a pedagogical and highly skilled Data Engineering assistant.
+    Your task is to accurately answer the user's question.
     
-    VIKTIG REGEL: Du får ENBART basera ditt svar på informationen i kontext-blocket nedan. 
-    Om svaret inte finns i kontexten, svara vänligt på SAMMA SPRÅK som frågan att du inte vet och uppmana användaren att söka på en annan term.
-    Hitta inte på egen information. Svara på samma språk som användarens fråga.
-
-    SPRÅK REGEL: Om användaren använder sig av ENGELSKA ska du svara på ENGELSKA,
-    om användaren använder sig av SVENSKA ska du svara på SVENSKA.
+    CRITICAL RULES:
+    1. NO HALLUCINATIONS: You must ONLY base your answer on the information provided in the context block below. Do not invent or add external information.
+    2. LANGUAGE MATCHING: You MUST reply in the exact same language that the user used in their question. If the user asks in English, reply in English. If the user asks in Swedish, reply in Swedish.
+    3. TRANSLATION PERMITTED: The provided context might be in English, but the user might ask in Swedish (e.g., "undantagshantering" vs "exception handling"). You are explicitly ALLOWED to translate the context information into the user's language to formulate your answer.
+    4. FALLBACK: If the answer cannot be found in the context, reply in the user's language that you do not know based on the available information, and ask them to search for another term.
     
-    --- KONTEXT FRÅN DATABASEN ---
+    --- CONTEXT FROM DATABASE ---
     {context}
     
-    --- ANVÄNDARENS FRÅGA ---
+    --- USER'S QUESTION ---
     {user_query}
     """
 
@@ -76,11 +75,11 @@ def generate_rag_response(user_query: str) -> str:
     return response.text
 
 # --- Testblock ---
-# Allt under if __name__ == "__main__": körs BARA om du kör just denna fil i terminalen.
+# Allt under if __name__ == "__main__": körs BARA om jag kör just denna fil i terminalen.
 if __name__ == "__main__":
     print("Testar RAG-motorn...\n")
     # Test prints. Ställa fråga som test_search.py hade problem med att svara på igår
-    test_question = "How does exception handling work?"
+    test_question = "Hur fungerar undantagshantering?"
     
 
     print(f"Fråga: '{test_question}'")
