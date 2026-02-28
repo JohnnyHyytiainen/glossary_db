@@ -12,7 +12,8 @@ from typing import Optional
 # Importera min databas och modeller och pydantic schema
 from src.database import get_db
 from src.models import Term, Category
-from src.schemas import TermResponse  # <-- ny ifrån schemas.py
+from src.schemas import TermResponse, AskRequest, AskResponse 
+from src.rag import generate_rag_response # <-- ny ifrån rag.py
 
 # Själva applikationen
 app = FastAPI(
@@ -114,3 +115,25 @@ def random_term(db: Session = Depends(get_db)):
     if not term_rnd:
         raise HTTPException(status_code=404, detail="No terms in database")
     return term_rnd
+
+
+# Fjärde endpoint: /ask för att lägga till och applicera mitt RAG lager med Gemini API key:
+@app.post("/ask", response_model=AskResponse)
+def ask_assistant(request: AskRequest):
+    """Ask a question to the RAG Data engineer assistant."""
+    try:
+        # 1) Hämta frågan ifrån pydantic modellen(Schemas.py)
+        user_question = request.query
+        # 2) Skicka frågan till min RAG engine.
+        ai_answer = generate_rag_response(user_question)
+        # 3) Returnera datan i de format i min AskResponse schema
+        return AskResponse(
+            query=user_question,
+            answer=ai_answer
+        )
+    
+    except Exception as e: # Fånga och flagga för fel
+        raise HTTPException(status_code=500, detail=f"AI stumbled upon an issue: {str(e)}")
+
+
+
