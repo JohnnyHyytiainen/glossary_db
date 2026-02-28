@@ -206,7 +206,18 @@ För att Verifiera snabbt att N+1 är borta (5–10 min):
 - Test semantic search on my real terms in ChromaDB (experiments/test_search.py)
     - Done
 ```
+## Saturday 28/02-2026
+**Goals for today:**
+```text
+- Create helper function in src/rag.py for my FastAPI endpoint to call on when using /ask endpoint
+    - 
 
+- Write new /ask endpoint in src/main.py to use helper function src/rag.py
+    - 
+
+
+
+```
 
 ## TODO:
 ```text
