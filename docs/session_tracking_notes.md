@@ -210,12 +210,16 @@ För att Verifiera snabbt att N+1 är borta (5–10 min):
 **Goals for today:**
 ```text
 - Create helper function in src/rag.py for my FastAPI endpoint to call on when using /ask endpoint
-    - 
+    - Done
 
 - Write new /ask endpoint in src/main.py to use helper function src/rag.py
     - 
 
+- Install and setup google-genai
+    - 
 
+- Learn theory regarding super prompting and about google-genai
+    -
 
 ```
 
@@ -228,23 +232,21 @@ För att Verifiera snabbt att N+1 är borta (5–10 min):
     -
 
 - Add "nuke" / "clear" feature to clear all data if needed in embed_terms.py
-    -
+    - 
 
 - Normalize embeddings for cosine in embed_terms.py
     -
 
-- Add metadata. I have categories but NOT sources in embed_terms.py
-    - 
 
 - Add small guards in embed_terms.py (ex, if DB is empty, return early. If definition is missing)
     -
 
 - Add "proof it works" script. Small query script(query_terms.py(?)) with something similar to:
-
 collection = client.get_collection("glossary_terms")
 q = "how to reduce redundancy"
 res = collection.query(query_texts=[q], n_results=5)
 print(res["ids"][0])
 print(res["documents"][0][0][:120])
 print(res["distances"][0])
+    - DONE
 ```
