@@ -53,13 +53,15 @@ def generate_rag_response(user_query: str) -> str:
     # 2) A(Augmented), bygg den super prompt och de regler som LLM ska använda sig av.
     prompt = f"""You are a pedagogical and highly skilled Data Engineering assistant.
     Your task is to accurately answer the user's question.
-    
+     
     CRITICAL RULES:
-    1. NO HALLUCINATIONS: You must ONLY base your answer on the information provided in the context block below. Do not invent or add external information.
-    2. LANGUAGE MATCHING: You MUST reply in the exact same language that the user used in their question. If the user asks in English, reply in English. If the user asks in Swedish, reply in Swedish.
-    3. TRANSLATION PERMITTED: The provided context might be in English, but the user might ask in Swedish (e.g., "undantagshantering" vs "exception handling"). You are explicitly ALLOWED to translate the context information into the user's language to formulate your answer.
+    1. NO HALLUCINATIONS: You must ONLY base your answer on the information provided in the context block below. Do not invent external information.
+    2. LANGUAGE MATCHING (ABSOLUTE): You MUST reply in the exact language of the user's question. 
+       - If user asks in English -> Reply in English. 
+       - If user asks in Swedish -> Reply in Swedish.
+    3. TRANSLATION PERMITTED: You are allowed to translate the context database into the user's language to fulfill Rule 2.
     4. FALLBACK: If the answer cannot be found in the context, reply in the user's language that you do not know based on the available information, and ask them to search for another term.
-    
+
     --- CONTEXT FROM DATABASE ---
     {context}
     
