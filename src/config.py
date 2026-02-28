@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     DB_NAME: str
     DB_HOST: str
     DB_PORT: str
+    GEMINI_API_KEY: str
 
     # Pydantic läser automatiskt in .env filen
     model_config = SettingsConfigDict(env_file=".env", env_ignore_empty=True)

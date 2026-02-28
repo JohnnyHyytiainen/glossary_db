@@ -40,3 +40,14 @@ class TermResponse(BaseModel):
 
     # Min "bro" för Pydantic till SQLAlchemy. Säger åt Pydantic att läsa direkt ifrån SQLAlchemy object
     model_config = ConfigDict(from_attributes=True)
+
+# --- 3: Input för min ASK endpoint ---
+# Det användare ska SKICKA till mitt API
+class AskRequest(BaseModel):
+    query: str
+
+# --- 3: OUTPUT för min ASK endpoint ---
+# Det användare får SVAR på från mitt API
+class AskResponse(BaseModel):
+    query: str
+    answer: str
