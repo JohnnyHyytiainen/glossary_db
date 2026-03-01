@@ -130,7 +130,7 @@ Det funkar, men 'clean' är att database.py äger både SessionLocal och get_db(
 
 1.1) I src/database.py: lägg tillbaka en riktig get_db() (generatorn) utanför kommentarer/docstrings.
 
-1.2) I src/main.py: ta bort din lokala get_db() och importera den:
+1.2) I src/main.py: ta bort min lokala get_db() och importera den:
     - före: from src.database import SessionLocal
     - efter: from src.database import get_db (och om jag fortfarande behöver SessionLocal någonstans, importera båda)
 
@@ -150,10 +150,10 @@ Fix:
 Lägg på "eager loading" i select(Term):
 import: from sqlalchemy.orm import selectinload
 
-bygg stmt så här (idé):
+bygga stmt så här (idé):
     - select(Term).options(selectinload(Term.categories), selectinload(Term.sources))
 
-Gör det i:
+Göra det i:
     - get_terms
     - get_term_by_slug
     - random_term
@@ -167,7 +167,7 @@ Gör det i:
 Det här är "N+1 ->  3" utan att jag ändrar API:t alls(?)
 ---
 För att Verifiera snabbt att N+1 är borta (5–10 min):
-- Sätt echo=True på din engine tillfälligt och slå /terms?limit=10.
+- Sätt echo=True på min engine tillfälligt och slå /terms?limit=10.
 - Räkna SQL-rader i terminaln: du ska se '1 + 2' queries, inte '1 + 20'
 ```
 ## Wednesday 25/02-2026
