@@ -224,3 +224,30 @@ För att Verifiera snabbt att N+1 är borta (5–10 min):
 - Write new /ask endpoint in src/main.py to use helper function src/rag.py
     - Done
 ```
+
+## Sunday 01/03-2025
+**Goals for today:**
+```text
+- Fix embedding mismatch. Change retrieval to use the same SentenceTransformer at when querying to match with indexing (match src/rag.py with scripts/embed_terms.py)
+    - Done
+
+- Fix embedding mismatch in embed_terms.py to match with rag.py.
+(embeddings = model.encode(texts, show_progress_bar=True) | to ->  embeddings = model.encode(texts, show_progress_bar=True, normalize_embeddings=True).tolist() )
+    - Done
+
+- Add a /search endpoint to my API.
+    - Done
+
+- Make /ask endpoint more user friendly and return sources in the output.
+    -
+
+- Add Gemini API key example to .env.example file
+    - Done
+
+- Add sources in AskResponse class in schemas.py
+    - Done
+
+- Add traceability to my /search and /ask endpoint
+    - 
+    
+```
