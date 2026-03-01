@@ -11,7 +11,7 @@ Det här är mina breda ämnesområden. De finns till för att Jag i framtiden s
 
 ### 2. `Source` (Kvittot / Ursprunget) 
 
-Här sparar jag exakt *varifrån* du fick informationen. Det gör att jag slipper skriva samma källa 50 gånger i mina anteckningar, och du kan enkelt uppdatera länkar om en kurs byter plattform.
+Här sparar jag exakt *varifrån* jag fick informationen. Det gör att jag slipper skriva samma källa 50 gånger i mina anteckningar, och jag kan enkelt uppdatera länkar om en kurs byter plattform.
 
 * **Vad som ska in här:** Kurser, böcker, dokumentation, YouTube-kanaler.
 
