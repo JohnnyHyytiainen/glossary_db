@@ -15,9 +15,9 @@ Denna modul hanterar applikationens "Ytterdörr". Den tar emot förfrågningar f
 
 ### 2. `main.py` (Växeln & Vägarna)
 
-**Syfte:** Initierar webbservern och definierar våra Endpoints (URL-vägar) som användare kan anropa.
+**Syfte:** Initierar webbservern och definierar  Endpoints (URL-vägar) som användare kan anropa.
 
-* **Dependency Injection (`Depends(get_db)`):** Ett smart sätt att hantera resurser. Istället för att öppna en databaskoppling som ligger och drar minne permanent, lånar funktionen `get_db()` ut en session via `yield` när ett anrop kommer in, och stänger den via `finally` så fort anropet är klart. 
+* **Dependency Injection (`Depends(get_db)`):** Ett smart sätt att hantera resurser. Istället för att öppna en databaskoppling som ligger och drar minne permanent, lånar funktionen `get_db()` ut en session via `yield` när ett anrop kommer in, och stänger den via `finally` så fort anropet är klart. Detta för att undvika `memory leaks`.
 
 * **Response Model (`response_model=...`):** Det är här `main.py` och `schemas.py` knyts ihop. Genom att skriva `@app.get(..., response_model=TermResponse)` säger jag åt FastAPI att ta den råa datan från databasen och skicka den genom Pydantic-filter innan den returneras.
 
