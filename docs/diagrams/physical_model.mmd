@@ -1,0 +1,39 @@
+erDiagram
+    terms {
+        SERIAL term_id PK
+        VARCHAR100 term "NOT NULL UNIQUE"
+        TEXT definition "NOT NULL"
+        TEXT example
+        TEXT notes
+        VARCHAR20 difficulty "CHECK beginner/intermediate/advanced"
+        TIMESTAMP created_at "DEFAULT NOW"
+        TIMESTAMP updated_at "DEFAULT NOW"
+    }
+
+    categories {
+        SERIAL category_id PK
+        VARCHAR50 category_name "NOT NULL UNIQUE"
+        TEXT description
+    }
+
+    sources {
+        SERIAL source_id PK
+        VARCHAR100 source_name "NOT NULL UNIQUE"
+        VARCHAR50 source_type
+        TEXT url
+    }
+
+    term_categories {
+        INTEGER term_id PK,FK "ON DELETE CASCADE"
+        INTEGER category_id PK,FK "ON DELETE CASCADE"
+    }
+
+    term_sources {
+        INTEGER term_id PK,FK "ON DELETE CASCADE"
+        INTEGER source_id PK,FK "ON DELETE CASCADE"
+    }
+
+    terms ||--o{ term_categories : "term_id"
+    categories ||--o{ term_categories : "category_id"
+    terms ||--o{ term_sources : "term_id"
+    sources ||--o{ term_sources : "source_id"

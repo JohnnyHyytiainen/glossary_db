@@ -1,0 +1,39 @@
+erDiagram
+    TERM {
+        int term_id PK
+        string term
+        string definition
+        string example
+        string notes
+        string difficulty
+        datetime created_at
+        datetime updated_at
+    }
+
+    CATEGORY {
+        int category_id PK
+        string category_name
+        string description
+    }
+
+    SOURCE {
+        int source_id PK
+        string source_name
+        string source_type
+        string url
+    }
+
+    TERM_CATEGORIES {
+        int term_id FK
+        int category_id FK
+    }
+
+    TERM_SOURCES {
+        int term_id FK
+        int source_id FK
+    }
+
+    TERM ||--o{ TERM_CATEGORIES : "has"
+    CATEGORY ||--o{ TERM_CATEGORIES : "has"
+    TERM ||--o{ TERM_SOURCES : "has"
+    SOURCE ||--o{ TERM_SOURCES : "has"
