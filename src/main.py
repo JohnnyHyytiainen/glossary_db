@@ -13,7 +13,7 @@ from typing import Optional
 from src.database import get_db
 from src.models import Term, Category
 from src.schemas import TermResponse, AskRequest, AskResponse 
-from src.rag import generate_rag_response # <-- ny ifrån rag.py
+from src.rag import generate_rag_response, search_database # <-- ny ifrån rag.py
 
 # Själva applikationen
 app = FastAPI(
@@ -117,7 +117,25 @@ def random_term(db: Session = Depends(get_db)):
     return term_rnd
 
 
-# Fjärde endpoint: /ask för att lägga till och applicera mitt RAG lager med Gemini API key:
+# Fjädrde endpoint: /search för att söka direkt mot vector DB(ChromaDB) UTAN LLM.
+# (För att testa sökning och se hur det fungerar UTAN att använda genai gemini daily "tokens")
+@app.get("/search")
+def search_terms(q: str, k: int = 5):
+    """Semantic search directly against the vector database (without LLM).
+    Perfect for testing how well the search works for free!
+    """
+    try:
+        results = search_database(q,k)
+        return {
+            "query": q,
+            "results": results
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+
+# Femte endpoint: /ask för att lägga till och applicera mitt RAG lager med Gemini API key:
 @app.post("/ask", response_model=AskResponse)
 def ask_assistant(request: AskRequest):
     """Ask a question to the RAG Data engineer assistant."""
@@ -125,11 +143,13 @@ def ask_assistant(request: AskRequest):
         # 1) Hämta frågan ifrån pydantic modellen(Schemas.py)
         user_question = request.query
         # 2) Skicka frågan till min RAG engine.
-        ai_answer = generate_rag_response(user_question)
+        # 2) Returnerar en dict: {"answer": "....", "sources": [...]}
+        rag_result = generate_rag_response(user_question)
         # 3) Returnera datan i de format i min AskResponse schema
         return AskResponse(
             query=user_question,
-            answer=ai_answer
+            answer=rag_result["answer"],
+            sources=rag_result["sources"] # <--- Skickar med källorna som svar till API't
         )
     
     except Exception as e: # Fånga och flagga för fel

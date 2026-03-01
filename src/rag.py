@@ -9,6 +9,8 @@ from sentence_transformers import SentenceTransformer
 from pathlib import Path
 from google import genai
 from dotenv import load_dotenv
+from typing import Any
+
 
 # Ladda in .env variabel så Gemini hittar min API key
 load_dotenv()
@@ -27,10 +29,10 @@ encoder = SentenceTransformer("all-MiniLM-L6-v2")
 ai_client = genai.Client()
 
 # ===== Helper funktion för context hantering =====
-def get_relevant_context(user_query: str, num_results: int =5) -> str:
-    """Retrieves the 3 closest relevant terms from ChromaDB for given question(/ask)"""
-
-    # NYTT: Översätter users fråga till vektor innan fråga till ChromaDB skickas
+def get_relevant_context(user_query: str, num_results: int =5) -> tuple[str, list[str]]:
+    """Gets context and returns (context_string, list_of_sources)"""""
+    
+    # Översätter users fråga till vektor innan fråga till ChromaDB skickas
     # normalize_embeddings=True för att matcha cosine matte
     query_vector = encoder.encode(user_query, normalize_embeddings=True).tolist()
 
@@ -40,8 +42,10 @@ def get_relevant_context(user_query: str, num_results: int =5) -> str:
         n_results=num_results
     )
 
-    # 2) hämta och packa upp min key+values bestående av en list med lists i sig.
+    # 2) Hämta och packa upp min key+values bestående av en list med lists i sig.
+    # 2) + hämta metadata för att hämta min SLUG
     documents = results["documents"][0]
+    metadatas = results["metadatas"][0]
 
     # 3) Sätt ihop listan till en lång str med simpel formattering för läsbarhet.
     # 3) Formatering för att underlätta för LLM och undvika framtida headaches
@@ -50,14 +54,52 @@ def get_relevant_context(user_query: str, num_results: int =5) -> str:
         for i, doc in enumerate(documents)
     )
 
-    return context_string
+    # 4) Ta ut källorna(slugs) till user
+    sources = [meta.get("slug") for meta in metadatas]
+
+    return context_string, sources
+
+# === Helper funktion för /search endpoint till mitt API ===
+# === (Underlättar och söker i vektorDB och returnerar raw data för att kunna felsöka och se glosor DB tar fram)
+def search_database(query: str, num_results: int = 5) -> list[dict[str, Any]]:
+    """Searches the vector database and returns raw data.
+    Used for troubleshooting and to see which words the database picks up.
+    (/search)
+    """
+    # 1) Översätter frågan till matematisk vektor (Samma princip som för RAG)
+    query_vector = encoder.encode(query, normalize_embeddings=True).tolist()
+    
+    # 2) Sök i vector DB(ChromaDB)
+    results = collection.query(
+        query_embeddings=[query_vector],
+        n_results=num_results
+    )
+
+    # 3) Packa upp list bestående av nested lists som är nyckelns Value
+    documents = results["documents"][0]
+    metadatas = results["metadatas"][0]
+    distances = results["distances"][0]
+
+    # 4) Zippa ihop all data
+    formatted_results = []
+    for docs, meta, dist in zip(documents, metadatas, distances):
+        formatted_results.append({
+            "term": meta.get("term"),
+            "slug": meta.get("slug"),
+            "distance": round(dist, 4), # Avrundar för formattering
+            "sources": meta.get("sources"),
+            "snippet": docs[:100] + ".." # 100 första tecknen av glosan
+        })
+
+    return formatted_results
+
 
 # ===== Funktion för att generera RAG svar =====
-def generate_rag_response(user_query: str) -> str:
+def generate_rag_response(user_query: str) -> dict:
     """Main function for RAG: Get context and let LLM formulate an answer"""
     
-    # 1) R (Retrieval), hämta faktan(user_query)
-    context = get_relevant_context(user_query)
+    # 1) R (Retrieval), hämta faktan(user_query + slugs)
+    context_text, source_slugs = get_relevant_context(user_query)
 
     # 2) A(Augmented), bygg den super prompt och de regler som LLM ska använda sig av.
     prompt = f"""You are a pedagogical and highly skilled Data Engineering assistant.
@@ -72,7 +114,7 @@ def generate_rag_response(user_query: str) -> str:
     4. FALLBACK: If the answer cannot be found in the context, reply in the user's language that you do not know based on the available information, and ask them to search for another term.
 
     --- CONTEXT FROM DATABASE ---
-    {context}
+    {context_text}
     
     --- USER'S QUESTION ---
     {user_query}
@@ -83,7 +125,12 @@ def generate_rag_response(user_query: str) -> str:
         model='gemini-2.5-flash',
         contents=prompt
     )
-    return response.text
+
+    # Returnera en dict med både AI svaret och sources
+    return {
+        "answer": response.text,
+        "sources": source_slugs
+    }
 
 # --- Testblock ---
 # Allt under if __name__ == "__main__": körs BARA om jag kör just denna fil i terminalen.

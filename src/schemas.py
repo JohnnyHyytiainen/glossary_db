@@ -51,3 +51,4 @@ class AskRequest(BaseModel):
 class AskResponse(BaseModel):
     query: str
     answer: str
+    sources: list[str]
