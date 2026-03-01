@@ -4,47 +4,66 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker%20Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/fastapi-109989?style=for-the-badge&logo=FASTAPI&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
-![SQLAlchemy](https://img.shields.io/badge/sqlalchemy-%23D71F00.svg?style=for-the-badge&logo=sqlalchemy&logoColor=white)  
+![Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
+![AI](https://img.shields.io/badge/AI%20RAG-ChromaDB-FF6F00?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+**A modern backend API for a technical glossary. It stores normalized glossary data in PostgreSQL, exposes clean JSON via FastAPI, and features a built-in **Retrieval-Augmented Generation (RAG)** engine for semantic search and AI-powered Q&A.**
 
-A small backend API for a technical glossary. It stores normalized glossary data in PostgreSQL and exposes clean, nested JSON via FastAPI.
+## Features (v1.3.0)
+- **AI RAG Engine:** Ask questions to the database via Google Gemini (`/ask`), restricted to only use internal glossary data.
 
-## Features (MVP v1.0)
-- Normalized PostgreSQL schema (Terms, Categories, Sources + M:N association tables)
-- FastAPI endpoints with Dependency Injection (DB session per request)
-- Pydantic response models (nested JSON without leaking internal fields)
-- `/health` endpoint for monitoring
-- Pagination (`skip`/`limit`, hard cap at 100)
-- Filtering via pushdown computation (`search`, `category`)
-- Basic seed/ETL scripts for loading glossary data
-- Unit tests with Pytest
+- **Explainable AI (XAI):** AI responses include exact source tracking (`sources: [...]`) to prevent hallucinations.
+
+- **Semantic Search:** Vector embeddings (Sentence-Transformers) and ChromaDB integration (`/search`).
+
+- **Normalized DB Schema:** Terms, Categories, Sources + M:N association tables.
+
+- **FastAPI Endpoints:** Dependency Injection, Pydantic response models, and pagination.
+
+- **Robust ETL Pipelines:** Scripts for seeding PostgreSQL from CSV and embedding vectors into ChromaDB.
 
 ## Tech Stack
-- Python 3.12+
-- FastAPI + Uvicorn
-- SQLAlchemy 2.x (ORM)
-- Alembic (migrations)
-- PostgreSQL (Docker)
-- (Optional) Pandas for CSV ingest
+- **Backend:** Python 3.12+, FastAPI, Uvicorn, Pydantic
+
+- **Database:** PostgreSQL (Docker), SQLAlchemy 2.x, Alembic
+
+- **AI & Vector DB:** ChromaDB, `all-MiniLM-L6-v2` (Sentence-Transformers), Google Gemini API
+
+- **Tooling:** `uv`, Pytest, Ruff, Black
 
 ---
+
+## Project Structure
+
+```text
+glossary_db/
+├── data/                # Raw and cleaned CSV files for ingestion
+├── docs/modules         # Extensive documentation (CDM/LDM/PDM diagrams,theory, modules)
+├── scripts/             # Vector ETL scripts (embed_terms.py)
+├── src/                 # Main FastAPI Application (rag.py, models, endpoints)
+├── tests/               # Pytest suite
+├── .env.example         # Template for environment variables
+├── docker-compose.yml   # Local infrastructure (PostgreSQL)
+└── README.md
+```
 
 ## Quickstart
 
 ### Prerequisites
 - Docker / Docker Desktop
 - `uv` installed
+- Google Gemini API key (for the `/ask` endpoint)
 
 ### 1) Clone & configure env
 ```bash
 git clone https://github.com/JohnnyHyytiainen/glossary_db.git
 cd glossary_db
+cp .env.example
 ```
-
 Create a local `.env` from the example:
 
+**Important:** Open your `.env` file and add your GEMINI_API_KEY=your_key_here.
 ```bash
 cp .env.example .env
 ```
@@ -55,12 +74,6 @@ cp .env.example .env
 
 ```bash
 docker compose up -d
-
-or: 
-
-docker-compose up -d
-
-docker compose ps
 ```
 
 ### 3) Install dependencies
@@ -72,78 +85,73 @@ uv sync
 ### 4) Run migrations (create tables)
 
 ```bash
+# Create tables
 uv run alembic upgrade head
-```
 
-### 5) Seed the database (ETL)
+# Seed PostgreSQL from CSV
+uv run python -m src.seed_csv
 
-Choose one seeding method depending on your repo scripts:
+# If you see:
+ModuleNotFoundError: No module named src, run scripts as modules:
 
-```bash
-# If you have a module-based seeder:
+# Do use: 
 uv run python -m src.seed
 
-# If you seed from CSV:
-uv run python -m src.seed_csv
+# Dont use:
+uv run src/seed.py
 ```
 
-> If you see `ModuleNotFoundError: No module named 'src'`, run scripts as modules:
->
-> **Do use:** `uv run python -m src.seed` 
->
-> **Dont use:** `uv run src/seed.py`
+### 5) Build the Vector Database (ChromaDB)
+To enable the AI and semantic search features, run the vector ETL script. This will generate embeddings and store them locally.
+```bash
+uv run python -m scripts.embed_terms
+```
 
 ### 6) Run the API
-
 ```bash
 uv run uvicorn src.main:app --reload
 ```
-
-Open:
-
-* Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-* OpenAPI JSON: [http://127.0.0.1:8000/openapi.json](http://127.0.0.1:8000/openapi.json)
-
----
+**Open Swagger UI to test the endpoints: http://127.0.0.1:8000/docs**
 
 ## API Endpoints
+**AI & Semantic Search (New in v1.3.0)**
 
-### Health
+- GET /search?q=...&k=5
+Semantic search directly against ChromaDB. Returns top matches with cosine distances and text snippets. Perfect for testing retrieval logic.
 
-* `GET /health`
+- POST /ask
+The RAG engine. Accepts a JSON payload ({"query": "What is a container?"}) and returns a pedagogical answer generated by Google Gemini, including an array of specific sources used to build the answer.
 
-### Terms
+- Glossary CRUD
+  - GET /terms (Pagination: ?skip=0&limit=10, Filtering: ?category=python, ?search=etl)
 
-* `GET /terms?skip=0&limit=10`
-* Filtering:
+  - GET /terms/{term_slug}
 
-  * `GET /terms?category=python`
-  * `GET /terms?search=etl`
+  - GET /random
 
-Notes:
+  - GET /health
+
+**Notes:**
 
 * `limit` is capped at 100.
 * Responses include nested `categories` and `sources` (optimized to avoid N+1 queries).
+--- 
 
-### Term by slug
 
-* `GET /terms/{term_slug}`
+## Documentation
 
-### Random term
+Check the /docs folder for deep dives into the system architecture:  
 
-* `GET /random`
+- **[Conceptual, Logical and Physical data models](docs/diagrams/)**  
+- **[RAG Flow Architecture](docs/modules/rag_flow_architecture.md)**  
+- **[Database Schema design](docs/modules/database_schema_design.md)**  
+- **[Database overview](docs/modules/database_overview.md)**
 
----
 
-## Tests
+## Tests & Linting
 
 ```bash
 uv run pytest -v
-```
-
-## Dev tooling
-
-```bash
 uv run ruff check .
 uv run black .
 ```
@@ -160,42 +168,7 @@ uv run black .
 
 ---
 
-## Troubleshooting
-
-### Reset DB and re-seed
-
-```bash
-docker compose down -v
-docker compose up -d
-uv run alembic upgrade head
-uv run python -m src.seed_csv
-```
-
-### Common issue: running scripts inside `src/`
-
-Run scripts as modules (recommended):
-
-```bash
-uv run python -m src.seed_csv
-```
-
----
-
-## Next steps (planned)
-
-* Mini RAG expansion:
-
-  * ChromaDB (vector index)
-  * Embeddings
-  * Retrieval endpoint (`/search?q=...`)
-  * Optional LLM integration (Gemini API)
----
-
-
-![Read the Docs](https://img.shields.io/badge/Read%20the%20Docs-%2300056500?style=for-the-badge&logo=readthedocs&logoColor=white)
-
-- **[MvP Version 1](docs/mvp_v1_api.md)**
-
-- **[Quick setup commands](docs/quick_setup_commands.md)**
+## Troubleshooting and quick run commands
+- **[Quick setup commands](docs/modules/quick_setup_commands.md)**
 
 
