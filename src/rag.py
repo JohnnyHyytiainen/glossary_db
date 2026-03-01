@@ -5,6 +5,7 @@
 # Mina imports
 import os
 import chromadb
+from sentence_transformers import SentenceTransformer
 from pathlib import Path
 from google import genai
 from dotenv import load_dotenv
@@ -18,6 +19,10 @@ CHROMA_PATH = Path(__file__).parent.parent / "chroma_db"
 client = chromadb.PersistentClient(path=str(CHROMA_PATH))
 collection = client.get_collection("glossary_terms")
 
+# --- Embedding setup (SentenceTransformer) ---
+# --- Laddar in exakt samma modell som används i embed_terms.py
+encoder = SentenceTransformer("all-MiniLM-L6-v2")
+
 # ===== 2) AI setup (Gemini) =====
 ai_client = genai.Client()
 
@@ -25,9 +30,13 @@ ai_client = genai.Client()
 def get_relevant_context(user_query: str, num_results: int =5) -> str:
     """Retrieves the 3 closest relevant terms from ChromaDB for given question(/ask)"""
 
+    # NYTT: Översätter users fråga till vektor innan fråga till ChromaDB skickas
+    # normalize_embeddings=True för att matcha cosine matte
+    query_vector = encoder.encode(user_query, normalize_embeddings=True).tolist()
+
     # 1) Fråga ChromaDB
     results = collection.query(
-        query_texts=[user_query],
+        query_embeddings=[query_vector],
         n_results=num_results
     )
 

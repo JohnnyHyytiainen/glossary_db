@@ -75,7 +75,7 @@ def transform_to_embeddings(terms: list[Term]) -> list[dict]:
     texts = [p["text"] for p in prepared]
     print(f"Creating embeddings for {len(texts)} terms..")
     # Embeddings + progress bar för att ej drabbas av panik.
-    embeddings = model.encode(texts, show_progress_bar=True)
+    embeddings = model.encode(texts, show_progress_bar=True, normalize_embeddings=True).tolist()
 
     # Koppla ihop embedding vektor med rätt term.
     for i, item in enumerate(prepared):
@@ -110,7 +110,7 @@ def load_into_chromadb(prepared: list[dict]) -> None:
     # Packa upp all data till listor. ChromaDB vill ha listor och INTE DICTS!
     ids =           [p["id"] for p in prepared]
     texts =         [p["text"] for p in prepared]
-    embeddings =    [p["embedding"].tolist() for p in prepared] # numpy array behöver konverteras till standard python list
+    embeddings =    [p["embedding"] for p in prepared] # Redan konverterad till list i transform_to_embeddings funktionen!
     metadatas =     [p["metadata"] for p in prepared]
 
     # Ladda in allt igen på en gång(Batch > loopa över varje ord)
