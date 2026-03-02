@@ -225,7 +225,7 @@ För att Verifiera snabbt att N+1 är borta (5–10 min):
     - Done
 ```
 
-## Sunday 01/03-2025
+## Sunday 01/03-2026
 **Goals for today:**
 ```text
 - Fix embedding mismatch. Change retrieval to use the same SentenceTransformer at when querying to match with indexing (match src/rag.py with scripts/embed_terms.py)
@@ -250,4 +250,12 @@ För att Verifiera snabbt att N+1 är borta (5–10 min):
 - Add traceability to my /search and /ask endpoint
     - Done
     
+```
+
+## Monday 02/03-2026
+**Goals for today:**
+```text
+Update embed_terms.py and rag.py to include sources for /search endpoint.
+("sources": [s.name for s in term.sources] added to transform_to_embeddings function) + ("sources": meta.get("sources") or [] added to search_database function)
+    - Done
 ```
