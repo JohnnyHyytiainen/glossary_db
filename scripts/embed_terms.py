@@ -67,6 +67,7 @@ def transform_to_embeddings(terms: list[Term]) -> list[dict]:
                 "slug": term.slug,
                 "difficulty": term.difficulty.value if term.difficulty else "beginner",
                 "categories": [c.name for c in term.categories],
+                "sources": [s.name for s in term.sources],  # <-- NY
             }
         })
 
