@@ -265,7 +265,10 @@ Update embed_terms.py and rag.py to include sources for /search endpoint.
 - Get project up and running again
     - **Done**
 
-- Update usage of API from googles dev with limited requests to Grunden.ai's API where founder have given me 1300 SEK in tokens to use.
+- Switch LLM provider: From Gemini -> Grunden.ai (`rag.py` + `config.py`)
+    - **Done**
+
+- Fix `GLM 5.1` prompt issues (system/user message split)
     - **Done**
 
 - Add new deps(streamlit) to have some kind of front-end instead of just using `swagger-ui`
