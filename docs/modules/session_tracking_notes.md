@@ -259,3 +259,14 @@ Update embed_terms.py and rag.py to include sources for /search endpoint.
 ("sources": [s.name for s in term.sources] added to transform_to_embeddings function) + ("sources": meta.get("sources") or [] added to search_database function)
     - Done
 ```
+
+## Sunday 07/06-2026
+*Goals for today:*
+- Get project up and running again
+    - *ongoing*
+
+- Update usage of API from googles dev with limited requests to Grunden.ai's API where founder have given me 1300 SEK in tokens to use.
+    - *ongoing*
+
+- Plan to have a quick and easy frontend (streamlit perhaps?) to show in upcoming demo for AI engineer summer internship end interview on Wednesday 10/06-2026.
+    - *ongoing*
