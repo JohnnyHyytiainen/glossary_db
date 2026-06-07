@@ -3,17 +3,14 @@
 # Helper function som ska fungera som min context till min /ask endpoint
 
 # Mina imports
-import os
 import chromadb
 from sentence_transformers import SentenceTransformer
 from pathlib import Path
-from google import genai
-from dotenv import load_dotenv
+from openai import OpenAI
 from typing import Any
 
-
-# Ladda in .env variabel så Gemini hittar min API key
-load_dotenv()
+# Hämtar API key via Pydantic settings
+from src.config import settings
 
 # Pathin variabel + koppla upp mot min skapade vector DB som innehåller hela databasen med glosor
 # ===== 1) Databas setup ChromaDB =====
@@ -25,22 +22,27 @@ collection = client.get_collection("glossary_terms")
 # --- Laddar in exakt samma modell som används i embed_terms.py
 encoder = SentenceTransformer("all-MiniLM-L6-v2")
 
-# ===== 2) AI setup (Gemini) =====
-ai_client = genai.Client()
+# ===== 2) AI setup (Grunden.ai via OpenAI kompatibelt API) =====
+# base_url pekar om OpenAIklitenten mot Grunden.ai's server istället för OpenAI protokollet
+# hur requests/responses ser ut är IDENTISKT med OpenAI
+ai_client = OpenAI(
+    api_key=settings.GRUNDEN_API_KEY,
+    base_url="https://api.grunden.ai/v1",
+)
+
 
 # ===== Helper funktion för context hantering =====
-def get_relevant_context(user_query: str, num_results: int =5) -> tuple[str, list[str]]:
-    """Gets context and returns (context_string, list_of_sources)"""""
-    
+def get_relevant_context(
+    user_query: str, num_results: int = 5
+) -> tuple[str, list[str]]:
+    """Gets context and returns (context_string, list_of_sources)""" ""
+
     # Översätter users fråga till vektor innan fråga till ChromaDB skickas
     # normalize_embeddings=True för att matcha cosine matte
     query_vector = encoder.encode(user_query, normalize_embeddings=True).tolist()
 
     # 1) Fråga ChromaDB
-    results = collection.query(
-        query_embeddings=[query_vector],
-        n_results=num_results
-    )
+    results = collection.query(query_embeddings=[query_vector], n_results=num_results)
 
     # 2) Hämta och packa upp min key+values bestående av en list med lists i sig.
     # 2) + hämta metadata för att hämta min SLUG
@@ -50,14 +52,14 @@ def get_relevant_context(user_query: str, num_results: int =5) -> tuple[str, lis
     # 3) Sätt ihop listan till en lång str med simpel formattering för läsbarhet.
     # 3) Formatering för att underlätta för LLM och undvika framtida headaches
     context_string = "\n----\n".join(
-        f"Term {i+1}: {doc}"
-        for i, doc in enumerate(documents)
+        f"Term {i + 1}: {doc}" for i, doc in enumerate(documents)
     )
 
     # 4) Ta ut källorna(slugs) till user
     sources = [meta.get("slug") for meta in metadatas]
 
     return context_string, sources
+
 
 # === Helper funktion för /search endpoint till mitt API ===
 # === (Underlättar och söker i vektorDB och returnerar raw data för att kunna felsöka och se glosor DB tar fram)
@@ -68,12 +70,9 @@ def search_database(query: str, num_results: int = 5) -> list[dict[str, Any]]:
     """
     # 1) Översätter frågan till matematisk vektor (Samma princip som för RAG)
     query_vector = encoder.encode(query, normalize_embeddings=True).tolist()
-    
+
     # 2) Sök i vector DB(ChromaDB)
-    results = collection.query(
-        query_embeddings=[query_vector],
-        n_results=num_results
-    )
+    results = collection.query(query_embeddings=[query_vector], n_results=num_results)
 
     # 3) Packa upp list bestående av nested lists som är nyckelns Value
     documents = results["documents"][0]
@@ -83,13 +82,15 @@ def search_database(query: str, num_results: int = 5) -> list[dict[str, Any]]:
     # 4) Zippa ihop all data
     formatted_results = []
     for docs, meta, dist in zip(documents, metadatas, distances):
-        formatted_results.append({
-            "term": meta.get("term"),
-            "slug": meta.get("slug"),
-            "distance": round(dist, 4), # Avrundar för formattering
-            "sources": meta.get("sources") or [],
-            "snippet": docs[:100] + ".." # 100 första tecknen av glosan
-        })
+        formatted_results.append(
+            {
+                "term": meta.get("term"),
+                "slug": meta.get("slug"),
+                "distance": round(dist, 4),  # Avrundar för formattering
+                "sources": meta.get("sources") or [],
+                "snippet": docs[:100] + "..",  # 100 första tecknen av glosan
+            }
+        )
 
     return formatted_results
 
@@ -97,7 +98,7 @@ def search_database(query: str, num_results: int = 5) -> list[dict[str, Any]]:
 # ===== Funktion för att generera RAG svar =====
 def generate_rag_response(user_query: str) -> dict:
     """Main function for RAG: Get context and let LLM formulate an answer"""
-    
+
     # 1) R (Retrieval), hämta faktan(user_query + slugs)
     context_text, source_slugs = get_relevant_context(user_query)
 
@@ -120,25 +121,23 @@ def generate_rag_response(user_query: str) -> dict:
     {user_query}
     """
 
-    # 3) G(Generation), Skicka vidare till google Gemini 2.5 Flash modellen
-    response = ai_client.models.generate_content(
-        model='gemini-2.5-flash',
-        contents=prompt
+    # 3) G(Generation), Skicka vidare till GLM 5.1 via Grunden.ai
+    # OpenAI-format: Svaret sitter i choises[0].message.content
+    # (choises är en lista, designat för när man ber om flera alternativ. Jag kör på [0])
+    response = ai_client.chat.completions.create(
+        model="glm-5.1", messages=[{"role": "user", "content": "prompt"}]
     )
 
     # Returnera en dict med både AI svaret och sources
-    return {
-        "answer": response.text,
-        "sources": source_slugs
-    }
+    return {"answer": response.choices[0].message.content, "sources": source_slugs}
+
 
 # --- Testblock ---
 # Allt under if __name__ == "__main__": körs BARA om jag kör just denna fil i terminalen.
 if __name__ == "__main__":
     print("Testar RAG-motorn...\n")
-    # Test prints. Ställa fråga som test_search.py hade problem med att svara på igår
+    # Test prints. Ställa fråga som question består av
     test_question = "Hur fungerar undantagshantering?"
-    
 
     print(f"Fråga: '{test_question}'")
     print(f"\n")

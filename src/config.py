@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     DB_NAME: str
     DB_HOST: str
     DB_PORT: str
-    GEMINI_API_KEY: str
+    GRUNDEN_API_KEY: str
 
     # Pydantic läser automatiskt in .env filen
     model_config = SettingsConfigDict(env_file=".env", env_ignore_empty=True)
@@ -20,6 +20,7 @@ class Settings(BaseSettings):
     def DATABASE_URL(self) -> str:
         """Building connection string automatically"""
         return f"postgresql+psycopg://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
-    
+
+
 # Skapa en instans som jag kan importera i andra filer
 settings = Settings()
