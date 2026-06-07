@@ -2,14 +2,18 @@
 
 
 ```text
-RAG (Retrieval-Augmented Generation) låter krångligt, men det handlar egentligen bara om att ge en LLM (Gemini) ett väldigt specifikt, öppet lexikon innan den får svara på frågor.
+RAG (Retrieval-Augmented Generation) låter krångligt, men det handlar egentligen bara om att ge en LLM ett väldigt specifikt, öppet lexikon innan den får svara på frågor.
 
-Istället för att Gemini gissar utifrån vad den läste på Reddit för tre år sedan, tvingar jag den att läsa min databas. Det kan delas in i olika faser.
+Istället för att LLM gissar utifrån vad den läste på Reddit för tre år sedan, tvingar jag den att läsa min databas. Det kan delas in i olika faser.
 
 Fas 1: Preppen (Vektor ETL) innan APIt ens kan svara på frågor måste jag bygga ChromaDB.
+
 - Läs: Jag hämtar alla mina glosor ifrån PostgreSQL
+
 - Transformera(Embeddings): Jag skickar texten genom en "embedding model" (t.ex Sentence-transformers(?)). Den förvandlar texten till en array av siffror(Vektor). Varje siffra representerar ordets BETYDELSE.
+
 - Ladda: Jag sparar ner dessa värden(vektorer) i ChromaDB.
+
 
 Fas 2: Anropet(Här kommer RAG "flödet" in).
 - När allting är preppat skapar jag en ny endpoint, t.ex POST /ask.
@@ -24,10 +28,10 @@ Fas 2: Anropet(Här kommer RAG "flödet" in).
     - Med Python bygger jag ihop en osynlig "super prompt/master prompt". Enkelt exempel är typ så här:
     - "Du är en AI-assistent. Svara på användarens fråga baserat enbart på följande kontext. Kontext: [Klistrar in definitionerna av PK och FK från ChromaDB]. Användarens fråga: Vad är skillnaden?"
 
-- 4) Generation (Gemini API(?))
-    - Super/master prompten skickas till Gemini via ett API-call. Eftersom att Gemini nu har facit i hand så genererar den ett svar som är baserat på MINA definitioner ifrån min databas.
+- 4) Generation (LLM API)
+    - Super/master prompten skickas till vald LLM via ett API-call. Eftersom att Gemini nu har facit i hand så genererar den ett svar som är baserat på MINA definitioner ifrån min databas.
 
 - 5) Svar(User/användaren):
-    - FastAPI skickar tillbaka geminis svar till användaren som JSON.
+    - FastAPI skickar tillbaka LLMs svar till användaren som JSON.
 ``` 
 
