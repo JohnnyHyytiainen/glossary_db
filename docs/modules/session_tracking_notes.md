@@ -263,10 +263,13 @@ Update embed_terms.py and rag.py to include sources for /search endpoint.
 ## Sunday 07/06-2026
 *Goals for today:*
 - Get project up and running again
-    - *ongoing*
+    - **Done**
 
 - Update usage of API from googles dev with limited requests to Grunden.ai's API where founder have given me 1300 SEK in tokens to use.
-    - *ongoing*
+    - **Done**
+
+- Add new deps(streamlit) to have some kind of front-end instead of just using `swagger-ui`
+    - **Done**
 
 - Plan to have a quick and easy frontend (streamlit perhaps?) to show in upcoming demo for AI engineer summer internship end interview on Wednesday 10/06-2026.
     - *ongoing*
