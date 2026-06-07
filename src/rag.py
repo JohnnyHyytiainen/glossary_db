@@ -4,9 +4,9 @@
 
 # Mina imports
 import chromadb
+from openai import OpenAI
 from sentence_transformers import SentenceTransformer
 from pathlib import Path
-from openai import OpenAI
 from typing import Any
 
 # Hämtar API key via Pydantic settings
@@ -100,32 +100,30 @@ def generate_rag_response(user_query: str) -> dict:
     """Main function for RAG: Get context and let LLM formulate an answer"""
 
     # 1) R (Retrieval), hämta faktan(user_query + slugs)
+    # Hämtar kontext från ChromaDB
     context_text, source_slugs = get_relevant_context(user_query)
 
-    # 2) A(Augmented), bygg den super prompt och de regler som LLM ska använda sig av.
-    prompt = f"""You are a pedagogical and highly skilled Data Engineering assistant.
-    Your task is to accurately answer the user's question.
-     
-    CRITICAL RULES:
-    1. NO HALLUCINATIONS: You must ONLY base your answer on the information provided in the context block below. Do not invent external information.
-    2. LANGUAGE MATCHING (ABSOLUTE): You MUST reply in the exact language of the user's question. 
-       - If user asks in English -> Reply in English. 
-       - If user asks in Swedish -> Reply in Swedish.
-    3. TRANSLATION PERMITTED: You are allowed to translate the context database into the user's language to fulfill Rule 2.
-    4. FALLBACK: If the answer cannot be found in the context, reply in the user's language that you do not know based on the available information, and ask them to search for another term.
+    # 2) A (Augmentation) - Injucera den hämtade kontexten i instruktionen, det är context_text
+    # inbäddad i system_message som är augmenteringen
+    system_message = f"""You are a pedagogical and highly skilled Data Engineering assistant.
+    Answer the user's question using ONLY the context below. No hallucinations.
+    Reply in the exact same language as the user's question.
+    If the answer is not in the context, say so and suggest another search term.
 
     --- CONTEXT FROM DATABASE ---
-    {context_text}
-    
-    --- USER'S QUESTION ---
-    {user_query}
-    """
+    {context_text}"""
 
-    # 3) G(Generation), Skicka vidare till GLM 5.1 via Grunden.ai
-    # OpenAI-format: Svaret sitter i choises[0].message.content
-    # (choises är en lista, designat för när man ber om flera alternativ. Jag kör på [0])
+    # 3) G(Generation), skicka augmenterad kontext + fråga till LLM (GLM 5.1 via Grunden.ai)
+    # OpenAI-format: Svaret sitter i choices[0].message.content
     response = ai_client.chat.completions.create(
-        model="glm-5.1", messages=[{"role": "user", "content": "prompt"}]
+        model="glm-5.1",
+        messages=[
+            {
+                "role": "system",
+                "content": system_message,
+            },  # <-- instruktioner + kontext
+            {"role": "user", "content": user_query},  # <-- bara frågan
+        ],
     )
 
     # Returnera en dict med både AI svaret och sources
@@ -137,7 +135,7 @@ def generate_rag_response(user_query: str) -> dict:
 if __name__ == "__main__":
     print("Testar RAG-motorn...\n")
     # Test prints. Ställa fråga som question består av
-    test_question = "Hur fungerar undantagshantering?"
+    test_question = "What does DRY mean?"
 
     print(f"Fråga: '{test_question}'")
     print(f"\n")
