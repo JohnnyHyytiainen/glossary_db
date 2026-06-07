@@ -10,6 +10,7 @@ dependencies = [
     "fastapi>=0.129.0",
     "google-genai>=1.65.0",
     "httpx>=0.28.1",
+    "openai>=2.41.0",
     "pandas>=3.0.1",
     "psycopg[binary]>=3.3.2",
     "pydantic-settings>=2.13.0",
