@@ -278,7 +278,10 @@ Update embed_terms.py and rag.py to include sources for /search endpoint.
     - **Done**
 
 - Ingest more glossary terms 
-    - *ongoing*
+    - **Done** 
 
 - Tag project with 1.4.0 once done with previous steps
-    - *ongoing*
+    - **Done**
+
+---
+
