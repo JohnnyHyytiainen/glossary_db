@@ -1,309 +1,631 @@
 Term,Definition,Category,Source,Difficulty
-.wal,"Write-Ahead Log file: a durability mechanism where changes are logged before being applied, enabling crash recovery.",SQL,SQL Course,beginner
-\*\*kwargs,"In Python, **kwargs collects extra keyword arguments into a dictionary inside a function.",Dataplatform Development,Dataplatform Development Course,beginner
-\*args,"In Python, *args collects extra positional arguments into a tuple inside a function.",Dataplatform Development,Dataplatform Development Course,beginner
-\_\_repr\_\_,__repr__ is a Python 'dunder' method that returns an unambiguous string representation of an object (useful for debugging).,Dataplatform Development,Dataplatform Development Course,beginner
-abstraction,Hiding implementation details and exposing only the essential interface users need.,Python,Python Course,beginner
-advertise,"In a pub/sub system, to advertise is to announce that a producer or service will publish certain messages or topics.",Dataplatform Development,Dataplatform Development Course,beginner
-aggregate functions,"Functions that summarize many rows into one value (COUNT, SUM, AVG, MIN, MAX).",SQL,SQL Course,beginner
-aliasing,Giving a temporary name to a table or column (often using AS) to simplify references.,SQL,SQL Course,beginner
-alternate key,A candidate key that is not selected as the primary key but is still unique and can identify rows.,Data Modeling,Data Modeling Course,beginner
-annotation,"An annotation is text added to a chart to label or explain a point, trend, or region.",Data Visualization,Data Visualization Course,beginner
-argument,A value passed into a function call.,Python,Python Course,beginner
-arrowprops,"In Matplotlib, arrowprops are settings that control how an arrow looks in an annotation (style, width, color, etc.).",Data Visualization,Data Visualization Course,beginner
-artist,"In Matplotlib, an Artist is any drawable element on a figure (lines, text, patches, axes, etc.).",Data Visualization,Data Visualization Course,beginner
-assertion,A check that a condition is true; in tests it defines expected behavior.,Python,Python Course,beginner
-assign,"To assign means to set a value; in pandas, assign() creates new columns in a DataFrame (often without mutating the original).",Dataplatform Development,Dataplatform Development Course,beginner
-assignment,en tilldelning enkelt förklarat. Har du en variabel = 10 så innebär det att likhetstecknet tilldelar variabeln 10 (som är en int i detta exempel).,Python,Python Course,beginner
-attention,"In data visualization, guiding attention means designing the chart so viewers notice the most important information first.",Data Visualization,Data Visualization Course,beginner
-attribute,A property that describes an entity; typically implemented as a column in a table.,Data Modeling,Data Modeling Course,beginner
-attributes,The set of properties/columns that describe an entity or table.,Data Modeling,Data Modeling Course,beginner
-axes,"Axes (plural) is the plotting area in Matplotlib that contains the data, ticks, labels, and most chart elements.",Data Visualization,Data Visualization Course,beginner
-axis,An axis (singular) is one dimension of a plot (x-axis or y-axis) with a scale and ticks.,Data Visualization,Data Visualization Course,beginner
-backup,"en extra kopia på någonting, används för säkerhet utifall någonting händer, t.ex en fil blir korrupt och ej läsbar. Har du en backup på originalet kan du läsa den istället utan problem.",Python,Python Course,beginner
-base class,The class that another class inherits from (superclass/parent).,Python,Python Course,beginner
-bash,A common command-line shell used on Unix-like systems for running commands and scripts.,SQL,SQL Course,beginner
-BETWEEN,"A SQL operator for inclusive range checks, e.g., WHERE x BETWEEN 10 AND 20.",SQL,SQL Course,beginner
-boolean,"en bool är True eller False. If x = True, ... ... True är här en bool.",Python,Python Course,beginner
-boolean expression,"An expression that evaluates to True or False (e.g., x > 0 and y < 5).",Python,Python Course,beginner
-boyce-codd normal form,"BCNF: a stronger form of 3NF where every determinant is a candidate key, preventing certain redundancy anomalies.",Data Modeling,Data Modeling Course,beginner
-break,Immediately exits the nearest enclosing loop.,Python,Python Course,beginner
-bridge table,A junction table that connects two tables in a many-to-many relationship (also called associative table).,Data Modeling,Data Modeling Course,beginner
-bubble chart,A bubble chart is a scatter plot where marker size represents a third value (in addition to x and y).,Data Visualization,Data Visualization Course,beginner
-call to action,A call to action is the clear next step you want the viewer to take after seeing a chart or dashboard.,Data Visualization,Data Visualization Course,beginner
-candidate key,Any minimal set of column(s) that can uniquely identify a row; one candidate key is chosen as the primary key.,Data Modeling,Data Modeling Course,beginner
-cardinality,"How many instances of one entity can be associated with instances of another (1:1, 1:N, N:M).",Data Modeling,Data Modeling Course,beginner
-cd,linux kommando som står för 'change directory',Python,Python Course,beginner
-cd ..,linux kommando som står för 'change directory bakåt'. Den flyttar dig bakåt en directory.,Python,Python Course,beginner
-child,Informal term for a subclass that inherits from a parent/superclass.,Python,Python Course,beginner
-child entity,The table on the many-side of a relationship that holds the foreign key referencing a parent table.,Data Modeling,Data Modeling Course,beginner
-choropleth,"A choropleth map colors geographic areas based on a value (e.g., unemployment by region).",Data Visualization,Data Visualization Course,beginner
-class,Keyword used to define a class (a blueprint for creating objects).,Python,Python Course,beginner
-clause,"A part of a SQL statement with a specific role (SELECT, FROM, WHERE, GROUP BY, ORDER BY, etc.).",SQL,SQL Course,beginner
-CLI,Command-Line Interface: interacting with a tool by typing commands in a terminal.,SQL,SQL Course,beginner
-client,"A client is a program that requests data or services from a server (e.g., a browser calling an API).",Dataplatform Development,Dataplatform Development Course,beginner
-clone,"git clone används för att skapa en lokal kopia av ett befintligt repo (remote repository), till exempel från GitHub, GitLab eller Bitbucket. Det laddar ner hela projektets historik, filer och alla grenar (branches) till din dator, vilket gör att du kan arbeta lokalt och senare synkronisera ändringar.",Python,Python Course,beginner
-close(),A method that closes a resource (file/connection) and frees underlying system handles.,Python,Python Course,beginner
-clutter,"Clutter is unnecessary visual noise in a chart (extra labels, gridlines, colors) that makes it harder to read.",Data Visualization,Data Visualization Course,beginner
-collections,"In Python, the collections module provides specialized container types like Counter, defaultdict, and deque.",Dataplatform Development,Dataplatform Development Course,beginner
-colors sparingly,"Use colors sparingly: apply color only where it adds meaning, so highlights stand out and the chart stays readable.",Data Visualization,Data Visualization Course,beginner
-column,"A named field in a table that stores one attribute type (e.g., email, created_at).",SQL,SQL Course,beginner
-composite entity,An associative entity (junction table) used to represent a many-to-many relationship and/or store attributes about that relationship.,Data Modeling,Data Modeling Course,beginner
-composite primary key,A primary key made of two or more columns (together uniquely identify rows).,Data Modeling,Data Modeling Course,beginner
-composition,"Building objects from other objects (a 'has-a' relationship), often preferred over deep inheritance.",Python,Python Course,beginner
-compound query,A query formed by combining multiple SELECT results using set operations (UNION/INTERSECT/EXCEPT).,SQL,SQL Course,beginner
-comprehension,"A concise way to build collections (list/set/dict) from an iterable, e.g., [x*x for x in nums].",Python,Python Course,beginner
-concatenation,"Joining values together, e.g., 'a' + 'b' or list1 + list2.",Python,Python Course,beginner
-conceptual model,"A high-level business view of data: main entities and relationships, without technical details like data types or indexes.",Data Modeling,Data Modeling Course,beginner
-condition,"A boolean expression (true/false) used for filtering or joining, e.g., WHERE age > 30.",SQL,SQL Course,beginner
-conditional statement,A statement that chooses which block to run based on a condition (if/elif/else).,Python,Python Course,beginner
-constraint,"A rule enforced by the database to protect data quality (PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, CHECK, etc.).",Data Modeling,Data Modeling Course,beginner
-consumer,"In messaging/pub-sub, a consumer is a process that reads messages from a queue or topic.",Dataplatform Development,Dataplatform Development Course,beginner
-container,"A container is a lightweight isolated runtime for an application and its dependencies, sharing the host OS kernel.",Dataplatform Development,Dataplatform Development Course,beginner
-containers,Containers are isolated application runtimes; you can run many containers from the same image.,Data Visualization,Data Visualization Course,beginner
-context,"Context is the background information (time, units, comparisons, definitions) that makes a visualization understandable.",Data Visualization,Data Visualization Course,beginner
-context manager,An object that manages setup/teardown for a block (implements __enter__ and __exit__).,Python,Python Course,beginner
-continue,Skips the rest of the current loop iteration and continues with the next one.,Python,Python Course,beginner
-contrast,"Contrast is the difference between visual elements (color, size, brightness) used to improve readability and emphasis.",Data Visualization,Data Visualization Course,beginner
-control flow,"The order in which statements execute (including branches, loops, and exceptions).",Python,Python Course,beginner
-control structures,"Language constructs that control execution flow, such as conditionals, loops, and exception handling.",Python,Python Course,beginner
-convention,"A recommended style or best practice (e.g., PEP 8) that improves readability but isn't required by the interpreter.",Python,Python Course,beginner
-CRUD,"Create, Read, Update, Delete: the four basic operations performed on stored data.",SQL,SQL Course,beginner
-csv,Comma-Separated Values: a plain-text tabular file format where each line is a row and fields are separated by commas.,SQL; Dataplatform Development,SQL Course; Dataplatform Development Course,beginner
-dashboard fatigue,"Dashboard fatigue is when users stop engaging because dashboards are overloaded, repetitive, or hard to interpret.",Data Visualization,Data Visualization Course,beginner
-data consistency,Data agrees across the system (no contradictions) and remains coherent after transactions and updates.,Data Modeling,Data Modeling Course,beginner
-data integrity,"The correctness/validity of data, maintained through constraints, validation rules, and controlled updates.",Data Modeling,Data Modeling Course,beginner
-data literacy,"Data literacy is the ability to read, understand, question, and communicate with data.",Data Visualization,Data Visualization Course,beginner
-data modeling,"The process of designing how data is structured, related, and constrained to support a business domain (conceptual → logical → physical).",Data Modeling,Data Modeling Course,beginner
-data redundancy,"Unnecessary duplication of the same fact in multiple places, which increases storage and can cause inconsistencies.",Data Modeling,Data Modeling Course,beginner
-data storytelling,"Data storytelling combines data, visuals, and narrative to explain insights and drive decisions.",Data Visualization,Data Visualization Course,beginner
-data structure,"Data structures är ett sätt att organisera, lagra och hantera data för att kunna använda den effektivt. Exempel på datastruktur är, list [], tuple (), dictionary {}.",Python,Python Course,beginner
-data type,"A classification that defines what values are allowed and how they are stored/processed (e.g., integer, text, date); used in both programming and databases.",Data Modeling; Python,Data Modeling Course; Python Course,beginner
-database,"An organized collection of data and database objects (tables, indexes, views) managed by a DBMS.",SQL,SQL Course,beginner
-dataframe,A DataFrame is a 2D table-like data structure in pandas with labeled rows and columns.,Dataplatform Development,Dataplatform Development Course,beginner
-DDL,"Data Definition Language: SQL for defining structures (CREATE, ALTER, DROP).",SQL,SQL Course,beginner
-def,Keyword used to define a function.,Python,Python Course,beginner
-default parameter,A function parameter with a default value used when no argument is provided.,Python,Python Course,beginner
-del,"Keyword that deletes a variable name, a dictionary key, or a slice of a list.",Python,Python Course,beginner
-deletion anomaly,A design problem where deleting a row unintentionally removes other important facts because data was bundled together.,Data Modeling,Data Modeling Course,beginner
-deserialization,Deserialization converts stored/transmitted data (like JSON) back into an in-memory object (like dicts/classes).,Dataplatform Development,Dataplatform Development Course,beginner
-detached mode,Detached mode (Docker -d) runs a container in the background instead of blocking your terminal.,Dataplatform Development,Dataplatform Development Course,beginner
-dict(),"The dictionary constructor; creates a mapping of keys to values (e.g., dict(a=1)).",Python,Python Course,beginner
-DML,"Data Manipulation Language: SQL for changing data (INSERT, UPDATE, DELETE).",SQL,SQL Course,beginner
-docker build,docker build creates a Docker image from a Dockerfile.,Dataplatform Development,Dataplatform Development Course,beginner
-docker compose down,docker compose down stops and removes containers (and optionally networks/volumes).,Dataplatform Development,Dataplatform Development Course,beginner
-docker compose up --build,docker compose up --build starts services and rebuilds images before running them.,Dataplatform Development,Dataplatform Development Course,beginner
-docker compose up -d,docker compose up -d starts services in the background (detached).,Dataplatform Development,Dataplatform Development Course,beginner
-docker container ls -a,"docker container ls -a lists all containers, including stopped ones.",Dataplatform Development,Dataplatform Development Course,beginner
-docker container prune,docker container prune removes stopped containers to free disk space.,Dataplatform Development,Dataplatform Development Course,beginner
-docker exec -it,docker exec -it runs a command inside a running container with an interactive terminal.,Dataplatform Development,Dataplatform Development Course,beginner
-docker image ls -a,"docker image ls -a lists all images, including intermediate ones.",Dataplatform Development,Dataplatform Development Course,beginner
-docker image prune,docker image prune removes unused images to free disk space.,Dataplatform Development,Dataplatform Development Course,beginner
-docker inspect,"docker inspect shows detailed JSON information about a Docker object (container, image, network, etc.).",Dataplatform Development,Dataplatform Development Course,beginner
-docker layers,"Docker image layers are cached filesystem snapshots created by each build step, enabling faster rebuilds.",Dataplatform Development,Dataplatform Development Course,beginner
-docker ps,docker ps lists running containers.,Dataplatform Development,Dataplatform Development Course,beginner
-docker rm,docker rm removes one or more containers (usually stopped containers).,Dataplatform Development,Dataplatform Development Course,beginner
-docker run,docker run creates and starts a new container from an image.,Dataplatform Development,Dataplatform Development Course,beginner
-docker volume ls,docker volume ls lists Docker volumes used for persistent storage.,Dataplatform Development,Dataplatform Development Course,beginner
-dockerize,To dockerize an app means packaging it into a Docker image so it can run consistently anywhere.,Dataplatform Development,Dataplatform Development Course,beginner
-dot commands,"Database client meta-commands (not SQL) such as psql backslash commands (e.g., \dt, \d, \x).",SQL,SQL Course,beginner
-DQL,"Data Query Language: SQL used to query data, mainly SELECT.",SQL,SQL Course,beginner
-DRY,"Don't Repeat Yourself (DRY): a principle that encourages avoiding duplicated code by reusing functions, modules, or shared logic.",Dataplatform Development,Dataplatform Development Course,beginner
-dunder methods,"Dunder methods are special Python methods with double underscores (e.g., __init__, __repr__) that customize object behavior.",Dataplatform Development,Dataplatform Development Course,beginner
-elif,An 'else if' branch: checked when previous if/elif conditions were False.,Python,Python Course,beginner
-else,Fallback branch of a conditional that runs when no prior condition is True.,Python,Python Course,beginner
-encapsulation,Bundling data and behavior together and hiding internal details behind a clear interface.,Python,Python Course,beginner
-entity constriants,"Entity constraints: rules that apply within a single table/entity (e.g., primary key uniqueness, not null, domain/check constraints).",Data Modeling,Data Modeling Course,beginner
-enumermate,"A misspelling of enumerate: a function that yields (index, item) pairs when looping.",Python,Python Course,beginner
-ERD,"Entity-Relationship Diagram: a visual model of entities, attributes, and relationships including cardinality/optionality.",Data Modeling,Data Modeling Course,beginner
-escape charactrers,"Special sequences in strings starting with backslash, e.g., \n (newline), \t (tab), \\ (backslash).",Python,Python Course,beginner
-event,"An event is something that happens in a system and can trigger processing (e.g., a message arrival or a user action).",Dataplatform Development,Dataplatform Development Course,beginner
-EXCEPT,Set operation that returns rows present in the first query but not in the second (set difference).,SQL,SQL Course,beginner
-except block,A block that catches and handles exceptions raised in the try block.,Python,Python Course,beginner
-exception,An error event that interrupts normal execution; exceptions can be raised and handled.,Python,Python Course,beginner
-explanatory data analysis,Explanatory data analysis focuses on communicating known insights clearly to an audience.,Data Visualization,Data Visualization Course,beginner
-exploratory data analysis,"Exploratory data analysis (EDA) is the process of exploring data to find patterns, anomalies, and questions to investigate.",Data Visualization,Data Visualization Course,beginner
-expression,"A piece of code that produces a value (e.g., 2 + 2, len(name), x > 3).",Python,Python Course,beginner
-field,A single piece of stored data in a record; often the value in a specific column for a row.,Data Modeling,Data Modeling Course,beginner
-fig.update_layout,"In Plotly, fig.update_layout updates a figure’s layout settings (titles, margins, legend, axes, etc.).",Data Visualization,Data Visualization Course,beginner
-figure,"A figure is the overall canvas/container for one or more plots (e.g., a Matplotlib Figure).",Data Visualization,Data Visualization Course,beginner
-finally block,"A block that runs whether an exception occurred or not, typically for cleanup.",Python,Python Course,beginner
-for,"A loop that iterates over items in an iterable (list, range, dict, etc.).",Python,Python Course,beginner
-foreign key,A column that references a primary/unique key in another table to enforce referential integrity between rows.,Data Modeling,Data Modeling Course,beginner
-function call,"Executing a function by writing its name followed by parentheses, optionally with arguments.",Python,Python Course,beginner
-functional dependency,"A relationship where one set of attributes determines another (if A is known, B is uniquely determined).",Data Modeling,Data Modeling Course,beginner
-geojson,"GeoJSON is a JSON format for geographic features (points, lines, polygons) and their properties.",Data Visualization,Data Visualization Course,beginner
-get(),Dictionary method to fetch a value by key with an optional default if the key is missing.,Python,Python Course,beginner
-grid,A grid is a set of reference lines or layout structure used to align elements and improve readability in charts.,Data Visualization,Data Visualization Course,beginner
-handling error,"Error handling is writing code that detects failures and responds safely (messages, retries, fallback, or clean exit).",Dataplatform Development,Dataplatform Development Course,beginner
-host system,The host system is the machine/OS that runs containers or virtual environments.,Dataplatform Development,Dataplatform Development Course,beginner
-hovertemplate,"In Plotly, hovertemplate controls the text shown when you hover over a point.",Data Visualization,Data Visualization Course,beginner
-IDE,"Integrated Development Environment: an editor with tools like linting, debugging, and project management.",SQL,SQL Course,beginner
-idempotent,A script/operation that can be run multiple times and still produces the same end state (safe re-runs).,SQL,SQL Course,beginner
-idiomatic,"Idiomatic code follows the common style and patterns of a language, making it easier to read and maintain.",Dataplatform Development,Dataplatform Development Course,beginner
-if,Starts a conditional block that runs only if its boolean condition is True.,Python,Python Course,beginner
-ILIKE,Case-insensitive version of LIKE in PostgreSQL.,SQL,SQL Course,beginner
-image,A Docker image is a packaged template of an application and its dependencies used to create containers.,Dataplatform Development,Dataplatform Development Course,beginner
-in operator,Operator used for membership tests (x in list) and for iterating in loops (for x in items).,Python,Python Course,beginner
-indentation,"Leading whitespace that defines code blocks in Python (e.g., inside if/for/functions).",Python,Python Course,beginner
-indexing,"Accessing an element by position using square brackets, e.g., s[0].",Python; Dataplatform Development,Python Course; Dataplatform Development Course,beginner
-inheritance,Defining a class based on another class to reuse/extend behavior (an 'is-a' relationship).,Python,Python Course,beginner
-INNER JOIN,Join that returns only rows where the join condition matches in both tables.,SQL,SQL Course,beginner
-input,input är det som går in.,Python,Python Course,beginner
-insertion anomaly,"A design problem where you cannot insert a fact without also inserting unrelated data, due to poor table structure.",Data Modeling,Data Modeling Course,beginner
-insight,An insight is a meaningful takeaway from data that helps answer a question or guide a decision.,Data Visualization,Data Visualization Course,beginner
-instance,"A concrete object created from a class (e.g., x = MyClass()).",Python,Python Course,beginner
-INTERSECT,Set operation that returns only rows that appear in both result sets (set intersection).,SQL,SQL Course,beginner
-interval,"A time duration (e.g., 7 days, 3 hours) used in date/time calculations.",SQL,SQL Course,beginner
-items(),"Dictionary method returning a view of (key, value) pairs, useful for looping.",Python,Python Course,beginner
-iterable,"An iterable is an object you can loop over (it produces items one by one), like lists, strings, or generators.",Dataplatform Development,Dataplatform Development Course,beginner
-iterate over,"To iterate over means to loop through each item in a collection, one at a time.",Dataplatform Development,Dataplatform Development Course,beginner
-json,"JSON (JavaScript Object Notation) is a text format for structured data, commonly used in APIs.",Dataplatform Development,Dataplatform Development Course,beginner
-kafka,"Apache Kafka is a distributed event-streaming platform for publishing, storing, and consuming streams of messages.",Dataplatform Development,Dataplatform Development Course,beginner
-keyword arguments,"Arguments passed by name (f(x=1)), making calls clearer and order-independent.",Python; Dataplatform Development,Python Course; Dataplatform Development Course,beginner
-KPI,Key Performance Indicator (KPI): a measurable metric used to track progress toward a goal.,Data Visualization,Data Visualization Course,beginner
-lambda functions,"Small anonymous functions created with the lambda keyword, often used for simple callbacks.",Python,Python Course,beginner
-layout,"In plotting, layout refers to the arrangement of chart elements (titles, axes, margins, legends, spacing).",Data Visualization,Data Visualization Course,beginner
-LEFT JOIN,Join that keeps all rows from the left table and matches from the right; non-matches on the right become NULL.,SQL,SQL Course,beginner
-legend,"A legend explains what colors, symbols, or lines represent in a chart.",Data Visualization,Data Visualization Course,beginner
-LIKE,Pattern matching operator using % and _ wildcards; often case-sensitive depending on database/collation.,SQL,SQL Course,beginner
-list,"A mutable, ordered collection of items, written with square brackets: [1, 2, 3].",Python,Python Course,beginner
-list comprehension,A list comprehension is a compact way to build a new list from an iterable in a single expression.,Dataplatform Development,Dataplatform Development Course,beginner
-list filtering,"Filtering rows based on membership in a list, typically using IN (...).",SQL,SQL Course,beginner
-logical error,A logical error is a bug where code runs without crashing but produces the wrong result.,Dataplatform Development,Dataplatform Development Course,beginner
-logical model,"A detailed, technology-agnostic design of entities, attributes, keys, and relationships (often normalized), ready to be implemented in a specific DB.",Data Modeling,Data Modeling Course,beginner
-loop,A control structure that repeats a block of code multiple times.,Python,Python Course,beginner
-ls,linux kommando som står för 'list',Python,Python Course,beginner
-mapbox,Mapbox is a mapping platform often used as a basemap/provider for interactive maps in tools like Plotly.,Data Visualization,Data Visualization Course,beginner
-marker,"A marker is a point symbol used in plots (shape, size, color) to represent data points.",Data Visualization,Data Visualization Course,beginner
-masking in pandas,"Masking in pandas means filtering rows using boolean conditions (e.g., df[df['col'] > 0]).",Dataplatform Development,Dataplatform Development Course,beginner
-membership test,"Checking whether a value exists in a container (e.g., x in items, key in dict).",Python,Python Course,beginner
-message,A message is a unit of data sent between systems (often via a queue or topic).,Dataplatform Development,Dataplatform Development Course,beginner
-method overloading,"Multiple methods with the same name but different signatures; Python doesn't support it directly, often emulated with defaults/dispatch.",Python,Python Course,beginner
-namespace,"A naming scope that keeps object names separate; in SQL often implemented as schemas (e.g., public.table).",SQL,SQL Course,beginner
-natural key,"A real-world, meaningful identifier used as a key (e.g., email address), not generated by the system.",Data Modeling,Data Modeling Course,beginner
-nested if statement,"An if-statement inside another if-statement, used for multi-level decisions.",Python,Python Course,beginner
-nested loop,"A loop inside another loop, used to iterate over combinations (e.g., rows and columns).",Python,Python Course,beginner
-normal forms,"A set of rules (1NF, 2NF, 3NF, BCNF, etc.) that describe increasing levels of normalization and reduced redundancy.",Data Modeling,Data Modeling Course,beginner
-normalization,"Design technique that structures tables to reduce redundancy and dependency problems, improving integrity and maintainability.",Data Modeling,Data Modeling Course,beginner
-object,An instance of a class; also the root base class in Python that most classes inherit from.,Python,Python Course,beginner
-on_action,"on_action is a callback/event handler triggered when a user performs an action (e.g., clicking a button).",Data Visualization,Data Visualization Course,beginner
-on_change,on_change is a callback/event handler triggered when an input value changes.,Data Visualization,Data Visualization Course,beginner
-one-to-many,"A relationship where one row in A can relate to many rows in B, while each row in B relates to one row in A.",Data Modeling,Data Modeling Course,beginner
-one-to-one,"A relationship where each row in A relates to at most one row in B, and each row in B relates to at most one row in A.",Data Modeling,Data Modeling Course,beginner
-open(),A built-in function that opens a file and returns a file object for reading/writing.,Python,Python Course,beginner
-operator,"A symbol/keyword that performs an operation (e.g., =, <, +, AND, OR).",SQL,SQL Course,beginner
-output,output är det som kommer ut.,Python,Python Course,beginner
-pandas appply,pandas apply() runs a function on each row or column (or element) to transform data.,Dataplatform Development,Dataplatform Development Course,beginner
-pandas concat,pandas concat() combines multiple Series/DataFrames by stacking rows or columns.,Dataplatform Development,Dataplatform Development Course,beginner
-pandas isnull,pandas isnull()/isna() checks for missing values (NaN/None) and returns a boolean mask.,Dataplatform Development,Dataplatform Development Course,beginner
-pandas transpose,pandas transpose (df.T) swaps rows and columns in a DataFrame.,Dataplatform Development,Dataplatform Development Course,beginner
-pandas value_counts(),pandas value_counts() counts unique values in a Series and returns frequencies.,Dataplatform Development,Dataplatform Development Course,beginner
-parameter,A named variable in a function definition that receives an argument when the function is called.,Python,Python Course,beginner
-parent,Informal term for a superclass in an inheritance relationship.,Python,Python Course,beginner
-parent entity,The table on the one-side of a relationship that is referenced by foreign keys from child tables.,Data Modeling,Data Modeling Course,beginner
-partition,"A partition is a slice of data used for scaling and parallelism (e.g., Kafka topic partitions or partitioned files).",Dataplatform Development,Dataplatform Development Course,beginner
-patch,"In Matplotlib, a Patch is a 2D shape (rectangle, circle, polygon) used to draw filled areas.",Data Visualization,Data Visualization Course,beginner
-pattern matching,Filtering text based on patterns (LIKE/ILIKE) or regular expressions (regexp).,SQL,SQL Course,beginner
-persistance,Persistence: data is stored durably (on disk) and remains after the program/process ends.,SQL,SQL Course,beginner
-persistent database,"A database stored on disk (durable), as opposed to an in-memory database that disappears when the process stops.",SQL,SQL Course,beginner
-physical model,"The implementation-specific design in a chosen DB: tables, columns, data types, indexes, constraints, partitioning, and storage details.",Data Modeling,Data Modeling Course,beginner
-pie chart,A pie chart shows parts of a whole as slices; it’s best for a few categories and rough comparisons.,Data Visualization,Data Visualization Course,beginner
-polymorphism,"Different types can be used through the same interface (duck typing), e.g., anything with __len__ works with len().",Python,Python Course,beginner
-ports mapping,"Port mapping publishes a container port to the host so services are reachable (e.g., host 8000 → container 8000).",Dataplatform Development,Dataplatform Development Course,beginner
-positional arguments,Arguments matched to parameters by their position in the function call.,Python; Dataplatform Development,Python Course; Dataplatform Development Course,beginner
-primary key,Column(s) that uniquely identify each row in a table; must be unique and not null.,Data Modeling,Data Modeling Course,beginner
-private,A convention for internal attributes (leading underscore) indicating 'do not use directly' (not strictly enforced).,Python,Python Course,beginner
-producer,"In messaging/pub-sub, a producer publishes messages to a topic or queue.",Dataplatform Development,Dataplatform Development Course,beginner
-projection,"Selecting which columns to return (the column list in SELECT), e.g., SELECT name, age FROM ...",SQL,SQL Course,beginner
-property,A managed attribute created with @property that lets you add logic to getting/setting a value.,Python,Python Course,beginner
-proximity principle,The proximity principle says items placed close together are perceived as related; useful for grouping in charts/dashboards.,Data Visualization,Data Visualization Course,beginner
-publish,To publish means to send data/messages so others can consume them (often to a topic/queue).,Dataplatform Development,Dataplatform Development Course,beginner
-publish-subscribe model,Publish-subscribe (pub/sub) is a messaging pattern where producers publish to topics and subscribers receive matching messages.,Dataplatform Development,Dataplatform Development Course,beginner
-pull,kommandot git pull används för att hämta och ladda ner innehåll från ett repository och omedelbart uppdatera det lokala arkivet så att det matchar det innehållet.,Python,Python Course,beginner
-pull model,"In a pull model, consumers request data when they are ready (e.g., polling).",Dataplatform Development,Dataplatform Development Course,beginner
-push model,"In a push model, producers send data to consumers as soon as it is available (event-driven).",Dataplatform Development,Dataplatform Development Course,beginner
-pythonic,"Pythonic means written in a clear, idiomatic style that fits Python conventions.",Dataplatform Development,Dataplatform Development Course,beginner
-query,A request for data (or a change) expressed in SQL; commonly refers to SELECT statements that return a result set.,SQL,SQL Course,beginner
-radar chart,A radar chart plots multiple variables on axes radiating from a center to compare profiles across categories.,Data Visualization,Data Visualization Course,beginner
-range,"A built-in that generates a sequence of integers, commonly used for looping (range(0, n)).",Python,Python Course,beginner
-range filtering,"Filtering rows by numeric/date ranges using operators like >, <, BETWEEN.",SQL,SQL Course,beginner
-RDBMS,"Relational Database Management System: software that stores data in related tables, enforces constraints, and supports transactions (ACID), typically queried with SQL.",Data Modeling,Data Modeling Course,beginner
-record,A synonym for row: one complete set of column values in a table.,SQL,SQL Course,beginner
-referential integrity,A guarantee that foreign keys always reference existing rows (no 'orphan' references).,Data Modeling,Data Modeling Course,beginner
-regexp,"Regular expression matching (database-specific), used to filter strings with regex patterns.",SQL,SQL Course,beginner
-regular expression,"A pattern language (re module) used to search, match, or split text based on patterns.",Python,Python Course,beginner
-relational database,A database that follows the relational model (tables + keys + constraints) and is queried with SQL.,SQL,SQL Course,beginner
-relational model,"A data model that represents data as relations (tables) made of tuples (rows) and attributes (columns), with keys defining relationships.",Data Modeling,Data Modeling Course,beginner
-relational schema notation,"A compact way to write a relational schema, e.g., R(A, B, C), with annotations for keys and constraints.",Data Modeling,Data Modeling Course,beginner
-replace,A string method that returns a new string with occurrences of a substring replaced.,Python,Python Course,beginner
-result set,The table-shaped output returned by a query (rows + columns).,SQL,SQL Course,beginner
-return statement,A statement that sends a value back from a function and stops its execution.,Python; Dataplatform Development,Python Course; Dataplatform Development Course,beginner
-RIGHT JOIN,Join that keeps all rows from the right table and matches from the left; non-matches on the left become NULL.,SQL,SQL Course,beginner
-row,A single record/tuple in a table (one item of data across all columns).,SQL,SQL Course,beginner
-schema,"A namespace and/or collection of database objects (tables, views, functions); also refers to the defined structure of data.",SQL,SQL Course,beginner
-SELECT clause,The part of a query that specifies which columns/expressions are returned.,SQL,SQL Course,beginner
-selection,Filtering which rows to return (typically via WHERE conditions).,SQL,SQL Course,beginner
-sequence,A control flow where statements run top-to-bottom in the order they are written.,Python,Python Course,beginner
-serialization,Serialization converts an in-memory object into a storable/transmittable format (like JSON or bytes).,Dataplatform Development,Dataplatform Development Course,beginner
-series,A Series is a 1D labeled array in pandas (similar to a single column with an index).,Dataplatform Development,Dataplatform Development Course,beginner
-set,"An unordered collection of unique items, written with braces: {1, 2, 3}.",Python,Python Course,beginner
-set operations,"Operations that combine result sets as sets (UNION, UNION ALL, INTERSECT, EXCEPT).",SQL,SQL Course,beginner
-sink,"A sink is the destination where data ends up (database, file, API, data warehouse).",Dataplatform Development,Dataplatform Development Course,beginner
-slicing,"Taking a subsequence using start:stop:step, e.g., s[1:4] or s[::-1].",Python; Dataplatform Development,Python Course; Dataplatform Development Course,beginner
-source system,"A source system is where data originates (an API, app database, logs, sensors, etc.).",Dataplatform Development,Dataplatform Development Course,beginner
-spaghetti code,"Spaghetti code is tangled, hard-to-follow code with poor structure and many hidden dependencies.",Dataplatform Development,Dataplatform Development Course,beginner
-spider chart,A spider chart is another name for a radar chart.,Data Visualization,Data Visualization Course,beginner
-spin up,"To spin up means to start and make a service/resource ready (e.g., start containers or servers).",Dataplatform Development,Dataplatform Development Course,beginner
-spine,"In Matplotlib, spines are the border lines of an axes (top/bottom/left/right) that frame the plot.",Data Visualization,Data Visualization Course,beginner
-split,"A string method that splits text into a list using a delimiter, e.g., 'a,b'.split(',').",Python,Python Course,beginner
-SQL statement,A SQL command executed by the database; same idea as a statement (SELECT/INSERT/UPDATE/DELETE/CREATE...).,SQL,SQL Course,beginner
-state,"State is stored information that represents the current condition of an app (e.g., selected filters, current page).",Data Visualization,Data Visualization Course,beginner
-statement,"A complete instruction executed by a system (e.g., Python interpreter or SQL database), such as an assignment, a function definition, or a SQL command.",SQL; Python,SQL Course; Python Course,beginner
-story arc,A story arc is the narrative structure of a data story: setup → tension/question → insight → takeaway/action.,Data Visualization,Data Visualization Course,beginner
-string,en string kännetecknas av 'text',Python,Python Course,beginner
-subplot,A subplot is one chart within a grid of multiple charts in a single figure.,Data Visualization,Data Visualization Course,beginner
-subquery,"A query nested inside another query (in SELECT, FROM, WHERE, etc.) whose result is used by the outer query.",SQL,SQL Course,beginner
-subscribe,To subscribe means to register interest in a topic/stream so you receive matching messages.,Dataplatform Development,Dataplatform Development Course,beginner
-superclass,Another name for base class: the class being inherited from.,Python,Python Course,beginner
-surrogate key,"A system-generated identifier used as a key (e.g., SERIAL/IDENTITY/UUID) with no business meaning.",Data Modeling,Data Modeling Course,beginner
-synthetic,"Artificially generated (not from real-world source), e.g., synthetic test data or surrogate keys.",SQL,SQL Course,beginner
-table,A relational structure that stores rows (records) with the same columns; also called a relation.,SQL,SQL Course,beginner
-tabular data,Tabular data is data organized in rows and columns (like a spreadsheet or database table).,Dataplatform Development,Dataplatform Development Course,beginner
-tag,"A tag is a label used to identify a version or variant (e.g., a Git tag or a Docker image tag).",Dataplatform Development,Dataplatform Development Course,beginner
-TDD,"Test-Driven Development: write a failing test first, then implement code to make it pass, then refactor.",Python,Python Course,beginner
-temporal,"Related to time-based data such as dates, timestamps, and time intervals.",SQL,SQL Course,beginner
-ternary operator,A ternary operator is a one-line conditional expression: x if condition else y.,Dataplatform Development,Dataplatform Development Course,beginner
-ternary relationship,A relationship that involves three entities at the same time (cannot be accurately modeled as only pairwise relationships).,Data Modeling,Data Modeling Course,beginner
-test coverage,A measure of how much code is executed by the test suite (not the same as correctness).,Python,Python Course,beginner
-ticklabels,"Tick labels are the text labels shown next to axis ticks (e.g., dates or numbers).",Data Visualization,Data Visualization Course,beginner
-ticks,Ticks are the small marks on an axis that show the scale positions.,Data Visualization,Data Visualization Course,beginner
-topic,A topic is a named stream/channel of messages in pub/sub systems like Kafka.,Dataplatform Development,Dataplatform Development Course,beginner
-trace,"In Plotly, a trace is one set of plotted data (e.g., one line, one bar series) within a figure.",Data Visualization,Data Visualization Course,beginner
-traceback,A detailed error report showing the call stack and where an exception occurred.,Python,Python Course,beginner
-transaction,A unit of work that is all-or-nothing (commit/rollback) to keep data reliable; follows ACID principles.,Data Modeling,Data Modeling Course,beginner
-transitive dependency,"When a non-key attribute depends on another non-key attribute (indirectly on the key), violating 3NF.",Data Modeling,Data Modeling Course,beginner
-try block,A block where you place code that may raise an exception.,Python,Python Course,beginner
-tuple,"An immutable, ordered collection of items, written with parentheses: (1, 2, 3).",Python,Python Course,beginner
-tuples,"A tuple is an immutable (unchangeable) ordered collection in Python, written with parentheses or commas.",Dataplatform Development,Dataplatform Development Course,beginner
-type casting,"innebär att en variabel av en viss datatyp konverteras till en annan. Till exempel: x = int(11.7), detta kommer bli 12 pga int är heltal och ej decimaler. https://www.w3schools.com/python/python_casting.asp",Python,Python Course,beginner
-type inference,"Automatically determining a value's type from context or data (e.g., importing CSV and guessing column types).",SQL,SQL Course,beginner
-unicode,A universal character set standard; Python's str type stores Unicode text.,Python,Python Course,beginner
-UNION,Set operation that combines results and removes duplicates (distinct).,SQL,SQL Course,beginner
-UNION ALL,Set operation that combines results and keeps duplicates (faster than UNION).,SQL,SQL Course,beginner
-unit test,An automated test that checks a small unit of code (a function/method) in isolation.,Python,Python Course,beginner
-unpacking,"Assigning elements of an iterable to variables (a, b = pair) or expanding with * and ** in calls.",Python,Python Course,beginner
-unpacking list,"Unpacking means assigning elements from a list/tuple into multiple variables (e.g., a, b = [1, 2]).",Dataplatform Development,Dataplatform Development Course,beginner
-update anomaly,"A design problem where the same fact must be updated in multiple rows/places, risking inconsistent values.",Data Modeling,Data Modeling Course,beginner
-update(),"Dictionary method that merges another mapping into the dict, overwriting existing keys.",Python,Python Course,beginner
-validation,"Checking that data meets rules (types, ranges, required fields) before using or storing it.",Python,Python Course,beginner
-VALUES,"SQL keyword to provide literal row values, commonly used in INSERT or as a table-like construct.",SQL,SQL Course,beginner
-variable,"en variabel är som en behållare som du ger ett namn och ett värde, till exempel hw = 'Hello World'. Då kan du kalla på variabeln när som helst med hw istället för att skriva Hello World.",Python,Python Course,beginner
-variable arguments,*args and **kwargs: parameters that accept a variable number of positional/keyword arguments.,Python,Python Course,beginner
-venn diagram,A diagram showing overlaps between sets; often used to explain UNION/INTERSECT/EXCEPT visually.,SQL,SQL Course,beginner
-virtualization,Virtualization is running isolated environments on a host machine (VMs or containers) to separate workloads.,Dataplatform Development,Dataplatform Development Course,beginner
-WHERE clause,The part of a query that filters rows based on a condition.,SQL,SQL Course,beginner
-while,A loop that repeats as long as its boolean condition remains True.,Python,Python Course,beginner
-with,A statement that uses a context manager to ensure resources are cleaned up automatically.,Python,Python Course,beginner
-zero-based indexing,Zero-based indexing means sequences start at index 0 (first element is at position 0).,Dataplatform Development,Dataplatform Development Course,beginner
-zip,"A function that combines iterables element-by-element into tuples, e.g., zip(names, ages).",Python,Python Course,beginner
+git,"A version control system that tracks changes in computer files and coordinates work on those files among multiple people.",Python,Python Course,beginner
+github,"A cloud-based platform for hosting and managing Git repositories, enabling collaboration and version control.",Python,Python Course,beginner
+version control,"The practice of tracking and managing changes to software code over time to ensure a history of edits and facilitate collaboration.",Python,Python Course,beginner
+backup,"A copy of data stored separately from the original to protect against data loss in case of hardware failure or accidental deletion.",Python,Python Course,beginner
+gitignore,"A file that specifies intentionally untracked files that Git should ignore, preventing sensitive or unnecessary files from being uploaded.",Python,Python Course,beginner
+commit,"A saved snapshot of changes made to a repository at a specific point in time, accompanied by a descriptive message.",Python,Python Course,beginner
+pull,"A Git command used to fetch and download content from a remote repository and immediately update the local repository to match.",Python,Python Course,beginner
+clone,"The process of creating a local copy of a remote Git repository, containing all its files, history, and branches.",Python,Python Course,beginner
+cd,"A command-line utility (change directory) used to navigate between different folders in a computer's file system.",Python,Python Course,beginner
+ls,"A command-line utility used to list all the files and directories contained within the current directory.",Python,Python Course,beginner
+cd ..,"A command-line instruction that moves the current working directory one level up to the parent directory.",Python,Python Course,beginner
+data type,"A classification that specifies which type of value a variable has, such as integer, string, or boolean, determining what operations can be performed on it.",Python,Python Course,beginner
+variable,"A named container used to store data values in memory that can be referenced or changed throughout a program.",Python,Python Course,beginner
+assignment,"The process of storing a specific value into a variable using an assignment operator, typically the equals sign (=).",Python,Python Course,beginner
+dynamically typed,"A programming feature where variable types are checked at runtime rather than beforehand, allowing variables to hold different data types over time.",Python,Python Course,beginner
+input,"Data provided to a program by a user or an external source so the program can process it.",Python,Python Course,beginner
+output,"The resulting data produced by a program and displayed or sent to a user or system after processing.",Python,Python Course,beginner
+type casting,"The process of explicitly converting a variable from one data type to another, such as turning an integer into a string.",Python,Python Course,beginner
+boolean,"A data type that can hold one of exactly two values: True or False, commonly used for logical conditions.",Python,Python Course,beginner
+string,"A sequence of characters used to represent text, typically enclosed in single or double quotes.",Python,Python Course,beginner
+f-string,"A syntax in Python that allows you to easily embed variables and expressions directly inside a string using curly braces.",Python,Python Course,beginner
+indentation,"The use of spaces or tabs at the beginning of a line of code to define blocks of code, which is strictly required in Python.",Python,Python Course,beginner
+convention,"An agreed-upon style or set of rules among programmers to write code uniformly, making it easier to read and maintain.",Python,Python Course,beginner
+control structures,"Programming blocks that dictate the flow of execution based on conditions or loops, rather than executing line by line.",Python,Python Course,beginner
+conditional statement,"A programming construct that performs different actions depending on whether a specific boolean condition evaluates to true or false.",Python,Python Course,beginner
+if,"A control flow statement that executes a block of code only if its specified condition evaluates to true.",Python,Python Course,beginner
+elif,"Short for 'else if', it allows you to check multiple alternative conditions if the previous 'if' conditions were false.",Python,Python Course,beginner
+else,"A control flow statement that executes a block of code when all preceding 'if' and 'elif' conditions evaluate to false.",Python,Python Course,beginner
+for,"A type of loop used to iterate over a sequence (like a list or string) and execute a block of code for each item.",Python,Python Course,beginner
+while,"A type of loop that repeatedly executes a block of code as long as a given condition remains true.",Python,Python Course,beginner
+break,"A statement used to immediately exit and terminate a loop, skipping any remaining iterations.",Python,Python Course,beginner
+continue,"A statement that skips the rest of the current loop iteration and immediately proceeds to the next iteration.",Python,Python Course,beginner
+boolean expression,"A mathematical or logical statement that evaluates to either True or False.",Python,Python Course,beginner
+loop,"A programming structure that repeats a sequence of instructions until a specific condition is met.",Python,Python Course,beginner
+nested loop,"A loop situated entirely within the body of another loop, often used to iterate through multi-dimensional data structures.",Python,Python Course,beginner
+nested if statement,"An 'if' statement placed inside another 'if' statement to test further conditions only when the outer condition is true.",Python,Python Course,beginner
+expression,"A combination of values, variables, and operators that is evaluated by the programming language to produce a single value.",Python,Python Course,beginner
+statement,"A complete line of code that performs a specific action, such as variable assignment or a function call.",Python,Python Course,beginner
+control flow,"The specific order in which individual statements, instructions, or function calls are executed or evaluated in a script.",Python,Python Course,beginner
+sequence,"An ordered collection of items where each item can be accessed by its specific position or index, such as strings and lists.",Python,Python Course,beginner
+list,"A built-in, ordered, and mutable collection in Python used to store multiple items in a single variable.",Python,Python Course,beginner
+tuple,"A built-in, ordered, but immutable collection in Python, meaning its elements cannot be changed once created.",Python,Python Course,beginner
+set,"An unordered collection of unique elements in Python, often used to eliminate duplicates or perform mathematical set operations.",Python,Python Course,beginner
+range,"A built-in Python function that generates a sequence of numbers, commonly used to determine how many times a 'for' loop should run.",Python,Python Course,beginner
+indexing,"The method of accessing a specific element in a sequence (like a list or string) by referring to its numerical position.",Python,Python Course,beginner
+slicing,"A feature that allows you to extract a specific portion or subset of a sequence by specifying a start and end index.",Python,Python Course,beginner
+comprehension,"A concise and readable way to create a new list, dictionary, or set by applying an expression to items in an existing iterable.",Python,Python Course,beginner
+zip,"A built-in function that combines multiple iterables (like lists) element by element into tuples.",Python,Python Course,beginner
+enumerate,"A built-in function that adds a counter to an iterable, returning both the index and the value during a loop.",Python,Python Course,beginner
+unpacking,"The process of assigning individual elements of a sequence (like a list or tuple) into distinct variables in a single statement.",Python,Python Course,beginner
+membership test,"An operation using the 'in' or 'not in' operators to check if a specific value exists within a sequence or collection.",Python,Python Course,beginner
+replace,"A string method used to create a new string by substituting specific characters or substrings with another set of characters.",Python,Python Course,beginner
+regular expression,"A specialized syntax used to define search patterns, allowing for advanced text matching and manipulation.",Python,Python Course,beginner
+concatenation,"The operation of joining two or more strings end-to-end to form a single continuous string.",Python,Python Course,beginner
+split,"A string method that divides a single string into a list of smaller strings based on a specified separator, like a comma or space.",Python,Python Course,beginner
+escape characters,"Special characters preceded by a backslash (such as \n for newline) used to represent characters that are difficult to type or have a special meaning in code.",Python,Python Course,beginner
+unicode,"An international encoding standard used to represent text across different languages and symbols consistently in computers.",Python,Python Course,beginner
+exception,"An error that occurs during the execution of a program, disrupting the normal flow of instructions.",Python,Python Course,beginner
+try block,"A block of code to be tested for errors while it is being executed, allowing the program to handle potential crashes gracefully.",Python,Python Course,beginner
+except block,"A block of code that executes only if an error occurs in the preceding 'try' block, used to handle the exception safely.",Python,Python Course,beginner
+finally block,"A block of code that always executes regardless of whether an exception occurred or not, typically used for cleanup actions.",Python,Python Course,beginner
+traceback,"A detailed report provided by Python when an error occurs, showing the sequence of function calls that led to the exception.",Python,Python Course,beginner
+open(),"A built-in function used to open a file and return a file object, enabling reading, writing, or appending.",Python,Python Course,beginner
+with,"A statement used to wrap the execution of a block of code, ensuring that resources like files are automatically closed when the block finishes.",Python,Python Course,beginner
+context manager,"An object that handles the setup and teardown of resources seamlessly, usually implemented using the 'with' statement.",Python,Python Course,beginner
+close(),"A method used to officially close an opened file, freeing up system resources and preventing data corruption.",Python,Python Course,beginner
+def,"The keyword used in Python to define and start the creation of a new function.",Python,Python Course,beginner
+function call,"The action of executing a previously defined function by typing its name followed by parentheses containing any necessary arguments.",Python,Python Course,beginner
+argument,"The actual value passed into a function when it is called, providing the data the function needs to perform its task.",Python,Python Course,beginner
+return statement,"A keyword used inside a function to send a resulting value back to the place where the function was called.",Python,Python Course,beginner
+parameter,"A named variable in a function's definition that acts as a placeholder for the argument values passed during a function call.",Python,Python Course,beginner
+default parameter,"A parameter that assumes a predefined value if no argument is provided for it during the function call.",Python,Python Course,beginner
+keyword arguments,"Arguments passed to a function by explicitly stating the parameter name, allowing them to be passed in any order.",Python,Python Course,beginner
+variable arguments,"A way to allow a function to accept an arbitrary number of arguments using *args for lists or kwargs for dictionaries.",Python,Python Course,beginner
+positional arguments,"Arguments that must be passed to a function in the exact order they are listed in the function's definition.",Python,Python Course,beginner
+lambda functions,"Small, anonymous, single-line functions defined using the 'lambda' keyword, typically used for short, throwaway operations.",Python,Python Course,beginner
+dict(),"A built-in function used to create a dictionary, which is a collection of key-value pairs.",Python,Python Course,beginner
+get(),"A dictionary method that retrieves the value for a specific key, safely returning a default value (like None) if the key doesn't exist.",Python,Python Course,beginner
+items(),"A dictionary method that returns a view object containing tuples of all the key-value pairs present in the dictionary.",Python,Python Course,beginner
+in operator,"A keyword used to check for the presence of a value within a sequence or a key within a dictionary.",Python,Python Course,beginner
+del,"A keyword used to delete objects, specific elements from a list, or key-value pairs from a dictionary.",Python,Python Course,beginner
+update(),"A dictionary method that merges another dictionary or iterable of key-value pairs into the current dictionary.",Python,Python Course,beginner
+class,"A blueprint or template for creating objects, defining the attributes (data) and methods (behaviors) those objects will have.",Python,Python Course,beginner
+object,"A specific instance created from a class blueprint, encapsulating both state (data) and behavior (methods).",Python,Python Course,beginner
+instance,"A specific realization of any object created from a class, holding its own unique data.",Python,Python Course,beginner
+encapsulation,"An object-oriented programming principle of bundling data and methods within a class, and restricting direct external access to some of the object's components.",Python,Python Course,beginner
+private,"A convention (often using an underscore prefix) indicating that an attribute or method should only be accessed within its own class.",Python,Python Course,beginner
+property,"A special method in Python acting like an attribute, allowing you to use getter and setter logic when accessing or modifying data.",Python,Python Course,beginner
+validation,"The process of checking if input data meets certain criteria or constraints before allowing it to be stored or processed.",Python,Python Course,beginner
+abstraction,"The principle of hiding complex implementation details and showing only the essential features of an object to the user.",Python,Python Course,beginner
+polymorphism,"The ability of different classes to be treated as instances of the same class through a common interface or method name.",Python,Python Course,beginner
+method overloading,"The ability to define multiple methods with the same name but different parameters, though Python handles this primarily through default arguments.",Python,Python Course,beginner
+inheritance,"A concept where a new class derives properties and behaviors from an existing class, promoting code reuse.",Python,Python Course,beginner
+composition,"A design principle where a class is composed of one or more instances of other classes to achieve complex functionality rather than using inheritance.",Python,Python Course,beginner
+base class,"Also known as a parent class, this is the original class from which other classes inherit attributes and methods.",Python,Python Course,beginner
+superclass,"Another term for a base or parent class that provides inherited functionality to a child class.",Python,Python Course,beginner
+parent,"In inheritance, the existing class whose characteristics are inherited by a new child class.",Python,Python Course,beginner
+child,"In inheritance, a class that derives its attributes and methods from a parent class.",Python,Python Course,beginner
+unit test,"A software testing method where individual components or functions of code are tested in isolation to verify they work correctly.",Python,Python Course,beginner
+assertion,"A statement used in testing to declare that a specific condition must be true; if false, it raises an error.",Python,Python Course,beginner
+test coverage,"A metric used to measure the percentage of the codebase that is executed and validated by automated tests.",Python,Python Course,beginner
+TDD,"Test-Driven Development; a software engineering practice where tests are written before the actual code to guide development and ensure reliability.",Python,Python Course,beginner
+few shot learning,"A machine learning technique where a model is given a small number of examples (shots) in its prompt to help it understand the desired task.",LLMOps,LLMOps Course,beginner
+token,"The fundamental unit of text (often a word or sub-word) that language models read and generate.",LLMOps,LLMOps Course,beginner
+context window,"The maximum amount of text (measured in tokens) an LLM can take in and consider at one time when generating a response.",LLMOps,LLMOps Course,beginner
+pydantic,"A Python library for data validation and settings management using standard Python type hints.",LLMOps,LLMOps Course,beginner
+BaseModel,"The core class in Pydantic from which you inherit to create robust data models with automatic validation.",LLMOps,LLMOps Course,beginner
+Field,"A Pydantic function used to provide extra information, constraints, or default values to a specific model attribute.",LLMOps,LLMOps Course,beginner
+model_fields,"An attribute in Pydantic models that contains metadata and configuration details for all the fields defined in the model.",LLMOps,LLMOps Course,beginner
+computed_field,"A Pydantic decorator used to define properties that are calculated on the fly rather than stored directly in the data structure.",LLMOps,LLMOps Course,beginner
+model_validate,"A Pydantic method used to parse and validate standard Python objects or dictionaries against a defined model schema.",LLMOps,LLMOps Course,beginner
+model_dump,"A Pydantic method used to convert a model instance back into a standard Python dictionary.",LLMOps,LLMOps Course,beginner
+type hinting,"A Python feature that allows developers to formally specify the expected data types of variables, arguments, and return values.",LLMOps,LLMOps Course,beginner
+serialization,"The process of converting complex data structures or objects into a format (like JSON) that can be easily stored or transmitted.",LLMOps,LLMOps Course,beginner
+deserialization,"The process of converting a stored or transmitted format (like JSON) back into complex data structures or objects.",LLMOps,LLMOps Course,beginner
+prompt engineering,"The practice of designing, refining, and optimizing the text inputs (prompts) given to an AI model to achieve the best possible outputs.",LLMOps,LLMOps Course,beginner
+zero-shot learning,"A scenario where a model is asked to perform a task or understand a concept without being provided any prior examples in the prompt.",LLMOps,LLMOps Course,beginner
+OpenRouter,"A routing service and API that provides standardized access to various Large Language Models from different providers.",LLMOps,LLMOps Course,beginner
+Agent,"An autonomous AI system powered by an LLM that can use tools, make decisions, and interact with its environment to achieve a goal.",LLMOps,LLMOps Course,beginner
+system prompt,"The initial set of instructions given to an LLM that defines its role, constraints, behavior, and overarching goals.",LLMOps,LLMOps Course,beginner
+agent.run,"The command or method used to start the execution of an AI agent, giving it a prompt to process and act upon.",LLMOps,LLMOps Course,beginner
+tools,"External functions or APIs that an AI agent can call upon to perform actions or fetch real-time data it normally wouldn't have access to.",LLMOps,LLMOps Course,beginner
+dependencies,"External libraries, frameworks, or data sources that an application or agent requires to function properly.",LLMOps,LLMOps Course,beginner
+output_type,"A specification defining the exact format and structure (often using Pydantic) that an AI model or function is expected to return.",LLMOps,LLMOps Course,beginner
+dependency injection,"A design pattern where an object receives its required dependencies from an external source rather than creating them itself.",LLMOps,LLMOps Course,beginner
+request body,"The part of an HTTP request that contains the data payload being sent to an API endpoint for processing.",LLMOps,LLMOps Course,beginner
+response model,"A schema (like a Pydantic model) that defines and validates the structure of the data sent back from an API to the user.",LLMOps,LLMOps Course,beginner
+pydantic model,"A Python class inheriting from BaseModel that strictly enforces data types and validation rules on incoming data.",LLMOps,LLMOps Course,beginner
+model,"A general term representing a mathematical or computational representation of a system, such as a Large Language Model.",LLMOps,LLMOps Course,beginner
+run,"The action of executing a script, pipeline, or AI agent workflow.",LLMOps,LLMOps Course,beginner
+retry loop,"A programmatic structure that automatically attempts an operation again if it fails, ensuring resilience against temporary errors.",LLMOps,LLMOps Course,beginner
+tool call,"The specific event where an AI model pauses its generation to request data from or execute an external function.",LLMOps,LLMOps Course,beginner
+messages,"The individual pieces of conversation (user prompts, system instructions, AI responses) that make up a chat history with an LLM.",LLMOps,LLMOps Course,beginner
+offline evaluation,"The process of testing and assessing an AI model's performance on static, historical datasets before deploying it to users.",LLMOps,LLMOps Course,beginner
+online evaluation,"The continuous monitoring and assessment of an AI model's performance in real-time as it interacts with actual users in production.",LLMOps,LLMOps Course,beginner
+LLM judge,"A technique where an advanced LLM is used to evaluate and grade the outputs generated by another LLM.",LLMOps,LLMOps Course,beginner
+human in the loop,"A system design where a human reviews, approves, or modifies an AI's decisions before they are finalized or sent to the end user.",LLMOps,LLMOps Course,beginner
+toxicity detection,"The process of using automated systems to identify offensive, harmful, or inappropriate content in text.",LLMOps,LLMOps Course,beginner
+hallucination detection,"The process of identifying when an AI model generates information that is factually incorrect, nonsensical, or unsupported by its context.",LLMOps,LLMOps Course,beginner
+CRUD,"An acronym for Create, Read, Update, and Delete, which represent the four basic operations performed on database data.",SQL,SQL Course,beginner
+query,"A request for information or data retrieval from a database using a specific language like SQL.",SQL,SQL Course,beginner
+statement,"A complete line of code or instruction sent to a database system to perform a specific action.",SQL,SQL Course,beginner
+DDL,"Data Definition Language; SQL commands (like CREATE, DROP, ALTER) used to define or modify the structure of database objects.",SQL,SQL Course,beginner
+DML,"Data Manipulation Language; SQL commands (like INSERT, UPDATE, DELETE) used to manage and modify the actual data within tables.",SQL,SQL Course,beginner
+idempotent,"An operation that produces the same result no matter how many times it is executed, ensuring safe retries.",SQL,SQL Course,beginner
+table,"A collection of related data held in a structured format within a database, consisting of columns and rows.",SQL,SQL Course,beginner
+schema,"The blueprint or structural organization of a database, defining its tables, columns, and relationships.",SQL,SQL Course,beginner
+row,"A single, horizontal record representing one complete data entry in a database table.",SQL,SQL Course,beginner
+record,"Another term for a row in a database table, representing a single complete entity or transaction.",SQL,SQL Course,beginner
+column,"A vertical division in a database table that represents a specific attribute or field applied to all rows.",SQL,SQL Course,beginner
+database,"An organized collection of structured information or data, typically stored electronically in a computer system.",SQL,SQL Course,beginner
+persistance,"The characteristic of data outliving the process that created it, meaning it is saved permanently on disk.",SQL,SQL Course,beginner
+DQL,"Data Query Language; SQL commands (specifically SELECT) used strictly to retrieve and read data from a database.",SQL,SQL Course,beginner
+relational database,"A type of database that stores data in structured tables that are logically linked together through shared keys.",SQL,SQL Course,beginner
+dot commands,"Special commands in CLI tools like SQLite (e.g., .tables, .schema) used to interact with the database environment rather than querying data.",SQL,SQL Course,beginner
+CLI,"Command Line Interface; a text-based user interface used to interact with software, operating systems, or databases.",SQL,SQL Course,beginner
+bash,"A popular command-line interpreter or shell used in Unix and Linux systems to execute commands and scripts.",SQL,SQL Course,beginner
+type inference,"A feature where a database or programming language automatically deduces the data type of an expression without explicit declaration.",SQL,SQL Course,beginner
+clause,"A distinct component or portion of an SQL statement, such as WHERE, FROM, or ORDER BY, that dictates a specific action.",SQL,SQL Course,beginner
+aliasing,"The practice of temporarily renaming a table or column in an SQL query using the AS keyword to make the results more readable.",SQL,SQL Course,beginner
+SQL statement,"A complete command written in Structured Query Language used to interact with and manipulate a relational database.",SQL,SQL Course,beginner
+persistent database,"A database system that permanently saves data to physical storage disks, ensuring it remains available after a system reboot.",SQL,SQL Course,beginner
+.wal,"Write-Ahead Log; a database technique where changes are recorded in a log before being applied to the main database file to ensure data integrity.",SQL,SQL Course,beginner
+IDE,"Integrated Development Environment; a software application that provides comprehensive facilities for programmers, often including a code editor and database viewer.",SQL,SQL Course,beginner
+csv,"Comma-Separated Values; a simple, widely used plain text format for storing tabular data, where each line is a row and values are separated by commas.",SQL,SQL Course,beginner
+namespace,"A logical container that holds a set of identifiers or names, ensuring that objects (like tables) have unique names to avoid conflicts.",SQL,SQL Course,beginner
+projection,"The process of selecting specific columns to retrieve from a table, effectively narrowing the data vertically.",SQL,SQL Course,beginner
+selection,"The process of filtering data to retrieve only specific rows that meet certain conditions, effectively narrowing the data horizontally.",SQL,SQL Course,beginner
+SELECT clause,"The fundamental SQL clause used to specify exactly which columns of data you want to retrieve from a database.",SQL,SQL Course,beginner
+WHERE clause,"The SQL clause used to filter rows, returning only the records that satisfy a specified condition.",SQL,SQL Course,beginner
+condition,"A logical statement, usually found in a WHERE clause, that evaluates to true, false, or unknown, used to filter data.",SQL,SQL Course,beginner
+BETWEEN,"An SQL operator used to filter values within a specific range, inclusive of the starting and ending values.",SQL,SQL Course,beginner
+aggregate functions,"Functions like SUM, AVG, COUNT, MAX, and MIN that perform calculations on multiple rows to return a single summarized value.",SQL,SQL Course,beginner
+range filtering,"The technique of querying data that falls between two numerical, alphabetical, or temporal boundaries.",SQL,SQL Course,beginner
+pattern matching,"A way to search for specific text patterns within strings, typically using the LIKE operator and wildcard characters.",SQL,SQL Course,beginner
+list filtering,"A technique used to find rows where a specific column's value matches any item in a predefined list, usually utilizing the IN operator.",SQL,SQL Course,beginner
+temporal,"Pertaining to time; temporal data involves dates, times, and timestamps representing when events occurred.",SQL,SQL Course,beginner
+interval,"A data type or concept that represents a specific span or duration of time, like '3 days' or '2 months'.",SQL,SQL Course,beginner
+synthetic,"Data that is artificially generated rather than created by real-world events, often used for testing and development.",SQL,SQL Course,beginner
+VALUES,"An SQL keyword used primarily in an INSERT statement to specify the exact data to be added to a row.",SQL,SQL Course,beginner
+subquery,"A nested SQL query placed inside another, larger SQL statement to provide intermediary results for the outer query.",SQL,SQL Course,beginner
+compound query,"A query that combines the results of two or more independent SELECT statements into a single dataset using set operators.",SQL,SQL Course,beginner
+set operations,"SQL operations like UNION, INTERSECT, and EXCEPT that combine and compare the result sets of two or more queries.",SQL,SQL Course,beginner
+EXCEPT,"A set operator that returns all unique rows from the first query that are not present in the results of the second query.",SQL,SQL Course,beginner
+result set,"The tabular data produced and returned by the execution of a SELECT statement.",SQL,SQL Course,beginner
+UNION,"A set operator that combines the results of two or more SELECT statements into a single result set, automatically removing duplicates.",SQL,SQL Course,beginner
+UNION ALL,"A set operator that combines the results of two SELECT statements into a single result set, keeping all duplicate rows intact.",SQL,SQL Course,beginner
+operator,"A reserved word or character (like =, <, AND, OR) used in a SQL WHERE clause to perform comparisons or logical operations.",SQL,SQL Course,beginner
+INTERSECT,"A set operator that returns only the distinct rows that appear in the results of both the first and second queries.",SQL,SQL Course,beginner
+venn diagram,"A visual representation using overlapping circles to illustrate logical relationships between different sets, often used to explain SQL Joins.",SQL,SQL Course,beginner
+LEFT JOIN,"An SQL join that returns all records from the left table, and only the matched records from the right table.",SQL,SQL Course,beginner
+INNER JOIN,"An SQL join that returns only the rows that have matching values in both tables being joined.",SQL,SQL Course,beginner
+RIGHT JOIN,"An SQL join that returns all records from the right table, and only the matched records from the left table.",SQL,SQL Course,beginner
+LIKE,"An SQL operator used in a WHERE clause to search for a specified text pattern within a column, usually case-sensitive.",SQL,SQL Course,beginner
+ILIKE,"An SQL operator specific to PostgreSQL that performs a case-insensitive search for a specified text pattern.",SQL,SQL Course,beginner
+regexp,"Regular Expressions; advanced pattern matching syntax used to find complex text patterns inside database strings.",SQL,SQL Course,beginner
+assign,"The action of storing a value into a variable using an assignment operator.",Data Platform Development,Data Platform Development Course,beginner
+logical error,"A bug in a program where the code runs without crashing but produces an incorrect or unintended result.",Data Platform Development,Data Platform Development Course,beginner
+handling error,"The process of safely catching and responding to exceptions or errors in code to prevent the application from crashing.",Data Platform Development,Data Platform Development Course,beginner
+indexing,"The method of accessing a specific item in a data structure using its numerical position.",Data Platform Development,Data Platform Development Course,beginner
+slicing,"The method of extracting a continuous subset of elements from a data structure by specifying a start and end point.",Data Platform Development,Data Platform Development Course,beginner
+iterable,"Any Python object capable of returning its elements one at a time, allowing it to be looped over in a 'for' loop.",Data Platform Development,Data Platform Development Course,beginner
+iterate over,"The action of going through each item in a collection or iterable object one by one.",Data Platform Development,Data Platform Development Course,beginner
+list comprehension,"A concise, elegant way to create lists in Python by embedding a 'for' loop inside square brackets.",Data Platform Development,Data Platform Development Course,beginner
+collections,"Specialized container data types in Python designed to store multiple items, such as lists, dictionaries, and sets.",Data Platform Development,Data Platform Development Course,beginner
+tuples,"An immutable, ordered collection of elements in Python, often used to group related but heterogeneous data.",Data Platform Development,Data Platform Development Course,beginner
+**repr**,"A special Python method that defines how an object is officially represented as a string, aiding in debugging and logging.",Data Platform Development,Data Platform Development Course,beginner
+dunder methods,"Double underscore methods in Python (like **init**) that allow developers to define how custom objects behave with built-in operations.",Data Platform Development,Data Platform Development Course,beginner
+pythonic,"A style of writing code that follows the standard conventions, best practices, and elegant idioms unique to Python.",Data Platform Development,Data Platform Development Course,beginner
+idiomatic,"Writing code in a way that is natural and standard for a specific programming language, making it highly readable to other developers.",Data Platform Development,Data Platform Development Course,beginner
+DRY,"Don't Repeat Yourself; a software principle aimed at reducing repetition by replacing redundant code with functions and abstractions.",Data Platform Development,Data Platform Development Course,beginner
+spaghetti code,"A derogatory term for unstructured, tangled, and difficult-to-maintain source code lacking a clear architecture.",Data Platform Development,Data Platform Development Course,beginner
+keyword arguments,"Arguments passed to a function using their parameter names, making code more readable and order-independent.",Data Platform Development,Data Platform Development Course,beginner
+positional arguments,"Arguments that must be passed into a function in the exact chronological order defined by the function signature.",Data Platform Development,Data Platform Development Course,beginner
+*args,"A syntax used in Python functions to accept a variable number of positional arguments as a tuple.",Data Platform Development,Data Platform Development Course,beginner
+kwargs,"A syntax used in Python functions to accept a variable number of keyword arguments as a dictionary.",Data Platform Development,Data Platform Development Course,beginner
+unpacking list,"The process of assigning the elements of a list directly into separate, individual variables in one line of code.",Data Platform Development,Data Platform Development Course,beginner
+return statement,"The instruction that specifies what value a function should output and send back to the caller.",Data Platform Development,Data Platform Development Course,beginner
+ternary operator,"A one-line shorthand for an 'if-else' statement, evaluating a condition and returning one of two values immediately.",Data Platform Development,Data Platform Development Course,beginner
+json,"JavaScript Object Notation; a lightweight, text-based data interchange format widely used for storing and sending data over APIs.",Data Platform Development,Data Platform Development Course,beginner
+dataframe,"A two-dimensional, mutable tabular data structure with labeled axes (rows and columns), central to the pandas library.",Data Platform Development,Data Platform Development Course,beginner
+series,"A one-dimensional labeled array in pandas, essentially representing a single column of data.",Data Platform Development,Data Platform Development Course,beginner
+pandas concat,"A pandas function used to stitch or append DataFrames together along a particular axis (rows or columns).",Data Platform Development,Data Platform Development Course,beginner
+pandas apply,"A pandas method that applies a function along an axis of the DataFrame or on a Series, useful for custom transformations.",Data Platform Development,Data Platform Development Course,beginner
+csv,"A plain text file format that stores tabular data, where rows are represented by lines and columns are separated by commas.",Data Platform Development,Data Platform Development Course,beginner
+pandas isnull,"A pandas method that detects missing values in a DataFrame, returning a boolean mask showing True for null elements.",Data Platform Development,Data Platform Development Course,beginner
+masking in pandas,"The technique of using a boolean array (a 'mask') to filter and select specific rows in a DataFrame based on a condition.",Data Platform Development,Data Platform Development Course,beginner
+pandas transpose,"An operation that rotates a DataFrame, swapping its rows with its columns.",Data Platform Development,Data Platform Development Course,beginner
+pandas value_counts(),"A pandas method that returns a Series containing the counts of unique values, useful for summarizing categorical data.",Data Platform Development,Data Platform Development Course,beginner
+tabular data,"Data that is structured into a rectangular grid of rows and columns, similar to a spreadsheet.",Data Platform Development,Data Platform Development Course,beginner
+zero-based indexing,"A standard in many programming languages, including Python, where the first element in a sequence is assigned the index 0 instead of 1.",Data Platform Development,Data Platform Development Course,beginner
+host system,"The physical computer or virtual machine that runs the overarching operating system hosting Docker containers.",Data Platform Development,Data Platform Development Course,beginner
+virtualization,"The creation of a virtual version of a computing resource, such as hardware platforms, storage devices, or network resources.",Data Platform Development,Data Platform Development Course,beginner
+spin up,"A colloquial term meaning to start, launch, or boot a server, virtual machine, or container.",Data Platform Development,Data Platform Development Course,beginner
+dockerize,"The process of packaging an application and its necessary dependencies into a standardized Docker container.",Data Platform Development,Data Platform Development Course,beginner
+docker build,"A command that reads a Dockerfile and creates a new Docker image from its instructions.",Data Platform Development,Data Platform Development Course,beginner
+docker run,"A command used to create and start a new container from a specified Docker image.",Data Platform Development,Data Platform Development Course,beginner
+docker layers,"The read-only segments that make up a Docker image, stacked on top of each other to maximize caching and efficiency.",Data Platform Development,Data Platform Development Course,beginner
+container,"A lightweight, standalone, and executable software package that includes everything needed to run an application seamlessly across environments.",Data Platform Development,Data Platform Development Course,beginner
+image,"A static, immutable template or snapshot containing the application code, libraries, and dependencies required to create a Docker container.",Data Platform Development,Data Platform Development Course,beginner
+docker compose up -d,"A command that starts the services defined in a docker-compose.yml file and runs them in the background (detached mode).",Data Platform Development,Data Platform Development Course,beginner
+docker compose up --build,"A command that forces Docker Compose to rebuild the images before starting the containers, ensuring the latest code changes are applied.",Data Platform Development,Data Platform Development Course,beginner
+docker compose down,"A command that stops and removes all containers, networks, and resources created by 'docker compose up'.",Data Platform Development,Data Platform Development Course,beginner
+docker exec -it /bin/bash,"A command used to open an interactive bash terminal inside a currently running Docker container for troubleshooting.",Data Platform Development,Data Platform Development Course,beginner
+docker inspect,"A command that returns deep, low-level configuration and state information about Docker objects like containers or images.",Data Platform Development,Data Platform Development Course,beginner
+docker ps,"A command that lists all actively running Docker containers on the host system.",Data Platform Development,Data Platform Development Course,beginner
+docker volume ls,"A command that lists all the persistent storage volumes managed by Docker.",Data Platform Development,Data Platform Development Course,beginner
+docker container ls -a,"A command that lists all Docker containers on the system, including those that are stopped or exited.",Data Platform Development,Data Platform Development Course,beginner
+docker image ls -a,"A command that lists all Docker images stored locally on the host system.",Data Platform Development,Data Platform Development Course,beginner
+docker image prune,"A command used to clean up and remove dangling or unused Docker images to free up disk space.",Data Platform Development,Data Platform Development Course,beginner
+docker container prune,"A command used to remove all stopped containers from the host system to clear clutter.",Data Platform Development,Data Platform Development Course,beginner
+tag,"A human-readable label applied to a Docker image to indicate a specific version or variant, such as 'latest' or 'v1.0'.",Data Platform Development,Data Platform Development Course,beginner
+docker rm,"A command used to delete one or more stopped Docker containers.",Data Platform Development,Data Platform Development Course,beginner
+kafka,"A distributed event streaming platform used to handle high-throughput, real-time data feeds and messaging.",Data Platform Development,Data Platform Development Course,beginner
+event,"A record or message indicating that a specific occurrence or state change has happened in the system.",Data Platform Development,Data Platform Development Course,beginner
+message,"The fundamental unit of data sent through Kafka, consisting of a key, a value, and a timestamp.",Data Platform Development,Data Platform Development Course,beginner
+producer,"An application or service that actively sends, or publishes, messages to a Kafka topic.",Data Platform Development,Data Platform Development Course,beginner
+consumer,"An application or service that reads, or subscribes to, messages from a Kafka topic.",Data Platform Development,Data Platform Development Course,beginner
+topic,"A named category or feed in Kafka where producers send messages and consumers read them.",Data Platform Development,Data Platform Development Course,beginner
+publish,"The act of sending a message or event to a central broker so that interested parties can receive it.",Data Platform Development,Data Platform Development Course,beginner
+subscribe,"The act of registering an interest in a topic to receive any messages published to it.",Data Platform Development,Data Platform Development Course,beginner
+sink,"The final destination or database where a streaming data pipeline deposits its processed data.",Data Platform Development,Data Platform Development Course,beginner
+publish-subscribe model,"A messaging pattern where senders categorize messages into topics without knowing who the receivers are, and receivers consume only the topics of interest.",Data Platform Development,Data Platform Development Course,beginner
+source system,"The original origin point or application from which raw data is extracted to enter a data pipeline.",Data Platform Development,Data Platform Development Course,beginner
+partition,"A division of a Kafka topic that allows data to be split across multiple brokers to increase parallel processing and scalability.",Data Platform Development,Data Platform Development Course,beginner
+serialization,"The process of converting complex data objects into a byte stream format suitable for transmission over a network.",Data Platform Development,Data Platform Development Course,beginner
+deserialization,"The process of converting a transmitted byte stream back into readable data objects for an application to use.",Data Platform Development,Data Platform Development Course,beginner
+pull model,"A communication design where the consumer actively requests or fetches data from the broker when it is ready.",Data Platform Development,Data Platform Development Course,beginner
+push model,"A communication design where the central broker actively pushes data to the consumer as soon as it arrives.",Data Platform Development,Data Platform Development Course,beginner
+client,"An application, like a producer or consumer, that connects to and interacts with a server or Kafka broker.",Data Platform Development,Data Platform Development Course,beginner
+advertise,"A configuration where a Kafka broker broadcasts its reachable IP address and port to clients so they know how to connect.",Data Platform Development,Data Platform Development Course,beginner
+ports mapping,"The process in Docker of linking a port on the host machine to a specific port inside the container, allowing external traffic to enter.",Data Platform Development,Data Platform Development Course,beginner
+detached mode,"Running a process or container in the background so it doesn't occupy or block the current terminal window.",Data Platform Development,Data Platform Development Course,beginner
+docker exec -it,"A command combination used to execute a command inside a running container with an interactive terminal.",Data Platform Development,Data Platform Development Course,beginner
+histogram,"A type of graph representing the distribution of numerical data by grouping values into continuous ranges, or bins.",Data Visualisation BI,Data Visualisation BI Course,beginner
+data cleaning,"The process of identifying, correcting, or removing inaccurate, incomplete, or duplicate records from a dataset to improve quality.",Data Visualisation BI,Data Visualisation BI Course,beginner
+data transformation,"The process of converting data from one format, structure, or value state into another, often to prepare it for analysis.",Data Visualisation BI,Data Visualisation BI Course,beginner
+casting,"The process of changing a data column from one data type to another, such as converting text to an integer.",Data Visualisation BI,Data Visualisation BI Course,beginner
+bar chart,"A graphical representation of categorical data using rectangular bars whose lengths are proportional to the values they represent.",Data Visualisation BI,Data Visualisation BI Course,beginner
+semantic model,"A logical, business-friendly representation of data that standardizes metrics and definitions so end-users can easily analyze it.",Data Visualisation BI,Data Visualisation BI Course,beginner
+power bi,"A business analytics service by Microsoft that provides interactive visualizations and business intelligence capabilities.",Data Visualisation BI,Data Visualisation BI Course,beginner
+data visualization,"The graphical representation of information and data to highlight patterns, trends, and outliers.",Data Visualisation BI,Data Visualisation BI Course,beginner
+DAX,"Data Analysis Expressions; a formula language used in Power BI to perform custom calculations and aggregations.",Data Visualisation BI,Data Visualisation BI Course,beginner
+power query,"A data preparation and connection technology in Power BI used to extract, transform, and load data seamlessly.",Data Visualisation BI,Data Visualisation BI Course,beginner
+workspace,"A collaborative environment in Power BI where teams can create, manage, and share dashboards and reports.",Data Visualisation BI,Data Visualisation BI Course,beginner
+padding,"The visual empty space added around the inside borders of an element or chart to improve readability and design.",Data Visualisation BI,Data Visualisation BI Course,beginner
+visuals,"The various charts, graphs, maps, and UI elements used to represent data in a report.",Data Visualisation BI,Data Visualisation BI Course,beginner
+tooltip,"A small pop-up box that appears when a user hovers over a data point, providing additional context or detailed metrics.",Data Visualisation BI,Data Visualisation BI Course,beginner
+conditional formating,"A feature that automatically changes the color or styling of data visuals based on specific rules or data values.",Data Visualisation BI,Data Visualisation BI Course,beginner
+button,"An interactive element on a dashboard that users can click to trigger an action, like navigating pages or clearing filters.",Data Visualisation BI,Data Visualisation BI Course,beginner
+bookmark,"A saved state of a report page in Power BI, capturing current filters and visual visibility to allow users to quickly return to a specific view.",Data Visualisation BI,Data Visualisation BI Course,beginner
+selection pane,"A menu in BI tools that allows developers to manage the stacking order, grouping, and visibility of individual visual elements.",Data Visualisation BI,Data Visualisation BI Course,beginner
+artist,"The underlying rendering engine concept in matplotlib that handles drawing the actual shapes and text on the canvas.",Data Visualisation BI,Data Visualisation BI Course,beginner
+containers,"High-level objects in visualization libraries that group multiple graphical elements together, like a Figure or Axes.",Data Visualisation BI,Data Visualisation BI Course,beginner
+spine,"The actual boundary lines mapping the data area in a matplotlib chart, representing the borders of an axis.",Data Visualisation BI,Data Visualisation BI Course,beginner
+axes,"The data-plotting area of a chart containing the x/y limits, labels, and ticks, where the actual graphical data is drawn.",Data Visualisation BI,Data Visualisation BI Course,beginner
+figure,"The highest-level container or window in matplotlib that holds all the subplots, axes, and graphical elements.",Data Visualisation BI,Data Visualisation BI Course,beginner
+subplot,"An individual grid area within a main Figure that houses its own distinct chart or graph.",Data Visualisation BI,Data Visualisation BI Course,beginner
+patch,"A 2D shape or polygon drawn on a chart, such as the rectangular bars in a bar chart.",Data Visualisation BI,Data Visualisation BI Course,beginner
+annotation,"Text and graphics explicitly added to a chart to highlight, explain, or draw attention to a specific data point.",Data Visualisation BI,Data Visualisation BI Course,beginner
+arrowprops,"A configuration parameter used in plotting libraries to format the arrow pointing from an annotation to a specific data point.",Data Visualisation BI,Data Visualisation BI Course,beginner
+marker,"A symbol used on a line chart or scatter plot to represent the exact position of an individual data point.",Data Visualisation BI,Data Visualisation BI Course,beginner
+ticks,"The short marks placed along an axis to denote specific intervals or units of measurement.",Data Visualisation BI,Data Visualisation BI Course,beginner
+ticklabels,"The actual text or numbers placed next to axis ticks to show the value at that interval.",Data Visualisation BI,Data Visualisation BI Course,beginner
+layout,"The arrangement and positioning of visual elements, charts, and text within a dashboard to optimize user experience.",Data Visualisation BI,Data Visualisation BI Course,beginner
+grid,"A pattern of intersecting horizontal and vertical lines in the background of a chart, used to help viewers align data points with axes.",Data Visualisation BI,Data Visualisation BI Course,beginner
+legend,"A small reference box on a chart that explains the meaning of different colors, symbols, or lines used in the visualization.",Data Visualisation BI,Data Visualisation BI Course,beginner
+exploratory data analysis,"The initial phase of investigating a dataset using visual techniques to discover patterns, anomalies, and hypotheses before formal modeling.",Data Visualisation BI,Data Visualisation BI Course,beginner
+explanatory data analysis,"The phase of analysis focused on clearly communicating specific findings, insights, and stories to an audience.",Data Visualisation BI,Data Visualisation BI Course,beginner
+clutter,"Unnecessary visual elements in a chart, like excessive gridlines or borders, that distract from the underlying data.",Data Visualisation BI,Data Visualisation BI Course,beginner
+proximity principle,"A design principle stating that items placed close together are visually perceived as belonging to the same group.",Data Visualisation BI,Data Visualisation BI Course,beginner
+attention,"The cognitive focus of the audience, which designers aim to capture and direct using visual hierarchy and contrast.",Data Visualisation BI,Data Visualisation BI Course,beginner
+contrast,"Using differences in color, size, or shape to make specific data points or insights stand out dramatically from the rest.",Data Visualisation BI,Data Visualisation BI Course,beginner
+colors sparingly,"The design best practice of using a neutral palette predominantly, reserving bright colors only to highlight key data points.",Data Visualisation BI,Data Visualisation BI Course,beginner
+data storytelling,"The practice of building a compelling narrative around data insights to drive understanding and inspire action.",Data Visualisation BI,Data Visualisation BI Course,beginner
+axis,"The reference lines (usually X and Y) on a chart that define the scale and dimensions of the data being plotted.",Data Visualisation BI,Data Visualisation BI Course,beginner
+insight,"A valuable, actionable discovery made through the analysis of data that can guide business decisions.",Data Visualisation BI,Data Visualisation BI Course,beginner
+context,"The background information surrounding data (like historical averages or industry benchmarks) needed to understand its true significance.",Data Visualisation BI,Data Visualisation BI Course,beginner
+call to action,"A clear instruction or recommendation presented at the end of a data story to guide the audience on what to do next.",Data Visualisation BI,Data Visualisation BI Course,beginner
+KPI,"Key Performance Indicator; a quantifiable measure used to evaluate the success of an organization or project in meeting its goals.",Data Visualisation BI,Data Visualisation BI Course,beginner
+story arc,"The narrative structure of a data presentation, including setting the context, presenting the complication, and offering a resolution.",Data Visualisation BI,Data Visualisation BI Course,beginner
+data literacy,"The ability to confidently read, work with, analyze, and argue with data in a meaningful way.",Data Visualisation BI,Data Visualisation BI Course,beginner
+dashboard fatigue,"The cognitive overload and loss of interest experienced by users when they are presented with too many complex dashboards.",Data Visualisation BI,Data Visualisation BI Course,beginner
+choropleth,"A type of map visualization where geographic regions are colored or shaded in relation to a specific data metric.",Data Visualisation BI,Data Visualisation BI Course,beginner
+fig.update_layout,"A Plotly method used to modify the overall appearance of a chart, such as its title, margins, and themes.",Data Visualisation BI,Data Visualisation BI Course,beginner
+radar chart,"A graphical method of displaying multivariate data in the form of a two-dimensional chart starting from a central point.",Data Visualisation BI,Data Visualisation BI Course,beginner
+spider chart,"Another name for a radar chart, named for its web-like visual appearance.",Data Visualisation BI,Data Visualisation BI Course,beginner
+mapbox,"A mapping platform integrated with visualization tools to provide high-quality geographic basemaps for data overlays.",Data Visualisation BI,Data Visualisation BI Course,beginner
+geojson,"A standard format for encoding a variety of geographic data structures, heavily used to draw borders in map visualizations.",Data Visualisation BI,Data Visualisation BI Course,beginner
+bubble chart,"A variation of a scatter plot where a third dimension of data is shown through the varying size of the data point circles.",Data Visualisation BI,Data Visualisation BI Course,beginner
+pie chart,"A circular statistical graphic divided into slices to illustrate numerical proportions, where the arc length corresponds to the quantity.",Data Visualisation BI,Data Visualisation BI Course,beginner
+hovertemplate,"A configuration string used in Plotly to strictly define the text and formatting shown when a user hovers over a data point.",Data Visualisation BI,Data Visualisation BI Course,beginner
+trace,"A single collection of data points (like one line or one set of bars) added to a Plotly figure.",Data Visualisation BI,Data Visualisation BI Course,beginner
+on_action,"An event listener that triggers a specific function when a user performs a physical interaction, like clicking a button.",Data Visualisation BI,Data Visualisation BI Course,beginner
+on_change,"An event listener that triggers an update in an application when the value of an input widget or variable is altered.",Data Visualisation BI,Data Visualisation BI Course,beginner
+state,"The current memory or condition of an application, holding the active values of user inputs and variables across interactions.",Data Visualisation BI,Data Visualisation BI Course,beginner
+downstream,"Systems, processes, or teams that receive and consume data after it has been processed by an earlier system.",Data Warehouse,Data Warehouse Course,beginner
+upstream,"Systems, applications, or sources where raw data originates before it flows into the data warehouse.",Data Warehouse,Data Warehouse Course,beginner
+data warehouse,"A central repository designed to store, integrate, and analyze large volumes of structured data from multiple sources for business intelligence.",Data Warehouse,Data Warehouse Course,beginner
+cloud computing,"The delivery of computing services over the internet, offering scalable resources without managing physical hardware.",Data Warehouse,Data Warehouse Course,beginner
+OLAP,"Online Analytical Processing; database systems optimized for complex queries, analytics, and reading large amounts of historical data.",Data Warehouse,Data Warehouse Course,beginner
+OLTP,"Online Transaction Processing; database systems optimized for fast, reliable, real-time inserts, updates, and daily operational transactions.",Data Warehouse,Data Warehouse Course,beginner
+virtual warehouse,"In Snowflake, a cluster of compute resources that processes queries independently of the data storage.",Data Warehouse,Data Warehouse Course,beginner
+external stage,"A location outside of Snowflake (like an Amazon S3 bucket) where raw data files are stored securely before being loaded into tables.",Data Warehouse,Data Warehouse Course,beginner
+data consumer,"The end-users, analysts, or automated dashboards that access and utilize the finalized data from the warehouse.",Data Warehouse,Data Warehouse Course,beginner
+scaling out,"Adding more compute nodes or servers to a system in order to handle a higher concurrency or volume of simultaneous users.",Data Warehouse,Data Warehouse Course,beginner
+scaling up,"Increasing the power (CPU, memory) of an existing node or virtual warehouse to handle more complex or larger datasets faster.",Data Warehouse,Data Warehouse Course,beginner
+snowflake credit,"The unit of measurement used by Snowflake to bill for compute resources consumed during query execution and data processing.",Data Warehouse,Data Warehouse Course,beginner
+securable object,"Any entity in Snowflake (like a table, view, or schema) to which specific access privileges can be granted or denied.",Data Warehouse,Data Warehouse Course,beginner
+schema,"A logical grouping of related database objects, acting as a folder within a database to organize tables and views.",Data Warehouse,Data Warehouse Course,beginner
+permanent table,"The standard table type in databases that safely stores data indefinitely until intentionally dropped, typically offering full backup protection.",Data Warehouse,Data Warehouse Course,beginner
+transient table,"A temporary-style table in Snowflake that exists until explicitly dropped, but does not incur the high storage costs of long-term backup features like Fail-safe.",Data Warehouse,Data Warehouse Course,beginner
+temporary table,"A table that only exists for the duration of the current user session and is automatically purged when the session ends.",Data Warehouse,Data Warehouse Course,beginner
+time-travel,"A Snowflake feature allowing users to query, restore, or clone historical data as it existed at a specific point in the recent past.",Data Warehouse,Data Warehouse Course,beginner
+fail-safe,"A disaster recovery feature providing a non-configurable period where data can be recovered by support even after Time Travel expires.",Data Warehouse,Data Warehouse Course,beginner
+view,"A saved, named SQL query that acts as a virtual table, allowing users to read customized data without physically storing a duplicate copy.",Data Warehouse,Data Warehouse Course,beginner
+table,"The primary database object used to store data structurally in rows and columns.",Data Warehouse,Data Warehouse Course,beginner
+DML,"Data Manipulation Language; commands used to insert, update, or delete records inside a table.",Data Warehouse,Data Warehouse Course,beginner
+DDL,"Data Definition Language; commands used to create, alter, or destroy the structure of database objects.",Data Warehouse,Data Warehouse Course,beginner
+DQL,"Data Query Language; the subset of SQL specifically used to search and read data using SELECT.",Data Warehouse,Data Warehouse Course,beginner
+DCL,"Data Control Language; SQL commands used to manage access, security, and permissions within the database.",Data Warehouse,Data Warehouse Course,beginner
+SYSADMIN,"A powerful role in Snowflake designated to create, manage, and provision all database and warehouse objects.",Data Warehouse,Data Warehouse Course,beginner
+USERADMIN,"A role responsible strictly for creating and managing user accounts and roles within the system.",Data Warehouse,Data Warehouse Course,beginner
+ORGADMIN,"The highest organizational role responsible for managing multiple Snowflake accounts at the corporate level.",Data Warehouse,Data Warehouse Course,beginner
+SECURITYADMIN,"A highly privileged role that manages global security settings, grants, and revokes access policies.",Data Warehouse,Data Warehouse Course,beginner
+ACCOUNTADMIN,"The top-level administrator role in a Snowflake account that encapsulates SYSADMIN and SECURITYADMIN capabilities.",Data Warehouse,Data Warehouse Course,beginner
+role inheritance,"A security architecture concept where a higher-level role automatically gains all the permissions of the roles subordinate to it.",Data Warehouse,Data Warehouse Course,beginner
+PUBLIC role,"A default role automatically granted to every user in the system, typically holding basic access rights.",Data Warehouse,Data Warehouse Course,beginner
+public schema,"A default schema automatically created inside every new database where objects are placed if no other schema is specified.",Data Warehouse,Data Warehouse Course,beginner
+API,"Application Programming Interface; a set of protocols allowing different software applications to communicate and transfer data automatically.",Data Warehouse,Data Warehouse Course,beginner
+ETL,"Extract, Transform, Load; a traditional data pipeline method where data is cleaned and altered before being loaded into the data warehouse.",Data Warehouse,Data Warehouse Course,beginner
+ELT,"Extract, Load, Transform; a modern data pipeline method where raw data is loaded into the warehouse first, then transformed using the database's power.",Data Warehouse,Data Warehouse Course,beginner
+data ingestion,"The process of moving raw data from various source systems into a storage medium like a data lake or data warehouse.",Data Warehouse,Data Warehouse Course,beginner
+batch ingestion,"Loading data in large, scheduled, discrete chunks at regular intervals rather than continuously.",Data Warehouse,Data Warehouse Course,beginner
+streaming ingestion,"The continuous, real-time loading of data into a system exactly as the events occur.",Data Warehouse,Data Warehouse Course,beginner
+incremental load,"A process that only ingests new or updated records since the last successful load, rather than reloading the entire dataset.",Data Warehouse,Data Warehouse Course,beginner
+dlt connectors,"Pre-built modules in the Data Load Tool (dlt) that easily connect to various APIs and databases to extract data.",Data Warehouse,Data Warehouse Course,beginner
+snowflake user,"An individual account or service credential used to log into and authenticate with the Snowflake environment.",Data Warehouse,Data Warehouse Course,beginner
+staging layer,"An intermediary storage area used to land raw, unprocessed data before it undergoes transformation and integration.",Data Warehouse,Data Warehouse Course,beginner
+granted to,"The SQL syntax defining which specific role or user is receiving a permission.",Data Warehouse,Data Warehouse Course,beginner
+granted on,"The SQL syntax defining which specific object (like a table or schema) the permission applies to.",Data Warehouse,Data Warehouse Course,beginner
+granted by,"Indicates the user or role that issued the permission, establishing an audit trail for access control.",Data Warehouse,Data Warehouse Course,beginner
+secrets.toml,"A configuration file commonly used in Python to securely store sensitive environment variables, passwords, and API keys.",Data Warehouse,Data Warehouse Course,beginner
+RBAC,"Role-Based Access Control; a security model where permissions are assigned to roles rather than directly to individual users.",Data Warehouse,Data Warehouse Course,beginner
+CRUD operations,"The four basic functions essential for persistent storage: Create, Read, Update, and Delete.",Data Warehouse,Data Warehouse Course,beginner
+resource dlt,"In the dlt framework, an endpoint or specific collection of data that yields records to be ingested.",Data Warehouse,Data Warehouse Course,beginner
+source dlt,"In the dlt framework, a logical grouping of one or more resources that define where the data originates.",Data Warehouse,Data Warehouse Course,beginner
+yield python,"A keyword used in Python generators to produce a sequence of values lazily, highly useful for streaming large datasets efficiently.",Data Warehouse,Data Warehouse Course,beginner
+granularity,"The level of detail or the exact scale that a single row of data represents in a table.",Data Warehouse,Data Warehouse Course,beginner
+fact,"A numerical, measurable metric of a business event, typically stored in a fact table at the center of a star schema.",Data Warehouse,Data Warehouse Course,beginner
+dimensions,"The descriptive, textual context (like time, location, or product) used to slice, filter, and categorize fact data.",Data Warehouse,Data Warehouse Course,beginner
+star schema,"A dimensional modeling technique where a central fact table is surrounded by connected dimension tables, resembling a star.",Data Warehouse,Data Warehouse Course,beginner
+business process,"The real-world activity or workflow being measured and modeled in the data warehouse, such as sales or inventory.",Data Warehouse,Data Warehouse Course,beginner
+data mart,"A specialized, subject-oriented subset of the data warehouse designed to serve the specific analytical needs of a single business department.",Data Warehouse,Data Warehouse Course,beginner
+snowflake schema,"A variation of the star schema where the dimension tables themselves are normalized into multiple related tables.",Data Warehouse,Data Warehouse Course,beginner
+3NF,"Third Normal Form; a database design rule ensuring data is highly organized to reduce duplication by isolating independent attributes.",Data Warehouse,Data Warehouse Course,beginner
+denomarlized tables,"Tables where related data is intentionally combined and duplicated to prioritize fast reading over strict storage efficiency.",Data Warehouse,Data Warehouse Course,beginner
+ER diagram,"Entity-Relationship Diagram; a visual blueprint showing the tables in a database and how they relate to one another.",Data Warehouse,Data Warehouse Course,beginner
+foreign key,"A column in one table that links to the primary key of another table, enforcing referential integrity between them.",Data Warehouse,Data Warehouse Course,beginner
+primary key,"A column or set of columns that uniquely identifies each individual row within a table.",Data Warehouse,Data Warehouse Course,beginner
+surrogate key,"An artificially generated, unique identifier assigned to a row in a data warehouse, decoupling it from the original source system keys.",Data Warehouse,Data Warehouse Course,beginner
+natural key,"The original, real-world identifier for a piece of data (like a social security number) originating from the operational source system.",Data Warehouse,Data Warehouse Course,beginner
+RDBMS,"Relational Database Management System; software that maintains data in structured tables, enforces relationships, and uses SQL for queries.",Data Modeling,Data Modeling Course,beginner
+relational model,"A fundamental database theory where data is structured into tables (relations) of columns and rows, connected by mathematical keys.",Data Modeling,Data Modeling Course,beginner
+conceptual model,"A high-level diagram outlining the core business entities and their relationships without any technical database details.",Data Modeling,Data Modeling Course,beginner
+logical model,"A structured blueprint that maps out tables, columns, and keys, abstracting away the specific database vendor syntax.",Data Modeling,Data Modeling Course,beginner
+physical model,"The final, highly technical schema optimized for a specific database engine, detailing precise data types and indexing.",Data Modeling,Data Modeling Course,beginner
+ERD,"Entity-Relationship Diagram; a standard visual modeling tool used to plan the structure and connections of database tables.",Data Modeling,Data Modeling Course,beginner
+data modeling,"The process of designing the structure, relationships, and rules of a database to accurately reflect business requirements.",Data Modeling,Data Modeling Course,beginner
+data integrity,"The assurance that data remains accurate, complete, and reliable throughout its lifecycle by enforcing strict rules.",Data Modeling,Data Modeling Course,beginner
+data consistency,"The principle ensuring that a transaction leaves the database in a valid state, preventing conflicting information across tables.",Data Modeling,Data Modeling Course,beginner
+field,"The smallest unit of data in a table, representing a single column's intersection with a row.",Data Modeling,Data Modeling Course,beginner
+attribute,"A specific characteristic or property of an entity, which becomes a column in a database table.",Data Modeling,Data Modeling Course,beginner
+data type,"The classification dictating what kind of data (integer, text, date) is allowed to be stored in a specific column.",Data Modeling,Data Modeling Course,beginner
+data redundancy,"The unnecessary duplication of the exact same data in multiple places within a database, which normalization seeks to remove.",Data Modeling,Data Modeling Course,beginner
+transaction,"A logical unit of work consisting of one or more SQL statements that must succeed or fail together entirely.",Data Modeling,Data Modeling Course,beginner
+cardinality,"The numerical relationship specifying how many instances of one entity can or must relate to instances of another entity.",Data Modeling,Data Modeling Course,beginner
+one-to-one,"A relationship where a single record in Table A is exclusively linked to one and only one record in Table B.",Data Modeling,Data Modeling Course,beginner
+one-to-many,"The most common relationship where a single record in Table A can be linked to multiple records in Table B.",Data Modeling,Data Modeling Course,beginner
+composite entity,"An associative entity created to resolve a many-to-many relationship, typically housing foreign keys from both related tables.",Data Modeling,Data Modeling Course,beginner
+constraint,"A strict rule enforced by the database engine (like UNIQUE or NOT NULL) to ensure data validity and integrity.",Data Modeling,Data Modeling Course,beginner
+primary key,"A field that serves as the definitive, unique identifier for every single record in a table.",Data Modeling,Data Modeling Course,beginner
+foreign key,"A field used to establish a definitive link between two tables, ensuring a record points to a valid primary key elsewhere.",Data Modeling,Data Modeling Course,beginner
+bridge table,"Another name for a composite or associative table used specifically to connect two tables in a many-to-many relationship.",Data Modeling,Data Modeling Course,beginner
+attributes,"The descriptive traits that define an entity, translated into columns during physical database design.",Data Modeling,Data Modeling Course,beginner
+referential integrity,"A database guarantee that relationships between tables remain unbroken and valid, preventing orphaned records.",Data Modeling,Data Modeling Course,beginner
+child entity,"A table that contains a foreign key pointing to the primary key of another related table.",Data Modeling,Data Modeling Course,beginner
+parent entity,"The core table containing the primary key that another related table (the child) points to.",Data Modeling,Data Modeling Course,beginner
+natural key,"A unique identifier formed by real-world attributes of the data, such as an email address or an invoice number.",Data Modeling,Data Modeling Course,beginner
+surrogate key,"An artificial, system-generated integer used exclusively as a primary key to provide a stable, meaningless identifier.",Data Modeling,Data Modeling Course,beginner
+candidate key,"Any column or set of columns in a table that uniquely identifies a row and is eligible to be chosen as the primary key.",Data Modeling,Data Modeling Course,beginner
+alternate key,"A candidate key that was not selected to be the primary key, but is still maintained as unique within the database.",Data Modeling,Data Modeling Course,beginner
+normalization,"The systematic process of organizing data into multiple tables to eliminate redundancy and prevent data anomalies.",Data Modeling,Data Modeling Course,beginner
+insertion anomaly,"A structural flaw where you cannot add a new piece of data to the database without also needing to add unrelated data.",Data Modeling,Data Modeling Course,beginner
+update anomaly,"A flaw caused by redundancy where changing a piece of data requires updating multiple identical records, risking inconsistency.",Data Modeling,Data Modeling Course,beginner
+deletion anomaly,"A flaw where deleting a specific record unintentionally causes the complete loss of other valuable, unrelated data.",Data Modeling,Data Modeling Course,beginner
+normal forms,"A series of ascending structural rules (1NF, 2NF, 3NF) applied to a database to progressively reduce data redundancy.",Data Modeling,Data Modeling Course,beginner
+boyce-codd normal form,"A stricter extension of the Third Normal Form (3NF) ensuring that every determinant in a table is a candidate key.",Data Modeling,Data Modeling Course,beginner
+transitive dependency,"An indirect relationship where a non-key column is dependent on another non-key column, a flaw fixed in Third Normal Form.",Data Modeling,Data Modeling Course,beginner
+functional dependency,"A relationship where the value of one attribute strictly determines the value of another attribute within the same table.",Data Modeling,Data Modeling Course,beginner
+ternary relationship,"A complex relationship involving three different entities interacting simultaneously.",Data Modeling,Data Modeling Course,beginner
+composite primary key,"A primary key formed by combining two or more columns together to create a unique identifier for a row.",Data Modeling,Data Modeling Course,beginner
+relational schema notation,"A shorthand text-based way to write out table structures, underlining primary keys to represent the logical design.",Data Modeling,Data Modeling Course,beginner
+entity constriants,"Business or structural rules applied directly to an entity to limit the kind of data it can hold.",Data Modeling,Data Modeling Course,beginner
+dataframe,"A two-dimensional, tabular data structure used in pandas for data manipulation and analysis.",AI Engineering,AI Engineering Course,beginner
+series,"A single, one-dimensional column of data in pandas.",AI Engineering,AI Engineering Course,beginner
+pandas concat,"A function used to combine multiple pandas DataFrames together.",AI Engineering,AI Engineering Course,beginner
+pandas apply,"A method to execute a specific function across rows or columns in a pandas DataFrame.",AI Engineering,AI Engineering Course,beginner
+csv,"A plain text file format widely used to store tabular data.",AI Engineering,AI Engineering Course,beginner
+pandas isnull,"A method that creates a boolean mask identifying missing or empty values in a dataset.",AI Engineering,AI Engineering Course,beginner
+masking in pandas,"The technique of filtering DataFrame rows using an array of boolean values.",AI Engineering,AI Engineering Course,beginner
+pandas transpose,"An operation that pivots a DataFrame, turning its rows into columns and vice versa.",AI Engineering,AI Engineering Course,beginner
+pandas value_counts(),"A function that counts how many times each unique value appears in a pandas Series.",AI Engineering,AI Engineering Course,beginner
+json,"A lightweight data format using key-value pairs, heavily used in APIs and web configurations.",AI Engineering,AI Engineering Course,beginner
+tabular data,"Data structured strictly into rows and columns, like a typical spreadsheet or database table.",AI Engineering,AI Engineering Course,beginner
+zero-based indexing,"The standard programming convention where lists or arrays start counting at zero instead of one.",AI Engineering,AI Engineering Course,beginner
+join,"An operation that merges columns from two datasets based on a common matching column.",AI Engineering,AI Engineering Course,beginner
+left join,"A join that retains all rows from the primary dataset and only matching rows from the secondary dataset.",AI Engineering,AI Engineering Course,beginner
+inner join,"A join that retains only the overlapping rows that exist in both datasets.",AI Engineering,AI Engineering Course,beginner
+group by,"An operation that splits data into categories to calculate summary statistics, like sums or averages.",AI Engineering,AI Engineering Course,beginner
+supervised learning,"A machine learning approach where the model learns by mapping input data to known, provided output labels.",AI Engineering,AI Engineering Course,beginner
+machine learning,"The field of AI where algorithms automatically learn and improve from experience without being explicitly programmed.",AI Engineering,AI Engineering Course,beginner
+data science,"The interdisciplinary field that extracts actionable knowledge from structured and unstructured data using scientific methods.",AI Engineering,AI Engineering Course,beginner
+data engineering,"The discipline of building and maintaining systems that extract, clean, and store massive amounts of data.",AI Engineering,AI Engineering Course,beginner
+algorithm,"A set of step-by-step mathematical instructions applied to data to solve a problem or make a prediction.",AI Engineering,AI Engineering Course,beginner
+regression,"A type of predictive modeling used to estimate a continuous numerical value, like predicting house prices.",AI Engineering,AI Engineering Course,beginner
+classification,"A type of predictive modeling used to assign data points into specific, discrete categories or classes.",AI Engineering,AI Engineering Course,beginner
+qualitative data,"Categorical or descriptive data that cannot be measured numerically, like text or colors.",AI Engineering,AI Engineering Course,beginner
+quantitative data,"Numerical data representing measurements or counts that can be mathematically analyzed.",AI Engineering,AI Engineering Course,beginner
+independent variable,"The input features or predictors used by an algorithm to make an estimate.",AI Engineering,AI Engineering Course,beginner
+dependent variable,"The specific output or target variable that the machine learning model is trying to predict.",AI Engineering,AI Engineering Course,beginner
+label,"The known outcome or correct answer attached to training data in supervised learning.",AI Engineering,AI Engineering Course,beginner
+feature,"An individual, measurable property or characteristic of a phenomenon being observed, used as input for an ML model.",AI Engineering,AI Engineering Course,beginner
+model,"The mathematical artifact or algorithm created after analyzing training data, capable of making future predictions.",AI Engineering,AI Engineering Course,beginner
+training,"The computationally intensive process where an algorithm analyzes data to learn underlying patterns and adjust its parameters.",AI Engineering,AI Engineering Course,beginner
+evaluation,"The process of testing a newly trained model using unseen data to measure its accuracy and reliability.",AI Engineering,AI Engineering Course,beginner
+prediction,"The estimated output produced by a machine learning model when given new, unseen input data.",AI Engineering,AI Engineering Course,beginner
+target,"Another term for the dependent variable or label; the specific metric a model aims to predict.",AI Engineering,AI Engineering Course,beginner
+training set,"The main chunk of data fed into the algorithm so it can learn the relationships between inputs and outputs.",AI Engineering,AI Engineering Course,beginner
+validation set,"A separate chunk of data used to iteratively tune an algorithm's hyperparameters without bleeding the final test data.",AI Engineering,AI Engineering Course,beginner
+test set,"The final, completely untouched chunk of data used to objectively evaluate the fully trained model's performance.",AI Engineering,AI Engineering Course,beginner
+recall,"A statistical metric measuring a model's ability to successfully identify all relevant or positive instances.",AI Engineering,AI Engineering Course,beginner
+f1 score,"A balanced metric that combines precision and recall into a single score to evaluate a model's robustness.",AI Engineering,AI Engineering Course,beginner
+regularization,"A technique used to penalize overly complex models during training to prevent them from memorizing noise (overfitting).",AI Engineering,AI Engineering Course,beginner
+hyperparameter,"Configuration settings manually set by the engineer before training begins, guiding how the algorithm learns.",AI Engineering,AI Engineering Course,beginner
+overfitting,"A failure mode where a model memorizes the training data too closely, performing poorly on new, unseen data.",AI Engineering,AI Engineering Course,beginner
+underfitting,"A failure mode where a model is too simple to capture the underlying patterns in the data, performing poorly overall.",AI Engineering,AI Engineering Course,beginner
+precision,"A statistical metric measuring how many of the model's positive predictions were actually correct.",AI Engineering,AI Engineering Course,beginner
+few shot learning,"A technique providing an LLM with a couple of examples in the prompt to rapidly adapt it to a new task.",AI Engineering,AI Engineering Course,beginner
+token,"A chunk of text (a word or sub-word) that language models process as a single unit.",AI Engineering,AI Engineering Course,beginner
+context window,"The token limit defining the maximum length of text an LLM can analyze or remember at one time.",AI Engineering,AI Engineering Course,beginner
+pydantic,"A python library enforcing strict data type validation.",AI Engineering,AI Engineering Course,beginner
+BaseModel,"The core class inherited in Pydantic used to construct robust, automatically validated Python objects.",AI Engineering,AI Engineering Course,beginner
+Field,"A Pydantic tool used to attach constraints, metadata, or default values to attributes.",AI Engineering,AI Engineering Course,beginner
+model_fields,"A dictionary containing the metadata for the defined attributes of a Pydantic model.",AI Engineering,AI Engineering Course,beginner
+computed_field,"A Pydantic feature that dynamically calculates and creates a property based on other data when the model is used.",AI Engineering,AI Engineering Course,beginner
+model_validate,"A method to strictly check and parse an external dictionary into a valid Pydantic object.",AI Engineering,AI Engineering Course,beginner
+model_dump,"A method to extract the data from a Pydantic model back into a standard Python dictionary format.",AI Engineering,AI Engineering Course,beginner
+type hinting,"Annotating Python variables with expected data types to improve code clarity and assist validation tools.",AI Engineering,AI Engineering Course,beginner
+serialization,"Translating a Python object into JSON text so it can be transmitted via an API.",AI Engineering,AI Engineering Course,beginner
+deserialization,"Reconstructing a JSON text payload back into a usable Python object.",AI Engineering,AI Engineering Course,beginner
+prompt engineering,"The art and science of formulating queries to maximize the accuracy and helpfulness of LLM responses.",AI Engineering,AI Engineering Course,beginner
+zero-shot learning,"Providing an LLM with instructions to perform a task without supplying any prior examples.",AI Engineering,AI Engineering Course,beginner
+uvicorn,"A lightning-fast ASGI server implementation used to run and serve FastAPI web applications.",AI Engineering,AI Engineering Course,beginner
+endpoint,"A specific URL address within an API that receives requests and executes a specific function.",AI Engineering,AI Engineering Course,beginner
+path parameter,"A variable embedded directly in the URL path of an API to identify a specific resource.",AI Engineering,AI Engineering Course,beginner
+query parameter,"Optional variables appended to the end of a URL (after a '?') used to filter or customize API requests.",AI Engineering,AI Engineering Course,beginner
+routes,"The mapping structure connecting specific API URLs to the underlying Python functions that handle them.",AI Engineering,AI Engineering Course,beginner
+request,"The data payload and metadata sent from a client or user asking an API to perform an action.",AI Engineering,AI Engineering Course,beginner
+REST,"Representational State Transfer; an architectural style for designing robust, standardized web APIs.",AI Engineering,AI Engineering Course,beginner
+CRUD,"Create, Read, Update, Delete; the four foundational operations implemented by REST APIs.",AI Engineering,AI Engineering Course,beginner
+put,"An HTTP method used in APIs to completely replace or update an existing resource.",AI Engineering,AI Engineering Course,beginner
+post,"An HTTP method used in APIs to create and submit an entirely new resource to the server.",AI Engineering,AI Engineering Course,beginner
+read,"The conceptual action of retrieving data, usually mapped to an HTTP GET request.",AI Engineering,AI Engineering Course,beginner
+update,"The conceptual action of modifying existing data, usually mapped to an HTTP PUT or PATCH request.",AI Engineering,AI Engineering Course,beginner
+field_validator,"A decorator in Pydantic used to write custom validation logic for a specific field.",AI Engineering,AI Engineering Course,beginner
+response,"The final data package and status code sent back by the API to the client after processing a request.",AI Engineering,AI Engineering Course,beginner
+swagger ui,"An interactive, visually appealing documentation interface automatically generated by FastAPI for testing API endpoints.",AI Engineering,AI Engineering Course,beginner
+OpenAPI,"A standard specification format used to describe, document, and define the structure of REST APIs.",AI Engineering,AI Engineering Course,beginner
+curl,"A command-line tool used by developers to manually send HTTP requests and test APIs without a graphical interface.",AI Engineering,AI Engineering Course,beginner
+tools,"Functions or scripts given to an AI Agent allowing it to fetch external data or take actions.",AI Engineering,AI Engineering Course,beginner
+dependencies,"Software packages or libraries that an application relies upon to function.",AI Engineering,AI Engineering Course,beginner
+output_type,"The strict schema format an AI is instructed to return, guaranteeing consistent data structures.",AI Engineering,AI Engineering Course,beginner
+dependency injection,"A pattern in FastAPI where required components (like database connections) are automatically provided to endpoints when called.",AI Engineering,AI Engineering Course,beginner
+request body,"The JSON payload included in POST or PUT requests containing the complex data to be processed.",AI Engineering,AI Engineering Course,beginner
+response model,"A schema defining the exact shape and data types of the output an API will return.",AI Engineering,AI Engineering Course,beginner
+pydantic model,"A structured Python class ensuring data integrity during application runtime.",AI Engineering,AI Engineering Course,beginner
+Agent,"An LLM-driven system capable of autonomous reasoning, calling tools, and breaking down complex goals.",AI Engineering,AI Engineering Course,beginner
+run,"The command used to execute an AI Agent's workflow or an application process.",AI Engineering,AI Engineering Course,beginner
+system prompt,"The invisible foundational instructions defining an LLM's persona, rules, and boundaries.",AI Engineering,AI Engineering Course,beginner
+retry loop,"A mechanism designed to automatically try an operation again if a network request or LLM generation fails.",AI Engineering,AI Engineering Course,beginner
+tool call,"When an LLM intelligently halts its text generation to request the execution of a specific python function.",AI Engineering,AI Engineering Course,beginner
+messages,"The historical list of dialogue exchanges passed to an LLM to maintain conversation context.",AI Engineering,AI Engineering Course,beginner
+RAG,"Retrieval-Augmented Generation; a technique that securely passes external, factual documents to an LLM to prevent hallucinations.",AI Engineering,AI Engineering Course,beginner
+embedding,"A numerical array representing the semantic meaning of text, allowing computers to measure conceptual similarity.",AI Engineering,AI Engineering Course,beginner
+vector database,"A specialized database optimized to store and instantly search mathematical embeddings.",AI Engineering,AI Engineering Course,beginner
+ANN,"Approximate Nearest Neighbor; an ultra-fast algorithm used by vector databases to find similar data points.",AI Engineering,AI Engineering Course,beginner
+KNN,"K-Nearest Neighbors; an algorithm that calculates the exact closest data points based on mathematical distance.",AI Engineering,AI Engineering Course,beginner
+retriever,"The component in a RAG system responsible for searching the vector database and fetching the most relevant documents.",AI Engineering,AI Engineering Course,beginner
+generator,"The LLM component in a RAG system that reads the retrieved documents and synthesizes a final, human-readable answer.",AI Engineering,AI Engineering Course,beginner
+similarity search,"The process of comparing a user's query embedding against a database to find semantically related text.",AI Engineering,AI Engineering Course,beginner
+BM25,"A traditional keyword-based search algorithm that ranks documents based on exact word frequency.",AI Engineering,AI Engineering Course,beginner
+keyword search,"A basic search method that looks for exact character matches rather than underlying meaning.",AI Engineering,AI Engineering Course,beginner
+hybrid search,"An advanced search methodology combining the strengths of exact keyword matching with semantic vector search.",AI Engineering,AI Engineering Course,beginner
+vector search,"Searching a database by calculating the mathematical distance between meaning-based embeddings.",AI Engineering,AI Engineering Course,beginner
+cosine similarity,"A specific mathematical calculation used to determine how close two embeddings are to each other conceptually.",AI Engineering,AI Engineering Course,beginner
+chunking,"The process of splitting large documents into smaller, manageable text blocks before turning them into embeddings.",AI Engineering,AI Engineering Course,beginner
+context,"The retrieved documents injected into the LLM's prompt to give it factual grounding to answer a query.",AI Engineering,AI Engineering Course,beginner
+metadata,"Descriptive tags (like date, author, or category) attached to document chunks in a vector database for better filtering.",AI Engineering,AI Engineering Course,beginner
+agentic rag,"An advanced pattern where an AI Agent independently decides if it needs to search a database, and what queries to use.",AI Engineering,AI Engineering Course,beginner
+on-premises IT infrastructure,"Computing hardware and servers physically located and maintained within an organization's own facilities.",Big Data Databricks,Big Data Databricks Course,beginner
+cloud IT infrastructure,"Computing resources, storage, and networking delivered as a service over the internet by third-party providers.",Big Data Databricks,Big Data Databricks Course,beginner
+3 Vs of big data,"Volume, Velocity, and Variety; the three defining characteristics of massive datasets that traditional systems cannot handle.",Big Data Databricks,Big Data Databricks Course,beginner
+scalability,"The ability of a cloud system to seamlessly increase computing power and storage to handle growing amounts of data.",Big Data Databricks,Big Data Databricks Course,beginner
+availability,"The metric determining how reliably accessible and operational a cloud computing system is over time.",Big Data Databricks,Big Data Databricks Course,beginner
+lakeflow connect,"A Databricks feature designed to easily integrate and ingest data from various external operational systems.",Big Data Databricks,Big Data Databricks Course,beginner
+lakeflow spark declarative pipeline,"A framework for defining robust, automated data pipelines within Databricks using a declarative syntax.",Big Data Databricks,Big Data Databricks Course,beginner
+unity catalog,"A unified governance solution within Databricks providing centralized access control, auditing, and lineage across data.",Big Data Databricks,Big Data Databricks Course,beginner
+data lakehouse,"A modern data architecture combining the vast storage flexibility of a data lake with the reliability and structure of a data warehouse.",Big Data Databricks,Big Data Databricks Course,beginner
+delta table,"A reliable, high-performance table format in Databricks supporting ACID transactions, time travel, and unified streaming/batch processing.",Big Data Databricks,Big Data Databricks Course,beginner
+lakeflow jobs,"A Databricks orchestration tool used to schedule, monitor, and execute complex data processing workflows.",Big Data Databricks,Big Data Databricks Course,beginner
+spark,"A powerful open-source distributed computing framework designed for fast, large-scale data processing.",Big Data Databricks,Big Data Databricks Course,beginner
+pyspark,"The Python API for Apache Spark, allowing data engineers to write Python code to process massive datasets on clusters.",Big Data Databricks,Big Data Databricks Course,beginner
+data intelligence platform,"The evolution of Databricks integrating generative AI to deeply understand data semantics and assist in code generation and analysis.",Big Data Databricks,Big Data Databricks Course,beginner
+dataframe,"A tabular data structure used in pandas for data analysis.",Machine Learning,Machine Learning Course,beginner
+series,"A one-dimensional array representing a single column in pandas.",Machine Learning,Machine Learning Course,beginner
+pandas concat,"A function to combine dataframes.",Machine Learning,Machine Learning Course,beginner
+pandas apply,"A method to apply a function over rows or columns of data.",Machine Learning,Machine Learning Course,beginner
+csv,"A plain text format for storing tabular data separated by commas.",Machine Learning,Machine Learning Course,beginner
+pandas isnull,"A method for finding missing or NaN values in a dataset.",Machine Learning,Machine Learning Course,beginner
+masking in pandas,"Filtering a dataframe by passing it an array of boolean conditions.",Machine Learning,Machine Learning Course,beginner
+pandas transpose,"Pivoting a dataframe so rows become columns.",Machine Learning,Machine Learning Course,beginner
+pandas value_counts(),"A function that returns the frequencies of unique values in a series.",Machine Learning,Machine Learning Course,beginner
+json,"JavaScript Object Notation; a common format for storing hierarchical data.",Machine Learning,Machine Learning Course,beginner
+tabular data,"Data neatly organized into rows and columns.",Machine Learning,Machine Learning Course,beginner
+zero-based indexing,"The programming convention of starting an index count at 0 instead of 1.",Machine Learning,Machine Learning Course,beginner
+join,"Combining two datasets horizontally based on a shared key.",Machine Learning,Machine Learning Course,beginner
+left join,"A join keeping all records from the primary dataset and matching ones from the secondary.",Machine Learning,Machine Learning Course,beginner
+inner join,"A join keeping only records that have a match in both datasets.",Machine Learning,Machine Learning Course,beginner
+group by,"Splitting data into discrete groups to calculate summary statistics.",Machine Learning,Machine Learning Course,beginner
+supervised learning,"A machine learning paradigm where algorithms learn from labeled training data.",Machine Learning,Machine Learning Course,beginner
+machine learning,"Teaching computers to recognize patterns and make decisions from data without explicit programming.",Machine Learning,Machine Learning Course,beginner
+data science,"Extracting insights and knowledge from complex data using math, stats, and programming.",Machine Learning,Machine Learning Course,beginner
+data engineering,"Building the pipelines and infrastructure required to process and store data efficiently.",Machine Learning,Machine Learning Course,beginner
+algorithm,"A computational formula or mathematical process used to solve a problem.",Machine Learning,Machine Learning Course,beginner
+regression,"Predicting a continuous numerical value based on input features.",Machine Learning,Machine Learning Course,beginner
+classification,"Predicting which category or class a data point belongs to.",Machine Learning,Machine Learning Course,beginner
+qualitative data,"Descriptive, categorical data.",Machine Learning,Machine Learning Course,beginner
+quantitative data,"Numerical data that can be measured and calculated mathematically.",Machine Learning,Machine Learning Course,beginner
+independent variable,"The input data features used by the model to learn and make predictions.",Machine Learning,Machine Learning Course,beginner
+dependent variable,"The specific variable the model is tasked with predicting.",Machine Learning,Machine Learning Course,beginner
+label,"The known correct answer provided to a supervised learning model during training.",Machine Learning,Machine Learning Course,beginner
+feature,"A measurable property used as an input variable in an algorithm.",Machine Learning,Machine Learning Course,beginner
+model,"The mathematical representation resulting from the training process.",Machine Learning,Machine Learning Course,beginner
+training,"The process of feeding data to an algorithm so it can calculate patterns and weights.",Machine Learning,Machine Learning Course,beginner
+evaluation,"Assessing how well a trained model performs using specific metrics.",Machine Learning,Machine Learning Course,beginner
+prediction,"The model's output estimate when presented with new data.",Machine Learning,Machine Learning Course,beginner
+target,"The outcome variable the model aims to predict.",Machine Learning,Machine Learning Course,beginner
+training set,"The portion of the dataset used exclusively to train the algorithm.",Machine Learning,Machine Learning Course,beginner
+validation set,"Data used to iteratively tune the model's settings during training.",Machine Learning,Machine Learning Course,beginner
+test set,"Data completely hidden during training, used for the final evaluation.",Machine Learning,Machine Learning Course,beginner
+recall,"The percentage of actual positives the model correctly identified.",Machine Learning,Machine Learning Course,beginner
+f1 score,"A metric providing a balanced average of precision and recall.",Machine Learning,Machine Learning Course,beginner
+regularization,"Penalizing model complexity to prevent overfitting and improve generalization.",Machine Learning,Machine Learning Course,beginner
+hyperparameter,"Settings adjusted by the engineer prior to training to steer how the model learns.",Machine Learning,Machine Learning Course,beginner
+overfitting,"When a model learns the training data's noise too well, failing on unseen data.",Machine Learning,Machine Learning Course,beginner
+underfitting,"When a model is too simplistic to learn the underlying patterns in the data.",Machine Learning,Machine Learning Course,beginner
+precision,"The percentage of the model's positive predictions that were actually correct.",Machine Learning,Machine Learning Course,beginner
+BaseModel,"A Pydantic class used for strictly defining data shapes.",Machine Learning,Machine Learning Course,beginner
+Field,"A Pydantic tool for configuring individual attribute validation.",Machine Learning,Machine Learning Course,beginner
+model_fields,"Metadata describing a Pydantic model's schema.",Machine Learning,Machine Learning Course,beginner
+computed_field,"A dynamically calculated property in a Pydantic model.",Machine Learning,Machine Learning Course,beginner
+model_validate,"Parsing data securely into a defined Python object.",Machine Learning,Machine Learning Course,beginner
+model_dump,"Converting a Python object back into a dictionary.",Machine Learning,Machine Learning Course,beginner
+type hinting,"Specifying variable types in Python for better code validation.",Machine Learning,Machine Learning Course,beginner
+serialization,"Converting complex data to JSON format.",Machine Learning,Machine Learning Course,beginner
+deserialization,"Converting JSON data back into complex objects.",Machine Learning,Machine Learning Course,beginner
+DAG,"Directed Acyclic Graph: A conceptual representation of a data pipeline where tasks are executed in a specific, unidirectional order without any infinite loops.",Data Engineering,Data Engineering Core,beginner
+CDC,"Change Data Capture: A software process that identifies and tracks changes in a database (inserts, updates, deletes) in real-time to keep downstream systems synced.",Data Engineering,Data Engineering Core,beginner
+Data Contract,"An agreement between data producers and data consumers defining the schema, quality, and service level of the data being shared to prevent pipeline breakages.",Data Engineering,Data Engineering Core,beginner
+Parquet,"An open-source, column-oriented data file format designed for highly efficient data storage and retrieval, heavily used in data lakes and Spark environments.",Data Engineering,Data Engineering Core,beginner
+Data Lineage,"The tracking of data as it flows from its origin to consumption, documenting exactly how it gets transformed and where it is ultimately used.",Data Engineering,Data Engineering Core,beginner
+Data Governance,"The overall organizational management of data availability, usability, integrity, and security, ensuring data is trusted and compliant.",Data Engineering,Data Engineering Core,beginner
+Data Catalog,"A centralized, searchable inventory of an organization's data assets that uses metadata to help users easily find and understand the data available to them.",Data Engineering,Data Engineering Core,beginner
+Data Mesh,"A decentralized data architecture that treats data as a product, assigning ownership to specific domain teams rather than a single central data team.",Data Engineering,Data Engineering Core,beginner
+Lambda Architecture,"A data-processing architecture designed to handle massive quantities of data by utilizing both batch-processing and stream-processing methods simultaneously.",Data Engineering,Data Engineering Core,beginner
+SLA,"Service Level Agreement: A defined expectation for data pipeline performance, specifying acceptable metrics like data freshness, uptime, and processing delay.",Data Engineering,Data Engineering Core,beginner
+Backfilling,"The process of pushing historical data through a newly created or updated data pipeline to populate a target destination retroactively.",Data Engineering,Data Engineering Core,beginner
+Data Skew,"A performance issue occurring in distributed systems (like Spark) where data is unevenly distributed across partitions, causing some nodes to work much harder than others.",Data Engineering,Data Engineering Core,beginner
+Idempotency,"A property of a data pipeline ensuring that running a task multiple times yields the exact same final result as running it just once, preventing accidental data duplication.",Data Engineering,Data Engineering Core,beginner

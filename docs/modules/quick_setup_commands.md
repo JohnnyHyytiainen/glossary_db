@@ -70,3 +70,4 @@ Run this exact command in the terminal:
 - `rm -rf chroma_db/`               Removes the entire chroma_db folder containing my vector DB.
 - `uv run python -m src.seed_csv`   Runs my seed_csv.py script and seeds my database again
 - `uv run python -m scripts.embed_terms` Runs my embed_terms.py script and rebuilds my vector DB.
+- `DROP TABLE term_categories, term_sources, terms, categories, sources CASCADE;` in Pgadmin to drop all my current tables.

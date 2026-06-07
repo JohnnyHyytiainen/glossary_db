@@ -8,10 +8,10 @@ Att bygga kärnan i min AI-motor genom att implementera **Retrieval-Augmented Ge
 ## Arkitektur & Flöde (The R-A-G process)
 1. **Retrieval (`get_relevant_context`):** Tar emot användarens fråga och gör en semantisk sökning (Cosine Similarity) i ChromaDB för att hämta de 5 mest relevanta glosorna.
 2. **Augmentation (Super-prompten):** Paketerar de hämtade glosorna och användarens fråga in i en strikt regelstyrd prompt.
-3. **Generation (`generate_rag_response`):** Skickar den paketerade prompten till `gemini-2.5-flash` som formulerar ett mänskligt och pedagogiskt svar baserat *exakt* på min data.
+3. **Generation (`generate_rag_response`):** Skickar den paketerade prompten till `grunden.ai's` servers som använder sig utan `OpenAI's glm-5.1 modell` som formulerar ett mänskligt och pedagogiskt svar baserat *exakt* på min data.
 
 ## Säkerhet & Skydd
-* **Hallucination Guard:** Gemini är instruerad att svara "Jag vet inte" om informationen saknas i kontexten. Tester visar att detta fungerar till 100% **(exempelvis vägrade den svara på "ETL" när termen inte fanns i databasen)**
+* **Hallucination Guard:** `glm-5.1` (Gemini(OLD)) är instruerad att svara "Jag vet inte" om informationen saknas i kontexten. Tester visar att detta fungerar till 100% **(exempelvis vägrade den svara på "ETL" när termen inte fanns i databasen)**
 
 * **Language Matching:** En regel tvingar AI'n att svara på samma språk som användaren ställde frågan på, med tillåtelse att översätta den engelska kontexten i farten.
 

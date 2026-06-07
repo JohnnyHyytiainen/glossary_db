@@ -272,4 +272,13 @@ Update embed_terms.py and rag.py to include sources for /search endpoint.
     - **Done**
 
 - Plan to have a quick and easy frontend (streamlit perhaps?) to show in upcoming demo for AI engineer summer internship end interview on Wednesday 10/06-2026.
+    - **Done**
+
+- Make streamlit more DRY, modulazise it now that PoC is working
+    - **Done**
+
+- Ingest more glossary terms 
+    - *ongoing*
+
+- Tag project with 1.4.0 once done with previous steps
     - *ongoing*

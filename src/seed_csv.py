@@ -10,17 +10,34 @@ from src.models import Term, Category, Source, DifficultyLevel
 # Skapa 'translation map' för kända specialfall/edge cases
 # Här får jag mappa vad extremfallen ska heta i URL'en
 CUSTOM_SLUGS = {
-        "*args":"args",
-        "**kwargs": "kwargs",
-        "__repr__": "dunder-repr",
-        "__init__": "dunder-init",
-        "__str__": "dunder-str",
-        "__iter__": "dunder-iter",
-        "c++": "cpp",
-        "cd ..": "cd-dotdot",
-        "c#": "c-sharp",
-        "docker exec -it": "docker-exec-it"
-    }
+    "*args": "args",
+    "**kwargs": "kwargs",
+    "__repr__": "dunder-repr",
+    "__init__": "dunder-init",
+    "__str__": "dunder-str",
+    "__iter__": "dunder-iter",
+    "c++": "cpp",
+    "cd ..": "cd-dotdot",
+    "c#": "c-sharp",
+    "docker exec -it": "docker-exec-it",
+}
+
+# Skapa 'category map' för mina kategorier. Likt CUSTOM_SLUGS använder jag CAT..._MAP som min "ordbok" för att standardisera stökiga namn
+CATEGORY_MAP = {
+    "dataplatform development": "Data Platform Development",
+    "data visualisation bi": "Data Visualization",
+    "data visualization": "Data Visualization",
+    "llmops": "LLMOps",
+    "big data databricks": "Big Data Databricks",
+    "data enginering": "Data Engineering",
+}
+
+
+def standardize_category(cat_name: str) -> str:
+    """Standardizing category name based on my CAT_MAP."""
+    clean_name = cat_name.strip()
+    return CATEGORY_MAP.get(clean_name.lower(), clean_name)
+
 
 def generate_slug(text: str) -> str:
     """
@@ -32,19 +49,19 @@ def generate_slug(text: str) -> str:
     # 1) Rensa markdown escapes direkt. (t.ex \*args blir *args)
     clean_text = str(text).replace("\\", "").strip().lower()
 
-
     # 2) Om termen finns i min mapping för CUSTOM SLUGS, returnera översättningen direkt
     if clean_text in CUSTOM_SLUGS:
         return CUSTOM_SLUGS[clean_text]
-    
+
     # 4) Om det inte är ett specialfall/edge case kör standard slug generating
-    # Byt ut allt som inte är bokstäver/siffror mot bindestreck - 
-    slug = re.sub(r'[^a-z0-9]+', '-', clean_text)
+    # Byt ut allt som inte är bokstäver/siffror mot bindestreck -
+    slug = re.sub(r"[^a-z0-9]+", "-", clean_text)
 
     # Rensa upp multibla bindestreck, --- blir - och bindestreck i ändarna
-    slug = re.sub(r'-+', '-', slug).strip('-')
-    
+    slug = re.sub(r"-+", "-", slug).strip("-")
+
     return slug
+
 
 def load_data_from_csv():
     csv_file = "data/glossary_filled_unique_terms.csv"
@@ -56,30 +73,37 @@ def load_data_from_csv():
     except FileNotFoundError:
         print(f"Could not find file {csv_file}. Check pathing")
         return
-    
+
     db = SessionLocal()
 
     try:
         # loopa igenom varje rad i CSV
         for index, row in df.iterrows():
             # Tvätta bort markdown escapes direkt
-            term_name = str(row['Term']).replace("\\", "").strip()
-            definition = str(row['Definition']).strip()
-            category_name = str(row['Category']).strip()
-            source_name = str(row['Source']).strip()
+            term_name = str(row["Term"]).replace("\\", "").strip()
+            definition = str(row["Definition"]).strip()
+            raw_cat_name = str(row["Category"]).strip()
+            category_name = standardize_category(raw_cat_name)
+            source_name = str(row["Source"]).strip()
 
             # skapa slug
             slug = generate_slug(term_name)
 
             # 1: Hämta eller skapa Category
-            category = db.scalars(select(Category).where(Category.name == category_name)).first()
+            category = db.scalars(
+                select(Category).where(Category.name == category_name)
+            ).first()
             if not category:
-                category = Category(name=category_name,description=f"Terms in: {category_name}")
+                category = Category(
+                    name=category_name, description=f"Terms in: {category_name}"
+                )
                 db.add(category)
-                db.flush() # db.flush() skickar till databasen för att få ett ID men committar ingenting än
+                db.flush()  # db.flush() skickar till databasen för att få ett ID men committar ingenting än
 
             # 2: Hämta eller skapa källa
-            source = db.scalars(select(Source).where(Source.name == source_name)).first()
+            source = db.scalars(
+                select(Source).where(Source.name == source_name)
+            ).first()
             if not source:
                 source = Source(name=source_name, source_type="Course")
                 db.add(source)
@@ -92,9 +116,9 @@ def load_data_from_csv():
                     slug=slug,
                     term=term_name,
                     definition=definition,
-                    difficulty=DifficultyLevel.beginner, # Default. Får se över om jag kan göra ändringar manuellt när allt är stabilt
+                    difficulty=DifficultyLevel.beginner,  # Default. Får se över om jag kan göra ändringar manuellt när allt är stabilt
                     categories=[category],
-                    sources=[source]
+                    sources=[source],
                 )
                 db.add(term)
             else:
@@ -113,6 +137,7 @@ def load_data_from_csv():
         db.rollback()
     finally:
         db.close()
+
 
 if __name__ == "__main__":
     load_data_from_csv()
