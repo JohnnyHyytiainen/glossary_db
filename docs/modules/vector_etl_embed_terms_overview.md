@@ -1,6 +1,7 @@
 # Vector-ETL & ChromaDB: Module Overview
 
 ***Skapat: 2026-02-25***
+***Uppdaterad med ANN: 2026-06-08***
 
 ## Syfte med Modulen
 
