@@ -3,6 +3,8 @@
 .env.*
 !.env.example
 !.env.template
+docs/studies/prep_for_unipl.md
+
 # AWS/Cloud keys om de skulle råka hamna här
 .aws/
 secrets/
@@ -67,6 +69,7 @@ coverage.xml
 !data/processed/
 !data/tmp/
 !data/raw/
+
 
 # men tillåt små fixtures/exempel
 !data/fixtures/**/*.json
