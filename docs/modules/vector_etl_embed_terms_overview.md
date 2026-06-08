@@ -38,3 +38,17 @@ En pipeline måste vara **idempotent,** den ska kunna köras 1 gång eller 1000 
 
 ---
 
+## ANN (Approximate Nearest Neighbor) 
+
+* ANN är något jag redan har använt mig utav utan att veta om det och tänka på just det. Tittar jag i min `ChromaDB`-konfiguration:
+```python
+    collection = client.get_or_create_collection(
+        name="glossary_terms",
+        metadata={"hnsw:space": "cosine"} # <--- Här
+    )
+```
+* Tittar jag på `metadata={"hnsw:space": "cosine"}` så ser jag att hnsw(Hierarchical Navigable Small World) redan är ett `ANN`-index. Jag konfigurerade redan ANN i Februari 2026 utan att ens veta om det.
+
+* Exakt nearest neighbor i 384 dimensioner kräver att jag beräknas `cosine similarity` mot varje enstaka vektor i databasen. Vid ~500 glosor så spelar det ej någon roll. Vid 50 MILJONER glosor så är det här oanvändbart. `ANN` byter ut "den exakt närmaste" mot "någon som med mycket hög sannolikhet är bland de närmaste" och på så sätt vinner extrem hastighet på det. Det är t.ex det som Ewa för Qdrant pratade om när hon pratade om Token efficiency och skalbarhet.
+
+* `Qdrant` VS `ChromaDB`: `ChromaDB` är rätt för tillfället. Snabb prototyp, lokalt och enkelt API. `Qdrant` är mer för produktion, distribuerad och ger ännu mer kontroll över `HNSW`-parametrar.
