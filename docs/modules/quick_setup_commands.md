@@ -48,6 +48,9 @@ Run this exact command in the terminal:
     - (--reload means that the server restarts automatically as soon as i save a change in my code.)
     - Terminal should give `Uvicorn running on http://127:0.0.1:8000` if everything went smoothly
 
+- **Run the STREAMLIT app:**
+    - `uv run streamlit run streamlit_app.py`
+
 - **Run the API TEST script:**
     - `pytest tests/test_api.py -v`
 

@@ -88,7 +88,7 @@ def search_database(query: str, num_results: int = 5) -> list[dict[str, Any]]:
                 "slug": meta.get("slug"),
                 "distance": round(dist, 4),  # Avrundar för formattering
                 "sources": meta.get("sources") or [],
-                "snippet": docs[:100] + "..",  # 100 första tecknen av glosan
+                "snippet": docs,  # 100 första tecknen av glosan
             }
         )
 
