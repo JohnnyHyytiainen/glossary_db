@@ -1,0 +1,79 @@
+flowchart TD
+    subgraph SOURCES["Data Sources"]
+        MD["Markdown glossary files
+        docs/glossary_terms/*.md
+        (python, sql, data_engineering m.fl)"]
+        MANUAL["Manual term entry
+        src/seed.py
+        (direkt insert till PostgreSQL)"]
+    end
+
+    subgraph ETL["ETL - Ingestion Pipeline"]
+        EXT["extract.py
+        Läser markdown-filer
+        Normaliserar och rensar"]
+        CSV["glossary_filled.csv
+        data/ · 500+ termer
+        11 kategorier"]
+        SEEDCSV["seed_csv.py
+        Pandas read_csv
+        ORM INSERT via SQLAlchemy"]
+    end
+
+    subgraph STORES["Data Stores (Docker)"]
+        PG[("PostgreSQL
+        terms · categories · sources
+        term_categories + term_sources (M:N)")]
+        EMBT["embed_terms.py
+        SELECT terms + sources från PG
+        Skapar embeddings (all-MiniLM-L6-v2)
+        normalize_embeddings=True
+        Skriver till ChromaDB"]
+        CHROMA[("ChromaDB · lokal
+        Collection: glossary_terms
+        Vektorer + metadata (slug, term, sources)")]
+    end
+
+    subgraph API["API Layer - FastAPI"]
+        MAIN["main.py · Endpoints
+        GET /terms (selectinload, N+1-fix)
+        GET /search · GET /random · GET /health
+        POST /ask (delegerar till rag.py)"]
+        RAG["rag.py · RAG Engine
+        R: get_relevant_context() -> ChromaDB
+        A: system_message med context_text
+        G: generate_rag_response() -> GLM 5.1"]
+    end
+
+    subgraph LLM_LAYER["LLM - Grunden.ai"]
+        GLM[("GLM 5.1
+        OpenAI-kompatibelt API
+        system: instruktioner + kontext
+        user: frågan")]
+    end
+
+    subgraph FRONTEND["Frontend"]
+        ST["Streamlit (ui/)
+        ui/api.py -> HTTP mot FastAPI (decoupled)
+        ask_tab · search_tab · browse_tab
+        http://localhost:8501"]
+    end
+
+    MD -->|"Raw text"| EXT
+    EXT -->|"Normaliserad CSV"| CSV
+    CSV -->|"Pandas read_csv"| SEEDCSV
+    SEEDCSV -->|"ORM INSERT"| PG
+    MANUAL -->|"Direkt insert"| PG
+
+    PG -->|"SELECT terms + sources"| EMBT
+    EMBT -->|"Embeddings + metadata"| CHROMA
+
+    PG <-->|"SQLAlchemy ORM
+    selectinload (N+1-fix)"| MAIN
+    CHROMA <-->|"query_embeddings
+    n_results=k"| RAG
+    RAG <-->|"system + user messages
+    answer + sources"| GLM
+    RAG -->|"answer + sources"| MAIN
+    MAIN <-->|"HTTP · ui/api.py
+    JSON"| ST
