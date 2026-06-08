@@ -288,3 +288,13 @@ Update embed_terms.py and rag.py to include sources for /search endpoint.
 
 ---
 
+## Monday 08/06-2026
+*Goals for today*
+
+- Write `overview` flowchart using `mermaid(.mmd)` to better understand and be able to present project in upcoming meeting.
+    - **Done**
+
+- Compile insights and docs from previous sessions to read through and study for upcoming meeting (`.gitignored`-notes)
+    - **Done**
+
+
